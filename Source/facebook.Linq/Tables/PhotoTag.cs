@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "object_id" , IsPrimaryKey = true)]
-        public long ObjectId { get; set; }
+        public long? ObjectId { get; set; }
 
         /// <summary>
         /// The ID of the photo being queried. The <code>pid</code> cannot be longer than 50 characters.<br /><strong>Note:</strong> Because the pid is a string, you should always wrap the pid in quotes when referenced in a query.
@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "subject" )]
-        public long Subject { get; set; }
+        public long? Subject { get; set; }
 
         /// <summary>
         /// The content of the tag being queried. It contains either the name of the user tagged or the text tag.
@@ -52,7 +52,7 @@ namespace facebook.Tables
         /// original type is: float
         /// </summary>
         [Column(Name = "xcoord" )]
-        public float Xcoord { get; set; }
+        public float? Xcoord { get; set; }
 
         /// <summary>
         /// The center of the tag's vertical position, measured as a floating-point percentage from 0 to 100, from the top edge of the photo.
@@ -60,7 +60,7 @@ namespace facebook.Tables
         /// original type is: float
         /// </summary>
         [Column(Name = "ycoord" )]
-        public float Ycoord { get; set; }
+        public float? Ycoord { get; set; }
 
         /// <summary>
         /// The date that the tag being queried was created.
@@ -68,7 +68,7 @@ namespace facebook.Tables
         /// original type is: time
         /// </summary>
         [Column(Name = "created" )]
-        public DateTime Created { get; set; }
+        public DateTime? Created { get; set; }
 
     }
 }

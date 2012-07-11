@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "id" , IsPrimaryKey = true)]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         /// <summary>
         /// ID of person publishing the post
@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "author_uid" )]
-        public long AuthorUid { get; set; }
+        public long? AuthorUid { get; set; }
 
         /// <summary>
         /// ID of application that published the post
@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "app_id" )]
-        public long AppId { get; set; }
+        public long? AppId { get; set; }
 
         /// <summary>
         /// UNIX timestamp
@@ -44,7 +44,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "timestamp" )]
-        public long Timestamp { get; set; }
+        public long? Timestamp { get; set; }
 
         /// <summary>
         /// <code>array</code> of <code>int</code>s representing the Facebook IDs tagged in the post
@@ -52,7 +52,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "tagged_uids" )]
-        public JsonObject TaggedUids { get; set; }
+        public UidsList TaggedUids { get; set; }
 
         /// <summary>
         /// ID of the Facebook page associated with the location or event in the post
@@ -60,7 +60,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "page_id" )]
-        public long PageId { get; set; }
+        public long? PageId { get; set; }
 
         /// <summary>
         /// Type of the target; either <code>page</code> or <code>event</code>

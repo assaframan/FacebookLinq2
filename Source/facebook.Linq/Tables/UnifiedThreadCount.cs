@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "unread_count" )]
-        public long UnreadCount { get; set; }
+        public long? UnreadCount { get; set; }
 
         /// <summary>
         /// Number of unseen threads in the folder.
@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "unseen_count" )]
-        public long UnseenCount { get; set; }
+        public long? UnseenCount { get; set; }
 
         /// <summary>
         /// The highest action ID of a thread in a particular folder. This can be useful for checking whether there are any new threads in the folder.
@@ -44,7 +44,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "last_action_id" )]
-        public long LastActionId { get; set; }
+        public long? LastActionId { get; set; }
 
         /// <summary>
         /// Last time the folder was accessed (Unix-type timestamp with millisecond resolution).
@@ -52,7 +52,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "last_seen_time" )]
-        public long LastSeenTime { get; set; }
+        public long? LastSeenTime { get; set; }
 
         /// <summary>
         /// Total number of non-archived threads.
@@ -60,7 +60,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "total_threads" )]
-        public long TotalThreads { get; set; }
+        public long? TotalThreads { get; set; }
 
     }
 }

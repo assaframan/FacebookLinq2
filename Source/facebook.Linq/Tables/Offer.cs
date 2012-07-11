@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "id" , IsPrimaryKey = true)]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         /// <summary>
         /// The ID of the Page that this offer belongs to.
@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "owner_id" )]
-        public long OwnerId { get; set; }
+        public long? OwnerId { get; set; }
 
         /// <summary>
         /// The title of the offer.
@@ -60,7 +60,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "claim_limit" )]
-        public long ClaimLimit { get; set; }
+        public long? ClaimLimit { get; set; }
 
         /// <summary>
         /// The UNIX timestamp when the offer was created
@@ -68,7 +68,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "created_time" )]
-        public long CreatedTime { get; set; }
+        public long? CreatedTime { get; set; }
 
         /// <summary>
         /// The UNIX timestamp when the offer expires (this is only for display purposes).

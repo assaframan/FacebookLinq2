@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "uid" , IsPrimaryKey = true)]
-        public long Uid { get; set; }
+        public long? Uid { get; set; }
 
         /// <summary>
         /// The ID of the status message.
@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "time" )]
-        public long Time { get; set; }
+        public long? Time { get; set; }
 
         /// <summary>
         /// The application that published the status originally.
@@ -44,7 +44,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "source" )]
-        public long Source { get; set; }
+        public long? Source { get; set; }
 
         /// <summary>
         /// The content of the status message.
@@ -60,7 +60,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "place_id" )]
-        public long PlaceId { get; set; }
+        public long? PlaceId { get; set; }
 
     }
 }

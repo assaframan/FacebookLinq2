@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "PERMISSION_NAME" )]
-        public bool PERMISSIONNAME { get; set; }
+        public bool? PERMISSIONNAME { get; set; }
 
     }
 }

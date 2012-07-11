@@ -44,7 +44,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "expires" )]
-        public long Expires { get; set; }
+        public long? Expires { get; set; }
 
         /// <summary>
         /// Path relative to the application's callback URL, with which the cookie should be associated. Default value is /

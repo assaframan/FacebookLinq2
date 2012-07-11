@@ -52,7 +52,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "type" )]
-        public long Type { get; set; }
+        public long? Type { get; set; }
 
         /// <summary>
         /// List of users on whom the action was performed. Each element of the list is an object with properties <code>name</code> (string), <code>email</code> (string) and <code>user_id</code> (string).

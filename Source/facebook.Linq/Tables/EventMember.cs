@@ -44,7 +44,7 @@ namespace facebook.Tables
         /// original type is: time
         /// </summary>
         [Column(Name = "start_time" )]
-        public DateTime StartTime { get; set; }
+        public DateTime? StartTime { get; set; }
 
     }
 }

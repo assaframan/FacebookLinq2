@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "eid" , IsPrimaryKey = true)]
-        public long Eid { get; set; }
+        public long? Eid { get; set; }
 
         /// <summary>
         /// The name of the event being queried.
@@ -44,7 +44,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "nid" )]
-        public long Nid { get; set; }
+        public long? Nid { get; set; }
 
         /// <summary>
         /// The URL to the small-sized profile picture for the event being queried. The image can have a maximum width of 50px and a maximum height of 150px. This URL may be blank.
@@ -116,7 +116,7 @@ namespace facebook.Tables
         /// original type is: time
         /// </summary>
         [Column(Name = "start_time" )]
-        public DateTime StartTime { get; set; }
+        public DateTime? StartTime { get; set; }
 
         /// <summary>
         /// The ending date and time of the event being queried.
@@ -124,7 +124,7 @@ namespace facebook.Tables
         /// original type is: time
         /// </summary>
         [Column(Name = "end_time" )]
-        public DateTime EndTime { get; set; }
+        public DateTime? EndTime { get; set; }
 
         /// <summary>
         /// The user ID of the creator of the event being queried.
@@ -132,7 +132,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "creator" )]
-        public long Creator { get; set; }
+        public long? Creator { get; set; }
 
         /// <summary>
         /// The time that the event being queried was last updated.
@@ -140,7 +140,7 @@ namespace facebook.Tables
         /// original type is: time
         /// </summary>
         [Column(Name = "update_time" )]
-        public DateTime UpdateTime { get; set; }
+        public DateTime? UpdateTime { get; set; }
 
         /// <summary>
         /// The location of the event being queried.
@@ -156,7 +156,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "venue" )]
-        public JsonObject Venue { get; set; }
+        public VenueType Venue { get; set; }
 
         /// <summary>
         /// The privacy setting of the event being queried, indicating whether the event is <code>OPEN</code>, <code>CLOSED</code>, or <code>SECRET</code>.
@@ -172,7 +172,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "hide_guest_list" )]
-        public bool HideGuestList { get; set; }
+        public bool? HideGuestList { get; set; }
 
         /// <summary>
         /// Indicates whether or not the viewer can invite friends to the event.
@@ -180,7 +180,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "can_invite_friends" )]
-        public bool CanInviteFriends { get; set; }
+        public bool? CanInviteFriends { get; set; }
 
         /// <summary>
         /// The number of invitees to the event.
@@ -188,7 +188,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "all_members_count" )]
-        public long AllMembersCount { get; set; }
+        public long? AllMembersCount { get; set; }
 
         /// <summary>
         /// The number of invitees who have accepted the event invite.
@@ -196,7 +196,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "attending_count" )]
-        public long AttendingCount { get; set; }
+        public long? AttendingCount { get; set; }
 
         /// <summary>
         /// The number of invitees who have responded maybe to the event invite.
@@ -204,7 +204,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "unsure_count" )]
-        public long UnsureCount { get; set; }
+        public long? UnsureCount { get; set; }
 
         /// <summary>
         /// The number of invitees who have declined the event invite.
@@ -212,7 +212,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "declined_count" )]
-        public long DeclinedCount { get; set; }
+        public long? DeclinedCount { get; set; }
 
         /// <summary>
         /// The number of invitees who have not yet replied to the event invite.
@@ -220,7 +220,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "not_replied_count" )]
-        public long NotRepliedCount { get; set; }
+        public long? NotRepliedCount { get; set; }
 
     }
 }

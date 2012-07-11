@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "archived" )]
-        public bool Archived { get; set; }
+        public bool? Archived { get; set; }
 
         /// <summary>
         /// Flag indicating whether the user can reply to the thread.
@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "can_reply" )]
-        public bool CanReply { get; set; }
+        public bool? CanReply { get; set; }
 
         /// <summary>
         /// Folder name (‘inbox’, ‘other’ or ‘spam’).
@@ -60,7 +60,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "has_attachments" )]
-        public bool HasAttachments { get; set; }
+        public bool? HasAttachments { get; set; }
 
         /// <summary>
         /// Flag indicating whether user is subscribed to the thread. Only applicable to threads with multiple participants where user can leave the conversation.
@@ -68,7 +68,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "is_subscribed" )]
-        public bool IsSubscribed { get; set; }
+        public bool? IsSubscribed { get; set; }
 
         /// <summary>
         /// Version identifier corresponding to one of the following actions: new message in thread, new thread participant, participant left the thread.
@@ -92,7 +92,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "num_messages" )]
-        public long NumMessages { get; set; }
+        public long? NumMessages { get; set; }
 
         /// <summary>
         /// Number of unread messages.
@@ -100,7 +100,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "num_unread" )]
-        public long NumUnread { get; set; }
+        public long? NumUnread { get; set; }
 
         /// <summary>
         /// List of participants who represent a Facebook page, group or event. Each element of the list is an object with properties <code>object_address_type</code> (int) and <code>id</code> (string).
@@ -156,7 +156,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "snippet_message_has_attachment" )]
-        public bool SnippetMessageHasAttachment { get; set; }
+        public bool? SnippetMessageHasAttachment { get; set; }
 
         /// <summary>
         /// Subject of the thread.
@@ -204,7 +204,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "unread" )]
-        public bool Unread { get; set; }
+        public bool? Unread { get; set; }
 
     }
 }

@@ -42,7 +42,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "user_id" )]
-        public long UserId { get; set; }
+        public long? UserId { get; set; }
 
         /// <summary>
         /// The type of the liked object. One of: <code>photo</code>, <code>album</code>, <code>event</code>, <code>group</code>, <code>note</code>, <code>link</code>, <code>video</code>, <code>application</code>, <code>status</code>, <code>check-in</code>, <code>review</code>, <code>comment</code>, <code>post</code>

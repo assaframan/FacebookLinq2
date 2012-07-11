@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "sender_id" )]
-        public long SenderId { get; set; }
+        public long? SenderId { get; set; }
 
         /// <summary>
         /// The user ID of the recipient of the notification. It is always the current session user.
@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "recipient_id" )]
-        public long RecipientId { get; set; }
+        public long? RecipientId { get; set; }
 
         /// <summary>
         /// The time the notification was originally sent. Notifications older than 7 days are deleted and will not be returned via this table.
@@ -44,7 +44,7 @@ namespace facebook.Tables
         /// original type is: ISO-8601 datetime
         /// </summary>
         [Column(Name = "created_time" )]
-        public DateTime CreatedTime { get; set; }
+        public DateTime? CreatedTime { get; set; }
 
         /// <summary>
         /// The time the notification was originally sent, or the time the notification was updated, whichever is later.
@@ -52,7 +52,7 @@ namespace facebook.Tables
         /// original type is: ISO-8601 datetime
         /// </summary>
         [Column(Name = "updated_time" )]
-        public DateTime UpdatedTime { get; set; }
+        public DateTime? UpdatedTime { get; set; }
 
         /// <summary>
         /// The main body of the notification in HTML.
@@ -100,7 +100,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "app_id" )]
-        public long AppId { get; set; }
+        public long? AppId { get; set; }
 
         /// <summary>
         /// Indicates whether the notification has been marked as read. Use notifications.markRead to mark a notification as read.
@@ -108,7 +108,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "is_unread" )]
-        public bool IsUnread { get; set; }
+        public bool? IsUnread { get; set; }
 
         /// <summary>
         /// Indicates whether the user hid the associated application's notifications.
@@ -116,7 +116,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "is_hidden" )]
-        public bool IsHidden { get; set; }
+        public bool? IsHidden { get; set; }
 
         /// <summary>
         /// The object id of the notification.

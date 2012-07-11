@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "subscribed_id" , IsPrimaryKey = true)]
-        public long SubscribedId { get; set; }
+        public long? SubscribedId { get; set; }
 
         /// <summary>
         /// The <code>user</code> ID of the subscribing <code>user</code> in a particular subscription link.
@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "subscriber_id" )]
-        public long SubscriberId { get; set; }
+        public long? SubscriberId { get; set; }
 
     }
 }

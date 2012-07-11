@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "share_count" )]
-        public long ShareCount { get; set; }
+        public long? ShareCount { get; set; }
 
         /// <summary>
         /// The number of times Facebook users have "Liked" the page, or liked any comments or re-shares of this page.
@@ -44,7 +44,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "like_count" )]
-        public long LikeCount { get; set; }
+        public long? LikeCount { get; set; }
 
         /// <summary>
         /// The number of comments users have made on the shared story.
@@ -52,7 +52,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "comment_count" )]
-        public long CommentCount { get; set; }
+        public long? CommentCount { get; set; }
 
         /// <summary>
         /// The total number of times the URL has been shared, liked, or commented on.
@@ -60,7 +60,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "total_count" )]
-        public long TotalCount { get; set; }
+        public long? TotalCount { get; set; }
 
         /// <summary>
         /// The number of times Facebook users have clicked a link to the page from a share or like.
@@ -68,7 +68,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "click_count" )]
-        public long ClickCount { get; set; }
+        public long? ClickCount { get; set; }
 
         /// <summary>
         /// The object_id associated with comments plugin comments for this url. This can be used to query for comments using the comment FQL table.
@@ -76,7 +76,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "comments_fbid" )]
-        public long CommentsFbid { get; set; }
+        public long? CommentsFbid { get; set; }
 
         /// <summary>
         /// The number of comments from a <a href="http://developers.facebook.com/docs/reference/plugins/comments/">comments box</a> on this URL. This only includes top level comments, not replies.
@@ -84,7 +84,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "commentsbox_count" )]
-        public long CommentsboxCount { get; set; }
+        public long? CommentsboxCount { get; set; }
 
     }
 }

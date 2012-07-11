@@ -75,6 +75,7 @@
     <Compile Include="Tables\Album.cs" />
     <Compile Include="Tables\Application.cs" />
     <Compile Include="Tables\Apprequest.cs" />
+    <Compile Include="Tables\ArrayTypes.cs" />
     <Compile Include="Tables\Checkin.cs" />
     <Compile Include="Tables\Comment.cs" />
     <Compile Include="Tables\CommentsInfo.cs" />
@@ -165,7 +166,6 @@
     <Compile Include="Linq\Metamodel.cs" />
     <Compile Include="Linq\Provider.cs" />
     <Compile Include="Linq\QueryBuilder.cs" />
-    <Compile Include="Linq\QueryBuilder2.cs" />
     <Compile Include="Linq\ResultEnumerator.cs" />
     <Compile Include="Linq\Table.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

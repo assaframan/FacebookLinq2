@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: time
         /// </summary>
         [Column(Name = "time" )]
-        public DateTime Time { get; set; }
+        public DateTime? Time { get; set; }
 
         /// <summary>
         /// An optional message sent by the user with the friend request.
@@ -52,7 +52,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "unread" )]
-        public bool Unread { get; set; }
+        public bool? Unread { get; set; }
 
     }
 }

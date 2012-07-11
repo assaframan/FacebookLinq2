@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "administrator" )]
-        public bool Administrator { get; set; }
+        public bool? Administrator { get; set; }
 
         /// <summary>
         /// Any positions taken by the member of the group being queried. Possible values are <code>OWNER</code>, <code>ADMIN</code> or <code>OFFICER</code>
@@ -52,7 +52,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "unread" )]
-        public long Unread { get; set; }
+        public long? Unread { get; set; }
 
         /// <summary>
         /// The order in which the group appears in the user's list of groups. This field requires the <code>user_groups</code> permission, and is only present when you query by <code>uid</code>
@@ -60,7 +60,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "bookmark_order" )]
-        public long BookmarkOrder { get; set; }
+        public long? BookmarkOrder { get; set; }
 
     }
 }

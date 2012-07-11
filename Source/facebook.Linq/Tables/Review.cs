@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "reviewee_id" , IsPrimaryKey = true)]
-        public long RevieweeId { get; set; }
+        public long? RevieweeId { get; set; }
 
         /// <summary>
         /// The ID of the user who created a review.
@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "reviewer_id" )]
-        public long ReviewerId { get; set; }
+        public long? ReviewerId { get; set; }
 
         /// <summary>
         /// The ID of the review.
@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "review_id" )]
-        public long ReviewId { get; set; }
+        public long? ReviewId { get; set; }
 
         /// <summary>
         /// The review text (optional).
@@ -52,7 +52,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "created_time" )]
-        public long CreatedTime { get; set; }
+        public long? CreatedTime { get; set; }
 
         /// <summary>
         /// The review rating.
@@ -60,7 +60,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "rating" )]
-        public long Rating { get; set; }
+        public long? Rating { get; set; }
 
     }
 }

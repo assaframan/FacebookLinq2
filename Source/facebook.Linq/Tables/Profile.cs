@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "id" , IsPrimaryKey = true)]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         /// <summary>
         /// Whether the current user can post to the objects profile wall.
@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: boolean
         /// </summary>
         [Column(Name = "can_post" )]
-        public bool CanPost { get; set; }
+        public bool? CanPost { get; set; }
 
         /// <summary>
         /// The full name of the object being queried.

@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "page_id" , IsPrimaryKey = true)]
-        public long PageId { get; set; }
+        public long? PageId { get; set; }
 
         /// <summary>
         /// The name of the Page.
@@ -124,7 +124,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "unread_notif_count" )]
-        public long UnreadNotifCount { get; set; }
+        public long? UnreadNotifCount { get; set; }
 
         /// <summary>
         /// The number of people who have liked the Page, since the last login. Only viewable by the page admin.
@@ -132,7 +132,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "new_like_count" )]
-        public long NewLikeCount { get; set; }
+        public long? NewLikeCount { get; set; }
 
         /// <summary>
         /// The number of people who like the Page.
@@ -140,7 +140,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "fan_count" )]
-        public long FanCount { get; set; }
+        public long? FanCount { get; set; }
 
         /// <summary>
         /// The type of Page.
@@ -164,7 +164,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "has_added_app" )]
-        public bool HasAddedApp { get; set; }
+        public bool? HasAddedApp { get; set; }
 
         /// <summary>
         /// General information provided by the Page.
@@ -180,7 +180,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "can_post" )]
-        public bool CanPost { get; set; }
+        public bool? CanPost { get; set; }
 
         /// <summary>
         /// Number of checkins at a <code>place</code> represented by a Page.
@@ -188,7 +188,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "checkins" )]
-        public long Checkins { get; set; }
+        public long? Checkins { get; set; }
 
         /// <summary>
         /// Indicates whether the Page is published and visible to non-admins.
@@ -196,7 +196,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "is_published" )]
-        public bool IsPublished { get; set; }
+        public bool? IsPublished { get; set; }
 
         /// <summary>
         /// Applicable to <strong>Companies</strong>.

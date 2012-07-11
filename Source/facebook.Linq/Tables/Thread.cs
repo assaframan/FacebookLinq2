@@ -44,7 +44,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "recipients" )]
-        public JsonObject Recipients { get; set; }
+        public UidsList Recipients { get; set; }
 
         /// <summary>
         /// The created_time of the most recent message in the thread.
@@ -52,7 +52,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "updated_time" )]
-        public long UpdatedTime { get; set; }
+        public long? UpdatedTime { get; set; }
 
         /// <summary>
         /// The ID of the message from which this thread was branched, or 0 if this thread is not a branch. The parent_message_id is a concatenation of the thread ID and the message ID, joined by an underscore.
@@ -60,7 +60,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "parent_message_id" )]
-        public string ParentMessageId { get; set; }
+        public long? ParentMessageId { get; set; }
 
         /// <summary>
         /// The ID of the thread from which this thread was branched, or 0 if this thread is not a branch.
@@ -68,7 +68,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "parent_thread_id" )]
-        public long ParentThreadId { get; set; }
+        public long? ParentThreadId { get; set; }
 
         /// <summary>
         /// The number of messages in this thread.
@@ -76,7 +76,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "message_count" )]
-        public long MessageCount { get; set; }
+        public long? MessageCount { get; set; }
 
         /// <summary>
         /// A short bit of text from the most recent message.
@@ -92,7 +92,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "snippet_author" )]
-        public long SnippetAuthor { get; set; }
+        public long? SnippetAuthor { get; set; }
 
         /// <summary>
         /// The object that sent this message, or 0 if it was not sent by an object. You can get more information about this object in the <strong>profile</strong> table.
@@ -100,7 +100,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "object_id" )]
-        public long ObjectId { get; set; }
+        public long? ObjectId { get; set; }
 
         /// <summary>
         /// The number of unread messages in the thread.
@@ -108,7 +108,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "unread" )]
-        public long Unread { get; set; }
+        public long? Unread { get; set; }
 
         /// <summary>
         /// The ID of the user whose Inbox you are querying.

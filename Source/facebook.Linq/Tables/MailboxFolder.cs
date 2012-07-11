@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "viewer_id" )]
-        public long ViewerId { get; set; }
+        public long? ViewerId { get; set; }
 
         /// <summary>
         /// A short description of the folder being queried.
@@ -44,7 +44,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "unread_count" )]
-        public long UnreadCount { get; set; }
+        public long? UnreadCount { get; set; }
 
         /// <summary>
         /// The number of total threads.
@@ -52,7 +52,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "total_count" )]
-        public long TotalCount { get; set; }
+        public long? TotalCount { get; set; }
 
     }
 }

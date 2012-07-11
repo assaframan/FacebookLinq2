@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "source_id" , IsPrimaryKey = true)]
-        public long SourceId { get; set; }
+        public long? SourceId { get; set; }
 
         /// <summary>
         /// The target(s) of the connection. The ID of the friend or Facebook Page with whom the specified user is either a friend or fan/supporter.
@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "target_id" )]
-        public long TargetId { get; set; }
+        public long? TargetId { get; set; }
 
         /// <summary>
         /// Indicates whether the target is a user or a page.
@@ -44,7 +44,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "is_following" )]
-        public bool IsFollowing { get; set; }
+        public bool? IsFollowing { get; set; }
 
     }
 }

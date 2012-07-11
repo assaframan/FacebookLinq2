@@ -44,7 +44,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "rank " )]
-        public long Rank { get; set; }
+        public long? Rank { get; set; }
 
         /// <summary>
         /// The URL to the filter icon. For applications, this is the same as your application icon.
@@ -60,7 +60,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "is_visible" )]
-        public bool IsVisible { get; set; }
+        public bool? IsVisible { get; set; }
 
         /// <summary>
         /// The type of filter. One of <code>application</code>, <code>newsfeed</code>, <code>friendlist</code>, <code>network</code>, or <code>public_profiles</code>.
@@ -76,7 +76,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "value" )]
-        public long Value { get; set; }
+        public long? Value { get; set; }
 
     }
 }

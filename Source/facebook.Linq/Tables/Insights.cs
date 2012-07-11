@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "object_id" , IsPrimaryKey = true)]
-        public long ObjectId { get; set; }
+        public long? ObjectId { get; set; }
 
         /// <summary>
         /// The usage data to retrieve.
@@ -38,7 +38,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "end_time" )]
-        public long EndTime { get; set; }
+        public long? EndTime { get; set; }
 
         /// <summary>
         /// The length of the period during which the metrics were collected, expressed in seconds as one of <code>86400</code> (day), <code>604800</code> (week), <code>2592000</code> (month) or <code>0</code> (lifetime) or using the function <code>period()</code> which takes one of the strings <code>day</code>, <code>week</code>, <code>month</code> or <code>lifetime</code>.</p>
@@ -48,7 +48,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "period" )]
-        public long Period { get; set; }
+        public long? Period { get; set; }
 
         /// <summary>
         /// The value of the requested metric.

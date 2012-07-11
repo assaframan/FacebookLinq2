@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "option_id" , IsPrimaryKey = true)]
-        public long OptionId { get; set; }
+        public long? OptionId { get; set; }
 
         /// <summary>
         /// ID of the user who submitted the vote
@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "voter_id" )]
-        public long VoterId { get; set; }
+        public long? VoterId { get; set; }
 
     }
 }

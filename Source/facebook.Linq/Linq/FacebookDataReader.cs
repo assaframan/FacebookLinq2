@@ -5,6 +5,7 @@ using System.Web;
 using System.Data;
 using Facebook;
 using System.Reflection;
+using facebook.Tables;
 
 namespace Facebook.Linq
 {
@@ -277,6 +278,10 @@ namespace Facebook.Linq
 			{
 				return ParseFacebookDateTime((long)value);
 			}
+			else if (propType == typeof(CoordsType))
+			{
+				return new CoordsType((JsonObject)value);
+			}
 			else if (propType.IsEnum)
 			{
 				return ParseFacebookEnum(propType, value as string);
@@ -287,6 +292,19 @@ namespace Facebook.Linq
 			}
 			else if (value is Facebook.JsonArray)
 			{
+				if ((value as Facebook.JsonArray).Count == 0)
+				{
+					return null;
+				}
+				if (propType == typeof(UidsList))
+				{
+					return new UidsList((JsonArray)value);
+				}
+				if (propType == typeof(UrlList))
+				{
+					return new UrlList((JsonArray)value);
+				}				
+				
 				return value;
 			}
 			else
@@ -331,18 +349,6 @@ namespace Facebook.Linq
 			throw new NotImplementedException();
 		}
 
-		private TypeData GetFacebookExtendedTypeData(string objectName)
-		{
-			switch (objectName)
-			{
-				case "friend_info":
-					{
-						return new TypeData { FqlTableName = "friend_info", Properties = new Dictionary<string, PropertyData> { { "uid1", new PropertyData { FqlFieldName = "uid1", IsLinqIdentity = false, PropertyInfo = null } } } };
-					}
-				default:
-					throw new NotImplementedException();
-			}
-		}
 
 		public static bool ParseBool(string value)
 		{

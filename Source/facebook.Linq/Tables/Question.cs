@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "id" , IsPrimaryKey = true)]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         /// <summary>
         /// ID of the user who created the question
@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "owner" )]
-        public long Owner { get; set; }
+        public long? Owner { get; set; }
 
         /// <summary>
         /// Text of the question
@@ -44,7 +44,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "created_time" )]
-        public long CreatedTime { get; set; }
+        public long? CreatedTime { get; set; }
 
         /// <summary>
         /// Time the question was was last modified, expressed as a UNIX timestamp
@@ -52,7 +52,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "updated_time" )]
-        public long UpdatedTime { get; set; }
+        public long? UpdatedTime { get; set; }
 
     }
 }

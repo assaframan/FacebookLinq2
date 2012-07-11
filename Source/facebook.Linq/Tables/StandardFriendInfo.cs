@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "uid1" , IsPrimaryKey = true)]
-        public long Uid1 { get; set; }
+        public long? Uid1 { get; set; }
 
         /// <summary>
         /// The user ID of the second user in the pair being queried.
@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "uid2" )]
-        public long Uid2 { get; set; }
+        public long? Uid2 { get; set; }
 
     }
 }

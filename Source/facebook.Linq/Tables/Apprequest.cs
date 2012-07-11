@@ -68,7 +68,7 @@ namespace facebook.Tables
         /// original type is: time
         /// </summary>
         [Column(Name = "created_time" )]
-        public DateTime CreatedTime { get; set; }
+        public DateTime? CreatedTime { get; set; }
 
     }
 }

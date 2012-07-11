@@ -52,7 +52,7 @@ namespace facebook.Tables
         /// original type is: float
         /// </summary>
         [Column(Name = "latitude" )]
-        public float Latitude { get; set; }
+        public float? Latitude { get; set; }
 
         /// <summary>
         /// The longitude of the location.
@@ -60,7 +60,7 @@ namespace facebook.Tables
         /// original type is: float
         /// </summary>
         [Column(Name = "longitude" )]
-        public float Longitude { get; set; }
+        public float? Longitude { get; set; }
 
         /// <summary>
         /// The number of times users have checked into the location.
@@ -68,7 +68,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "checkin_count" )]
-        public long CheckinCount { get; set; }
+        public long? CheckinCount { get; set; }
 
         /// <summary>
         /// Display text containing metadata about the location.

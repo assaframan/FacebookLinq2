@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "id" , IsPrimaryKey = true)]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         /// <summary>
         /// ID of the question associated with this option.
@@ -44,7 +44,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "votes" )]
-        public long Votes { get; set; }
+        public long? Votes { get; set; }
 
         /// <summary>
         /// ID of Page associated with this option (optional, may be empty)
@@ -52,7 +52,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "object_id" )]
-        public long ObjectId { get; set; }
+        public long? ObjectId { get; set; }
 
         /// <summary>
         /// User ID of the owner
@@ -60,7 +60,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "owner" )]
-        public long Owner { get; set; }
+        public long? Owner { get; set; }
 
         /// <summary>
         /// UNIX timestamp of time when the option was created
@@ -68,7 +68,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "created_time" )]
-        public long CreatedTime { get; set; }
+        public long? CreatedTime { get; set; }
 
     }
 }

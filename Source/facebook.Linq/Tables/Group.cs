@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "gid" , IsPrimaryKey = true)]
-        public long Gid { get; set; }
+        public long? Gid { get; set; }
 
         /// <summary>
         /// The name of the group being queried.
@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "nid" )]
-        public long Nid { get; set; }
+        public long? Nid { get; set; }
 
         /// <summary>
         /// The URL to the smallest-sized photo for the group being queried. The image can have a maximum width of 50px and a maximum height of 150px. This URL may be blank.
@@ -100,7 +100,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "creator" )]
-        public long Creator { get; set; }
+        public long? Creator { get; set; }
 
         /// <summary>
         /// The last time the group being queried was updated.
@@ -108,7 +108,7 @@ namespace facebook.Tables
         /// original type is: time
         /// </summary>
         [Column(Name = "update_time" )]
-        public DateTime UpdateTime { get; set; }
+        public DateTime? UpdateTime { get; set; }
 
         /// <summary>
         /// The location of the office of the group being queried.

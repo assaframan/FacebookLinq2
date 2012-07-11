@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "profile_id" , IsPrimaryKey = true)]
-        public long ProfileId { get; set; }
+        public long? ProfileId { get; set; }
 
         /// <summary>
         /// The ID of the Page app.
@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "app_id" )]
-        public long AppId { get; set; }
+        public long? AppId { get; set; }
 
         /// <summary>
         /// The permalink for the Page app.
@@ -52,7 +52,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "position" )]
-        public long Position { get; set; }
+        public long? Position { get; set; }
 
         /// <summary>
         /// A flag to identify if the app can be removed from the Page (return false for default tabs).
@@ -60,7 +60,7 @@ namespace facebook.Tables
         /// original type is: boolean
         /// </summary>
         [Column(Name = "is_permanent" )]
-        public bool IsPermanent { get; set; }
+        public bool? IsPermanent { get; set; }
 
     }
 }

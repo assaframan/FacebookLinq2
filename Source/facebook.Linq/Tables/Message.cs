@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "author_id" )]
-        public long AuthorId { get; set; }
+        public long? AuthorId { get; set; }
 
         /// <summary>
         /// The content of the message.
@@ -52,7 +52,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "created_time" )]
-        public long CreatedTime { get; set; }
+        public long? CreatedTime { get; set; }
 
         /// <summary>
         /// An array of information about the attachment to the message. This is the attachment that Facebook returns.

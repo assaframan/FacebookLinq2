@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "viewer_id " )]
-        public long ViewerId { get; set; }
+        public long? ViewerId { get; set; }
 
         /// <summary>
         /// For posts published by apps, the ID of that app
@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "app_id" )]
-        public long AppId { get; set; }
+        public long? AppId { get; set; }
 
         /// <summary>
         /// The ID of the user, page, group, or event whose wall the post is on
@@ -44,7 +44,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "source_id " )]
-        public long SourceId { get; set; }
+        public long? SourceId { get; set; }
 
         /// <summary>
         /// The time the post was last updated, which occurs when a user comments on the post, expressed as a Unix timestamp. Querying by <code>updated_time</code> is currently not supported
@@ -52,7 +52,7 @@ namespace facebook.Tables
         /// original type is: time
         /// </summary>
         [Column(Name = "updated_time" )]
-        public DateTime UpdatedTime { get; set; }
+        public DateTime? UpdatedTime { get; set; }
 
         /// <summary>
         /// The time the post was published, expressed as a Unix timestamp
@@ -60,7 +60,7 @@ namespace facebook.Tables
         /// original type is: time
         /// </summary>
         [Column(Name = "created_time" )]
-        public DateTime CreatedTime { get; set; }
+        public DateTime? CreatedTime { get; set; }
 
         /// <summary>
         /// The filter key to fetch data with. This key should be retrieved from by querying the stream_filter FQL table or with the special values 'others' or 'owner'.
@@ -132,7 +132,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "impressions" )]
-        public long Impressions { get; set; }
+        public long? Impressions { get; set; }
 
         /// <summary>
         /// An array containing the following information about comments for a post:
@@ -156,7 +156,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "place" )]
-        public long Place { get; set; }
+        public long? Place { get; set; }
 
         /// <summary>
         /// The privacy settings for a post
@@ -180,7 +180,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "xid" )]
-        public long Xid { get; set; }
+        public long? Xid { get; set; }
 
         /// <summary>
         /// An array of IDs tagged in the <code>message</code> of the post.
@@ -220,7 +220,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "type" )]
-        public long Type { get; set; }
+        public long? Type { get; set; }
 
     }
 }

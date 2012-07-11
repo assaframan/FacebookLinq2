@@ -44,7 +44,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "fromid" )]
-        public long Fromid { get; set; }
+        public long? Fromid { get; set; }
 
         /// <summary>
         /// A Unix timestamp associated with the creation time of a comment.
@@ -52,7 +52,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "time" )]
-        public long Time { get; set; }
+        public long? Time { get; set; }
 
         /// <summary>
         /// The text of a comment.
@@ -68,7 +68,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "id" )]
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         /// <summary>
         /// The user name that a user entered when they posted a comment. In these cases, the <code>fromid</code> returned will be 0. Note that user names for valid users are not returned here.
@@ -100,7 +100,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "app_id" )]
-        public long AppId { get; set; }
+        public long? AppId { get; set; }
 
         /// <summary>
         /// The number of likes for this comment.
@@ -108,7 +108,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "likes" )]
-        public long Likes { get; set; }
+        public long? Likes { get; set; }
 
         /// <summary>
         /// The replies to this comment.
@@ -124,7 +124,7 @@ namespace facebook.Tables
         /// original type is: boolean
         /// </summary>
         [Column(Name = "can_like" )]
-        public bool CanLike { get; set; }
+        public bool? CanLike { get; set; }
 
         /// <summary>
         /// If the current user liked this comment.
@@ -132,7 +132,7 @@ namespace facebook.Tables
         /// original type is: boolean
         /// </summary>
         [Column(Name = "user_likes" )]
-        public bool UserLikes { get; set; }
+        public bool? UserLikes { get; set; }
 
         /// <summary>
         /// Array of mention objects for each object tagged in the comment.
@@ -148,7 +148,7 @@ namespace facebook.Tables
         /// original type is: boolean
         /// </summary>
         [Column(Name = "is_private" )]
-        public bool IsPrivate { get; set; }
+        public bool? IsPrivate { get; set; }
 
     }
 }

@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "owner" )]
-        public long Owner { get; set; }
+        public long? Owner { get; set; }
 
         /// <summary>
         /// The name of the video being queried.
@@ -76,7 +76,7 @@ namespace facebook.Tables
         /// original type is: time
         /// </summary>
         [Column(Name = "updated_time" )]
-        public DateTime UpdatedTime { get; set; }
+        public DateTime? UpdatedTime { get; set; }
 
         /// <summary>
         /// The date when the video being queried was added.
@@ -84,7 +84,7 @@ namespace facebook.Tables
         /// original type is: time
         /// </summary>
         [Column(Name = "created_time" )]
-        public DateTime CreatedTime { get; set; }
+        public DateTime? CreatedTime { get; set; }
 
         /// <summary>
         /// The length of the video in seconds.
@@ -92,7 +92,7 @@ namespace facebook.Tables
         /// original type is: float
         /// </summary>
         [Column(Name = "length" )]
-        public float Length { get; set; }
+        public float? Length { get; set; }
 
         /// <summary>
         /// The URL to thesource file for the standard quality version of the video.

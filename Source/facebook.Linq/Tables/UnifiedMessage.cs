@@ -52,7 +52,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "unread" )]
-        public bool Unread { get; set; }
+        public bool? Unread { get; set; }
 
         /// <summary>
         /// Unique version identifier that increases in the same order as messages are received by Facebook. If messages arrive out of order, this ordering can theoretically be different from the timestamp-based ordering, since timestamps for email-originated messages are based on the timestamp of the sender's email client.
@@ -92,7 +92,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "recipients" )]
-        public JsonObject Recipients { get; set; }
+        public UidsList Recipients { get; set; }
 
         /// <summary>
         /// Sender of the message in the case that it is a Facebook page, group or event. This field is an object with properties <code>object_address_type</code> (int) and <code>id</code> (string).

@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "uid" , IsPrimaryKey = true)]
-        public long Uid { get; set; }
+        public long? Uid { get; set; }
 
         /// <summary>
         /// The unique identifier for the note.
@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: time
         /// </summary>
         [Column(Name = "created_time" )]
-        public DateTime CreatedTime { get; set; }
+        public DateTime? CreatedTime { get; set; }
 
         /// <summary>
         /// The most recent time the user edited the note as a UNIX timestamp.
@@ -44,7 +44,7 @@ namespace facebook.Tables
         /// original type is: time
         /// </summary>
         [Column(Name = "updated_time" )]
-        public DateTime UpdatedTime { get; set; }
+        public DateTime? UpdatedTime { get; set; }
 
         /// <summary>
         /// The body of the note in plaintext.

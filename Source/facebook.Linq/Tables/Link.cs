@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "owner" )]
-        public long Owner { get; set; }
+        public long? Owner { get; set; }
 
         /// <summary>
         /// The comment the owner made about the link.
@@ -44,7 +44,7 @@ namespace facebook.Tables
         /// original type is: time
         /// </summary>
         [Column(Name = "created_time" )]
-        public DateTime CreatedTime { get; set; }
+        public DateTime? CreatedTime { get; set; }
 
         /// <summary>
         /// The title of the link, as taken from the site's title meta tag.
@@ -84,7 +84,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "image_urls" )]
-        public JsonObject ImageUrls { get; set; }
+        public UrlList ImageUrls { get; set; }
 
     }
 }

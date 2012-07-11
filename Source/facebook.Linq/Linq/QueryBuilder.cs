@@ -6,6 +6,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Collections;
 using System.Diagnostics;
+using System.Data.Linq.Mapping;
 
 namespace Facebook.Linq
 {
@@ -38,6 +39,8 @@ namespace Facebook.Linq
 					return Eval((MemberExpression)exp);
 				case ExpressionType.Constant:
 					return Eval((ConstantExpression)exp);
+				case ExpressionType.Parameter:
+					return Eval((ParameterExpression)exp);
 				default:
 					throw new NotImplementedException();
 			}
@@ -48,12 +51,46 @@ namespace Facebook.Linq
 			return exp.Value;
 		}
 
+		private object Eval(ParameterExpression exp)
+		{
+			return exp.Type;
+		}
+
+		class PropNameString
+		{
+			public string Name {get;  set;}
+		}
 		private object Eval(MemberExpression exp)
 		{
 			var p = exp.Expression == null ? null : Eval(exp.Expression);
 			if (exp.Member is PropertyInfo)
 			{
-				return ((PropertyInfo)exp.Member).GetValue(p, null);
+				PropertyInfo propInfo = (PropertyInfo)exp.Member;
+				var memberName = exp.Member.Name;
+				if (propInfo.IsFqlColumn())
+				{
+					var a  = (propInfo.GetCustomAttributes(typeof(ColumnAttribute), true));
+					if(a.Length > 0)
+					{
+						memberName = ((System.Data.Linq.Mapping.DataAttribute)(a[0])).Name;
+					}
+				}
+				if (p is Type)
+				{
+					return new PropNameString
+					{
+						Name = memberName,
+					};
+				}
+				if (p is PropNameString)
+				{
+					(p as PropNameString).Name += "." + memberName;
+					return p; 
+				}
+
+
+				else
+				return propInfo.GetValue(p, null);
 			}
 			else if (exp.Member is FieldInfo)
 			{
@@ -78,6 +115,10 @@ namespace Facebook.Linq
 				_Build((int)value);
 			else if (value is long)
 				_Build((long)value);
+			else if (value is double)
+				_Build((double)value);
+			else if (value is float)
+				_Build((float)value);
 			else if (value is IFqlDataQuery)
 			{
 				var innerQuery = (IFqlDataQuery)value;
@@ -92,6 +133,10 @@ namespace Facebook.Linq
 					Write(innerQueryText);//
 					Write(")");
 				}
+			}
+			else if (value is PropNameString)
+			{
+				Write((value as PropNameString).Name);
 			}
 			else if (typeof(IEnumerable).IsAssignableFrom(value.GetType()))
 			{
@@ -140,15 +185,18 @@ namespace Facebook.Linq
 				case ExpressionType.Lambda:
 					_Build((LambdaExpression)exp);
 					break;
+				case ExpressionType.Add:
+				case ExpressionType.Subtract:
+				case ExpressionType.LessThan:
+				case ExpressionType.LessThanOrEqual:
+				case ExpressionType.GreaterThan:
+				case ExpressionType.GreaterThanOrEqual:
 				case ExpressionType.NotEqual:
 				case ExpressionType.Equal:
 					_Build((BinaryExpression)exp);
 					break;
 				case ExpressionType.MemberAccess:
 					_Build((MemberExpression)exp);
-					break;
-				case ExpressionType.Add:
-					_Build((BinaryExpression)exp);
 					break;
 				case ExpressionType.New:
 					_Build((NewExpression)exp);
@@ -175,12 +223,8 @@ namespace Facebook.Linq
 				case ExpressionType.ConvertChecked:
 				case ExpressionType.Divide:
 				case ExpressionType.ExclusiveOr:
-				case ExpressionType.GreaterThan:
-				case ExpressionType.GreaterThanOrEqual:
 				case ExpressionType.Invoke:
 				case ExpressionType.LeftShift:
-				case ExpressionType.LessThan:
-				case ExpressionType.LessThanOrEqual:
 				case ExpressionType.ListInit:
 				case ExpressionType.Modulo:
 				case ExpressionType.Multiply:
@@ -194,7 +238,6 @@ namespace Facebook.Linq
 				case ExpressionType.Parameter:
 				case ExpressionType.Power:
 				case ExpressionType.RightShift:
-				case ExpressionType.Subtract:
 				case ExpressionType.SubtractChecked:
 				case ExpressionType.TypeAs:
 				case ExpressionType.TypeIs:
@@ -541,12 +584,12 @@ namespace Facebook.Linq
 
 		private void _Build(float p)
 		{
-			Write(p.ToString());
+			Write("'" + p.ToString() + "'");
 		}
 
 		private void _Build(double p)
 		{
-			Write(p.ToString());
+			Write("'"+ p.ToString() + "'");
 		}
 
 		private void _Build(byte p)

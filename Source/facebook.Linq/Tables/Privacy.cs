@@ -68,7 +68,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "owner_id" )]
-        public long OwnerId { get; set; }
+        public long? OwnerId { get; set; }
 
         /// <summary>
         /// The ID of the network that can see the object, or 1 for all of the user's networks.
@@ -76,7 +76,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "networks" )]
-        public long Networks { get; set; }
+        public long? Networks { get; set; }
 
         /// <summary>
         /// Which users can see the object. Can be one of:

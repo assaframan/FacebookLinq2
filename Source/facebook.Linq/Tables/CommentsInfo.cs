@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "count" )]
-        public long Count { get; set; }
+        public long? Count { get; set; }
 
         /// <summary>
         /// A Unix timestamp indicating the most recent time a comment was made.
@@ -44,7 +44,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "updated_time" )]
-        public long UpdatedTime { get; set; }
+        public long? UpdatedTime { get; set; }
 
     }
 }

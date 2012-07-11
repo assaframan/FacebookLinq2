@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "object_id" , IsPrimaryKey = true)]
-        public long ObjectId { get; set; }
+        public long? ObjectId { get; set; }
 
         /// <summary>
         /// The ID of the photo being queried. The <code>pid</code> cannot be longer than 50 characters.<br /><strong>Note:</strong> Because the pid is a string, you should always wrap the pid in quotes when referenced in a query.
@@ -60,7 +60,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "src_small_width" )]
-        public long SrcSmallWidth { get; set; }
+        public long? SrcSmallWidth { get; set; }
 
         /// <summary>
         /// Height of the thumbnail version, in px. This field may be blank.
@@ -68,7 +68,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "src_small_height" )]
-        public long SrcSmallHeight { get; set; }
+        public long? SrcSmallHeight { get; set; }
 
         /// <summary>
         /// The URL to the full-sized version of the photo being queried. The image can have a maximum width or height of 720px, <a href='/blog/post/602/'>increasing to 960px</a> on 1st March 2012. This URL may be blank.
@@ -84,7 +84,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "src_big_width" )]
-        public long SrcBigWidth { get; set; }
+        public long? SrcBigWidth { get; set; }
 
         /// <summary>
         /// Height of the full-sized version, in px. This field may be blank.
@@ -92,7 +92,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "src_big_height" )]
-        public long SrcBigHeight { get; set; }
+        public long? SrcBigHeight { get; set; }
 
         /// <summary>
         /// The URL to the album view version of the photo being queried. The image can have a maximum width or height of 130px. This URL may be blank.
@@ -108,7 +108,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "src_width" )]
-        public long SrcWidth { get; set; }
+        public long? SrcWidth { get; set; }
 
         /// <summary>
         /// Height of the album view version, in px. This field may be blank.
@@ -116,7 +116,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "src_height" )]
-        public long SrcHeight { get; set; }
+        public long? SrcHeight { get; set; }
 
         /// <summary>
         /// The URL to the page containing the photo being queried.
@@ -140,7 +140,7 @@ namespace facebook.Tables
         /// original type is: time
         /// </summary>
         [Column(Name = "created" )]
-        public DateTime Created { get; set; }
+        public DateTime? Created { get; set; }
 
         /// <summary>
         /// The date when the photo being queried was last modified.
@@ -148,7 +148,7 @@ namespace facebook.Tables
         /// original type is: time
         /// </summary>
         [Column(Name = "modified" )]
-        public DateTime Modified { get; set; }
+        public DateTime? Modified { get; set; }
 
         /// <summary>
         /// The position of the photo in the album.
@@ -156,7 +156,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "position" )]
-        public long Position { get; set; }
+        public long? Position { get; set; }
 
         /// <summary>
         /// The object_id of the album the photo belongs to.
@@ -164,7 +164,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "album_object_id" )]
-        public long AlbumObjectId { get; set; }
+        public long? AlbumObjectId { get; set; }
 
         /// <summary>
         /// Facebook ID of the place associated with the photo, if any.
@@ -172,7 +172,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "place_id" )]
-        public long PlaceId { get; set; }
+        public long? PlaceId { get; set; }
 
         /// <summary>
         /// An array of objects containing width, height, source each representing the various photo sizes.
@@ -204,7 +204,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "can_delete" )]
-        public bool CanDelete { get; set; }
+        public bool? CanDelete { get; set; }
 
     }
 }

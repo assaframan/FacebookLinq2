@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "uid" , IsPrimaryKey = true)]
-        public long Uid { get; set; }
+        public long? Uid { get; set; }
 
         /// <summary>
         /// The username of the user being queried.
@@ -108,7 +108,7 @@ namespace facebook.Tables
         /// original type is: time
         /// </summary>
         [Column(Name = "profile_update_time" )]
-        public DateTime ProfileUpdateTime { get; set; }
+        public DateTime? ProfileUpdateTime { get; set; }
 
         /// <summary>
         /// The user's timezone offset from UTC.
@@ -116,7 +116,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "timezone" )]
-        public long Timezone { get; set; }
+        public long? Timezone { get; set; }
 
         /// <summary>
         /// The religion of the user being queried.
@@ -196,7 +196,7 @@ namespace facebook.Tables
         /// original type is: uid
         /// </summary>
         [Column(Name = "significant_other_id" )]
-        public long SignificantOtherId { get; set; }
+        public long? SignificantOtherId { get; set; }
 
         /// <summary>
         /// The political views of the user being queried.
@@ -236,7 +236,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "is_app_user" )]
-        public bool IsAppUser { get; set; }
+        public bool? IsAppUser { get; set; }
 
         /// <summary>
         /// The favorite music of the user being queried.
@@ -316,7 +316,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "notes_count" )]
-        public long NotesCount { get; set; }
+        public long? NotesCount { get; set; }
 
         /// <summary>
         /// The number of Wall posts for the user being queried.
@@ -324,7 +324,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "wall_count" )]
-        public long WallCount { get; set; }
+        public long? WallCount { get; set; }
 
         /// <summary>
         /// The current status of the user being queried.
@@ -340,7 +340,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "has_added_app" )]
-        public bool HasAddedApp { get; set; }
+        public bool? HasAddedApp { get; set; }
 
         /// <summary>
         /// The user's Facebook Chat status. Returns a string, one of <code>active</code>, <code>idle</code>, <code>offline</code>, or <code>error</code> (when Facebook can't determine presence information on the server side). The query does not return the user's Facebook Chat status when that information is restricted for privacy reasons.
@@ -436,7 +436,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "verified" )]
-        public bool Verified { get; set; }
+        public bool? Verified { get; set; }
 
         /// <summary>
         /// This string contains the contents of the text box under a user's profile picture.
@@ -479,7 +479,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "is_blocked" )]
-        public bool IsBlocked { get; set; }
+        public bool? IsBlocked { get; set; }
 
         /// <summary>
         /// A string containing the user's primary Facebook email address. If the user shared his or her primary email address with you, this address also appears in the <code>email</code> field (see below). Facebook recommends you query the email field to get the email address shared with your application.
@@ -591,7 +591,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "likes_count" )]
-        public long LikesCount { get; set; }
+        public long? LikesCount { get; set; }
 
         /// <summary>
         /// Count of all the user's friends.
@@ -599,7 +599,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "friend_count" )]
-        public long FriendCount { get; set; }
+        public long? FriendCount { get; set; }
 
         /// <summary>
         /// The number of mutual friends shared by the user in the query and the session user.
@@ -607,7 +607,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "mutual_friend_count" )]
-        public long MutualFriendCount { get; set; }
+        public long? MutualFriendCount { get; set; }
 
         /// <summary>
         /// Whether or not the viewer can post to the user's Wall.
@@ -615,7 +615,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "can_post" )]
-        public bool CanPost { get; set; }
+        public bool? CanPost { get; set; }
 
     }
 }

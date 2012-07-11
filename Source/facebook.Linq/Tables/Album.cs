@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "object_id" )]
-        public long ObjectId { get; set; }
+        public long? ObjectId { get; set; }
 
         /// <summary>
         /// The user ID of the owner of the album
@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "owner" )]
-        public long Owner { get; set; }
+        public long? Owner { get; set; }
 
         /// <summary>
         /// The album cover photo ID string
@@ -52,7 +52,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "cover_object_id" )]
-        public long CoverObjectId { get; set; }
+        public long? CoverObjectId { get; set; }
 
         /// <summary>
         /// The title of the album
@@ -68,7 +68,7 @@ namespace facebook.Tables
         /// original type is: time
         /// </summary>
         [Column(Name = "created" )]
-        public DateTime Created { get; set; }
+        public DateTime? Created { get; set; }
 
         /// <summary>
         /// The last time the photo album was updated expressed as a unix time.
@@ -76,7 +76,7 @@ namespace facebook.Tables
         /// original type is: time
         /// </summary>
         [Column(Name = "modified" )]
-        public DateTime Modified { get; set; }
+        public DateTime? Modified { get; set; }
 
         /// <summary>
         /// The description of the album
@@ -100,7 +100,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "size " )]
-        public long Size { get; set; }
+        public long? Size { get; set; }
 
         /// <summary>
         /// A link to this album on Facebook
@@ -124,7 +124,7 @@ namespace facebook.Tables
         /// original type is: time
         /// </summary>
         [Column(Name = "modified_major" )]
-        public DateTime ModifiedMajor { get; set; }
+        public DateTime? ModifiedMajor { get; set; }
 
         /// <summary>
         /// The URL for editing the album
@@ -148,7 +148,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "can_upload" )]
-        public bool CanUpload { get; set; }
+        public bool? CanUpload { get; set; }
 
         /// <summary>
         /// The number of photos in the album
@@ -156,7 +156,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "photo_count" )]
-        public long PhotoCount { get; set; }
+        public long? PhotoCount { get; set; }
 
         /// <summary>
         /// The number of videos in the album
@@ -164,7 +164,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "video_count" )]
-        public long VideoCount { get; set; }
+        public long? VideoCount { get; set; }
 
         /// <summary>
         /// The like information of the album being queried. This is an object containing <code>can_like</code>, <code>like_count</code>, and <code>user_likes</code>

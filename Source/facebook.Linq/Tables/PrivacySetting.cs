@@ -60,7 +60,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "networks" )]
-        public long Networks { get; set; }
+        public long? Networks { get; set; }
 
         /// <summary>
         /// Which users can see the object. Can be one of:

@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "subject" )]
-        public long Subject { get; set; }
+        public long? Subject { get; set; }
 
         /// <summary>
         /// The date when the video being queried was last modified.
@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: time
         /// </summary>
         [Column(Name = "updated_time" )]
-        public DateTime UpdatedTime { get; set; }
+        public DateTime? UpdatedTime { get; set; }
 
         /// <summary>
         /// The date when the video being queried was added.
@@ -44,7 +44,7 @@ namespace facebook.Tables
         /// original type is: time
         /// </summary>
         [Column(Name = "created_time" )]
-        public DateTime CreatedTime { get; set; }
+        public DateTime? CreatedTime { get; set; }
 
     }
 }

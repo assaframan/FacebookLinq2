@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "app_id" , IsPrimaryKey = true)]
-        public long AppId { get; set; }
+        public long? AppId { get; set; }
 
         /// <summary>
         /// The API key of the application being queried.
@@ -132,7 +132,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "is_facebook_app" )]
-        public bool IsFacebookApp { get; set; }
+        public bool? IsFacebookApp { get; set; }
 
         /// <summary>
         /// Returns demographic restrictions for the app in a object with zero or more of the following fields: <code>type</code>, <code>location</code>, <code>age</code>, and <code>age_distr</code>. See <code>restrictions</code> field on the Graph API <a href="/docs/reference/api/application/">Application</a> object for more information.
@@ -212,7 +212,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "auth_referral_enabled" )]
-        public bool AuthReferralEnabled { get; set; }
+        public bool? AuthReferralEnabled { get; set; }
 
         /// <summary>
         /// Extended permissions that a user can choose to grant when Authenticated Referrals are enabled. App <code>access_token</code> required.
@@ -236,7 +236,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "canvas_fluid_height" )]
-        public bool CanvasFluidHeight { get; set; }
+        public bool? CanvasFluidHeight { get; set; }
 
         /// <summary>
         /// Indicates whether app uses fluid or fixed width values for Canvas. App <code>access_token</code> required.
@@ -244,7 +244,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "canvas_fluid_width" )]
-        public bool CanvasFluidWidth { get; set; }
+        public bool? CanvasFluidWidth { get; set; }
 
         /// <summary>
         /// The non-secure URL from which Canvas app content is loaded. App <code>access_token</code> required.
@@ -268,7 +268,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "created_time" )]
-        public long CreatedTime { get; set; }
+        public long? CreatedTime { get; set; }
 
         /// <summary>
         /// User ID of the creator of this app. App <code>access_token</code> required.
@@ -276,7 +276,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "creator_uid" )]
-        public long CreatorUid { get; set; }
+        public long? CreatorUid { get; set; }
 
         /// <summary>
         /// URL that is pinged whenever a user removes the app. App <code>access_token</code> required.
@@ -364,7 +364,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "social_discovery" )]
-        public bool SocialDiscovery { get; set; }
+        public bool? SocialDiscovery { get; set; }
 
         /// <summary>
         /// URL to Terms of Service which is linked to in Auth Dialog. App <code>access_token</code> required.

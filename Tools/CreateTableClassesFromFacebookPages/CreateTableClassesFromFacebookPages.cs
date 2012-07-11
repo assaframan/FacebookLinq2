@@ -182,19 +182,26 @@ namespace CreateTableClassesFromFacebookPages
 			string cSharpTypeToUse = theType;
 			if (theType == "int")
 			{
-				cSharpTypeToUse = "long";
+				if (name == "post_id")
+				{
+					cSharpTypeToUse = "string";
+				}
+				else
+				{
+					cSharpTypeToUse = "long?";
+				}
 			}
 			else if (theType == "uid")
 			{
-				cSharpTypeToUse = "long";
+				cSharpTypeToUse = "long?";
 			}
 			else if (theType == "time")
 			{
-				cSharpTypeToUse = "DateTime";
+				cSharpTypeToUse = "DateTime?";
 			}
 			else if (theType == "ISO-8601 datetime")
 			{
-				cSharpTypeToUse = "DateTime";
+				cSharpTypeToUse = "DateTime?";
 			}				
 			else if (theType == "object")
 			{
@@ -202,7 +209,30 @@ namespace CreateTableClassesFromFacebookPages
 			}
 			else if (theType == "array")
 			{
-				cSharpTypeToUse = "JsonObject";
+				if (name == "coords")
+				{
+					cSharpTypeToUse = "CoordsType";
+				}
+				else if (name == "tagged_uids")
+				{
+					cSharpTypeToUse = "UidsList";
+				}
+				else if (name == "recipients")
+				{
+					cSharpTypeToUse = "UidsList";
+				}					
+				else if (name == "image_urls")
+				{
+					cSharpTypeToUse = "UrlList";
+				}					
+				else if (name == "venue")
+				{
+					cSharpTypeToUse = "VenueType";
+				}
+				else
+				{
+					cSharpTypeToUse = "JsonObject";
+				}
 			}
 			else if (theType == "comments")
 			{
@@ -214,19 +244,26 @@ namespace CreateTableClassesFromFacebookPages
 			}
 			else if (theType == "bool")
 			{
-				cSharpTypeToUse = "bool";
+				cSharpTypeToUse = "bool?";
 			}
 			else if (theType == "boolean")
 			{
-				cSharpTypeToUse = "bool";
+				cSharpTypeToUse = "bool?";
 			}	
 			else if (theType == "float")
 			{
-				cSharpTypeToUse = "float";
+				cSharpTypeToUse = "float?";
 			}	
 			else if (theType == "string")
 			{
-				cSharpTypeToUse = "string";
+				if (name == "parent_message_id")
+				{
+					cSharpTypeToUse = "long?";
+				}
+				else
+				{
+					cSharpTypeToUse = "string";
+				}
 			}
 			else				
 			{

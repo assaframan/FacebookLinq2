@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "owner_id" , IsPrimaryKey = true)]
-        public long OwnerId { get; set; }
+        public long? OwnerId { get; set; }
 
         /// <summary>
         /// The ID of the domain being queried.
@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "domain_id" )]
-        public long DomainId { get; set; }
+        public long? DomainId { get; set; }
 
     }
 }
