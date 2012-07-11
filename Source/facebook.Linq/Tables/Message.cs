@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -59,7 +60,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "attachment" )]
-        public string Attachment { get; set; }
+        public JsonObject Attachment { get; set; }
 
         /// <summary>
         /// The ID of the user whose Inbox you are querying. Defaults to session user.

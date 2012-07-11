@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -27,7 +28,7 @@ namespace facebook.Tables
         /// original type is: object
         /// </summary>
         [Column(Name = "actor" )]
-        public string Actor { get; set; }
+        public JsonObject Actor { get; set; }
 
         /// <summary>
         /// Unique identifier of the thread.
@@ -59,7 +60,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "users" )]
-        public string Users { get; set; }
+        public JsonObject Users { get; set; }
 
     }
 }

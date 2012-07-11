@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -155,7 +156,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "venue" )]
-        public string Venue { get; set; }
+        public JsonObject Venue { get; set; }
 
         /// <summary>
         /// The privacy setting of the event being queried, indicating whether the event is <code>OPEN</code>, <code>CLOSED</code>, or <code>SECRET</code>.
@@ -171,7 +172,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "hide_guest_list" )]
-        public string HideGuestList { get; set; }
+        public bool HideGuestList { get; set; }
 
         /// <summary>
         /// Indicates whether or not the viewer can invite friends to the event.
@@ -179,7 +180,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "can_invite_friends" )]
-        public string CanInviteFriends { get; set; }
+        public bool CanInviteFriends { get; set; }
 
         /// <summary>
         /// The number of invitees to the event.

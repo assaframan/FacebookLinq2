@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -43,7 +44,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "is_following" )]
-        public string IsFollowing { get; set; }
+        public bool IsFollowing { get; set; }
 
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -91,7 +92,7 @@ namespace facebook.Tables
         /// original type is: float
         /// </summary>
         [Column(Name = "length" )]
-        public string Length { get; set; }
+        public float Length { get; set; }
 
         /// <summary>
         /// The URL to thesource file for the standard quality version of the video.

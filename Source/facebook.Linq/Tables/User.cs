@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -99,7 +100,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "affiliations" )]
-        public string Affiliations { get; set; }
+        public JsonObject Affiliations { get; set; }
 
         /// <summary>
         /// The time the profile of the user being queried was most recently updated. If the user's profile has not been updated in the past three days, this value will be 0.
@@ -147,7 +148,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "devices" )]
-        public string Devices { get; set; }
+        public JsonObject Devices { get; set; }
 
         /// <summary>
         /// The gender of the user being queried.
@@ -163,7 +164,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "hometown_location" )]
-        public string HometownLocation { get; set; }
+        public JsonObject HometownLocation { get; set; }
 
         /// <summary>
         /// A list of the genders the person the user being queried wants to meet.
@@ -171,7 +172,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "meeting_sex" )]
-        public string MeetingSex { get; set; }
+        public JsonObject MeetingSex { get; set; }
 
         /// <summary>
         /// A list of the reasons the user being queried wants to meet someone.
@@ -179,7 +180,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "meeting_for" )]
-        public string MeetingFor { get; set; }
+        public JsonObject MeetingFor { get; set; }
 
         /// <summary>
         /// The type of relationship for the user being queried.
@@ -195,7 +196,7 @@ namespace facebook.Tables
         /// original type is: uid
         /// </summary>
         [Column(Name = "significant_other_id" )]
-        public string SignificantOtherId { get; set; }
+        public long SignificantOtherId { get; set; }
 
         /// <summary>
         /// The political views of the user being queried.
@@ -211,7 +212,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "current_location" )]
-        public string CurrentLocation { get; set; }
+        public JsonObject CurrentLocation { get; set; }
 
         /// <summary>
         /// The activities of the user being queried.
@@ -235,7 +236,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "is_app_user" )]
-        public string IsAppUser { get; set; }
+        public bool IsAppUser { get; set; }
 
         /// <summary>
         /// The favorite music of the user being queried.
@@ -291,7 +292,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "hs_info" )]
-        public string HsInfo { get; set; }
+        public JsonObject HsInfo { get; set; }
 
         /// <summary>
         /// <strong>Deprecated.</strong> This value is now equivalent to <code>education</code> entry of <code>type</code> ''College''.
@@ -299,7 +300,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "education_history" )]
-        public string EducationHistory { get; set; }
+        public JsonObject EducationHistory { get; set; }
 
         /// <summary>
         /// <strong>Deprecated.</strong> This value is now equivalent to <code>work</code>.
@@ -307,7 +308,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "work_history" )]
-        public string WorkHistory { get; set; }
+        public JsonObject WorkHistory { get; set; }
 
         /// <summary>
         /// The number of notes created by the user being queried.
@@ -339,7 +340,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "has_added_app" )]
-        public string HasAddedApp { get; set; }
+        public bool HasAddedApp { get; set; }
 
         /// <summary>
         /// The user's Facebook Chat status. Returns a string, one of <code>active</code>, <code>idle</code>, <code>offline</code>, or <code>error</code> (when Facebook can't determine presence information on the server side). The query does not return the user's Facebook Chat status when that information is restricted for privacy reasons.
@@ -379,7 +380,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "email_hashes" )]
-        public string EmailHashes { get; set; }
+        public JsonObject EmailHashes { get; set; }
 
         /// <summary>
         /// The URL to the small-sized profile picture for the user being queried. The image can have a maximum width of 50px and a maximum height of 150px, and is overlaid with the Facebook favicon. This URL may be blank.
@@ -419,7 +420,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "pic_cover" )]
-        public string PicCover { get; set; }
+        public JsonObject PicCover { get; set; }
 
         /// <summary>
         /// A comma-delimited list of <a href="/docs/reference/rest/admin.setRestrictionInfo">Demographic Restrictions</a> <code>types</code> a user is allowed to access. Currently, <code>alcohol</code> is the only type that can get returned.
@@ -435,7 +436,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "verified" )]
-        public string Verified { get; set; }
+        public bool Verified { get; set; }
 
         /// <summary>
         /// This string contains the contents of the text box under a user's profile picture.
@@ -462,7 +463,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "family" )]
-        public string Family { get; set; }
+        public JsonObject Family { get; set; }
 
         /// <summary>
         /// The website of the user being queried.
@@ -478,7 +479,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "is_blocked" )]
-        public string IsBlocked { get; set; }
+        public bool IsBlocked { get; set; }
 
         /// <summary>
         /// A string containing the user's primary Facebook email address. If the user shared his or her primary email address with you, this address also appears in the <code>email</code> field (see below). Facebook recommends you query the email field to get the email address shared with your application.
@@ -518,7 +519,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "video_upload_limits" )]
-        public string VideoUploadLimits { get; set; }
+        public JsonObject VideoUploadLimits { get; set; }
 
         /// <summary>
         /// The user's favorite games; this field is deprecated and will be removed in the near future. The string is a comma-separated list.
@@ -534,7 +535,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "work" )]
-        public string Work { get; set; }
+        public JsonObject Work { get; set; }
 
         /// <summary>
         /// A list of the user's education history. Contains <code>year</code> and <code>type</code> fields, and <code>school</code> object (<code>name</code>, <code>id</code>, <code>type</code>, and optional <code>year</code>, <code>degree</code>, <code>concentration</code> array, <code>classes</code> array, and <code>with</code> array ).
@@ -542,7 +543,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "education" )]
-        public string Education { get; set; }
+        public JsonObject Education { get; set; }
 
         /// <summary>
         /// The sports that the user plays. The array objects contain id and name fields.
@@ -550,7 +551,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "sports" )]
-        public string Sports { get; set; }
+        public JsonObject Sports { get; set; }
 
         /// <summary>
         /// The user's favorite athletes; this field is deprecated and will be removed in the near future. The array objects contain id and name fields.
@@ -558,7 +559,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "favorite_athletes" )]
-        public string FavoriteAthletes { get; set; }
+        public JsonObject FavoriteAthletes { get; set; }
 
         /// <summary>
         /// The user's favorite teams; this field is deprecated and will be removed in the near future. The array objects contain id and name fields.
@@ -566,7 +567,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "favorite_teams" )]
-        public string FavoriteTeams { get; set; }
+        public JsonObject FavoriteTeams { get; set; }
 
         /// <summary>
         /// The people who inspire the user. The array objects contain id and name fields.
@@ -574,7 +575,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "inspirational_people" )]
-        public string InspirationalPeople { get; set; }
+        public JsonObject InspirationalPeople { get; set; }
 
         /// <summary>
         /// The user's languages. The array objects contain id and name fields.
@@ -582,7 +583,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "languages" )]
-        public string Languages { get; set; }
+        public JsonObject Languages { get; set; }
 
         /// <summary>
         /// Count of all the pages this user has liked.
@@ -614,7 +615,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "can_post" )]
-        public string CanPost { get; set; }
+        public bool CanPost { get; set; }
 
     }
 }

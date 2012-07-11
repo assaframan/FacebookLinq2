@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -75,7 +76,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "affiliations" )]
-        public string Affiliations { get; set; }
+        public JsonObject Affiliations { get; set; }
 
         /// <summary>
         /// The URL to a user's profile.

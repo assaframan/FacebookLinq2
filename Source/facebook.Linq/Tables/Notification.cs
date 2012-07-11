@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -43,7 +44,7 @@ namespace facebook.Tables
         /// original type is: ISO-8601 datetime
         /// </summary>
         [Column(Name = "created_time" )]
-        public string CreatedTime { get; set; }
+        public DateTime CreatedTime { get; set; }
 
         /// <summary>
         /// The time the notification was originally sent, or the time the notification was updated, whichever is later.
@@ -51,7 +52,7 @@ namespace facebook.Tables
         /// original type is: ISO-8601 datetime
         /// </summary>
         [Column(Name = "updated_time" )]
-        public string UpdatedTime { get; set; }
+        public DateTime UpdatedTime { get; set; }
 
         /// <summary>
         /// The main body of the notification in HTML.
@@ -107,7 +108,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "is_unread" )]
-        public string IsUnread { get; set; }
+        public bool IsUnread { get; set; }
 
         /// <summary>
         /// Indicates whether the user hid the associated application's notifications.
@@ -115,7 +116,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "is_hidden" )]
-        public string IsHidden { get; set; }
+        public bool IsHidden { get; set; }
 
         /// <summary>
         /// The object id of the notification.

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -27,7 +28,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "archived" )]
-        public string Archived { get; set; }
+        public bool Archived { get; set; }
 
         /// <summary>
         /// Flag indicating whether the user can reply to the thread.
@@ -35,7 +36,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "can_reply" )]
-        public string CanReply { get; set; }
+        public bool CanReply { get; set; }
 
         /// <summary>
         /// Folder name (‘inbox’, ‘other’ or ‘spam’).
@@ -51,7 +52,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "former_participants" )]
-        public string FormerParticipants { get; set; }
+        public JsonObject FormerParticipants { get; set; }
 
         /// <summary>
         /// Flag indicating whether the thread contains a message which includes an attachment.
@@ -59,7 +60,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "has_attachments" )]
-        public string HasAttachments { get; set; }
+        public bool HasAttachments { get; set; }
 
         /// <summary>
         /// Flag indicating whether user is subscribed to the thread. Only applicable to threads with multiple participants where user can leave the conversation.
@@ -67,7 +68,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "is_subscribed" )]
-        public string IsSubscribed { get; set; }
+        public bool IsSubscribed { get; set; }
 
         /// <summary>
         /// Version identifier corresponding to one of the following actions: new message in thread, new thread participant, participant left the thread.
@@ -107,7 +108,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "object_participants" )]
-        public string ObjectParticipants { get; set; }
+        public JsonObject ObjectParticipants { get; set; }
 
         /// <summary>
         /// List of participants who are currently subscribed to the thread. Each element of the list is an object with properties <code>name</code> (string), <code>email</code> (string) and <code>user_id</code> (string).
@@ -115,7 +116,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "participants" )]
-        public string Participants { get; set; }
+        public JsonObject Participants { get; set; }
 
         /// <summary>
         /// List of participants who have sent a message in the thread. Each element of the list is an object with properties <code>name</code> (string), <code>email</code> (string) and <code>user_id</code> (string).
@@ -123,7 +124,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "senders" )]
-        public string Senders { get; set; }
+        public JsonObject Senders { get; set; }
 
         /// <summary>
         /// For threads representing a two-person conversation this is the user ID of the other thread participant.
@@ -147,7 +148,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "snippet_sender" )]
-        public string SnippetSender { get; set; }
+        public JsonObject SnippetSender { get; set; }
 
         /// <summary>
         /// Flag indicating whether the thread contains a message which includes an attachment.
@@ -155,7 +156,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "snippet_message_has_attachment" )]
-        public string SnippetMessageHasAttachment { get; set; }
+        public bool SnippetMessageHasAttachment { get; set; }
 
         /// <summary>
         /// Subject of the thread.
@@ -171,7 +172,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "tags" )]
-        public string Tags { get; set; }
+        public JsonObject Tags { get; set; }
 
         /// <summary>
         /// Unique identifier of the thread.
@@ -187,7 +188,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "thread_participants" )]
-        public string ThreadParticipants { get; set; }
+        public JsonObject ThreadParticipants { get; set; }
 
         /// <summary>
         /// Last update time of the thread (Unix-type timestamp with millisecond resolution).
@@ -203,7 +204,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "unread" )]
-        public string Unread { get; set; }
+        public bool Unread { get; set; }
 
     }
 }

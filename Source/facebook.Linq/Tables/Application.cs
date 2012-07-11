@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -131,7 +132,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "is_facebook_app" )]
-        public string IsFacebookApp { get; set; }
+        public bool IsFacebookApp { get; set; }
 
         /// <summary>
         /// Returns demographic restrictions for the app in a object with zero or more of the following fields: <code>type</code>, <code>location</code>, <code>age</code>, and <code>age_distr</code>. See <code>restrictions</code> field on the Graph API <a href="/docs/reference/api/application/">Application</a> object for more information.
@@ -139,7 +140,7 @@ namespace facebook.Tables
         /// original type is: object
         /// </summary>
         [Column(Name = "restriction_info" )]
-        public string RestrictionInfo { get; set; }
+        public JsonObject RestrictionInfo { get; set; }
 
         /// <summary>
         /// Domains and subdomains this app can use. App <code>access_token</code> required.
@@ -147,7 +148,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "app_domains" )]
-        public string AppDomains { get; set; }
+        public JsonObject AppDomains { get; set; }
 
         /// <summary>
         /// The URL of a special landing page that helps users of an app begin publishing Open Graph activity. App <code>access_token</code> required.
@@ -187,7 +188,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "auth_referral_user_perms" )]
-        public string AuthReferralUserPerms { get; set; }
+        public JsonObject AuthReferralUserPerms { get; set; }
 
         /// <summary>
         /// Basic friends permissions that a user must grant when Authenticated Referrals are enabled. App <code>access_token</code> required.
@@ -195,7 +196,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "auth_referral_friend_perms" )]
-        public string AuthReferralFriendPerms { get; set; }
+        public JsonObject AuthReferralFriendPerms { get; set; }
 
         /// <summary>
         /// The default privacy setting selected for Open Graph activities in the Auth Dialog. App <code>access_token</code> required; only returned if specifically requested via the fields URL parameter. <code>string</code> which is one of, <code>SELF</code>, <code>EVERYONE</code>, <code>ALL_FRIENDS</code> or <code>NONE</code>.
@@ -211,7 +212,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "auth_referral_enabled" )]
-        public string AuthReferralEnabled { get; set; }
+        public bool AuthReferralEnabled { get; set; }
 
         /// <summary>
         /// Extended permissions that a user can choose to grant when Authenticated Referrals are enabled. App <code>access_token</code> required.
@@ -219,7 +220,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "auth_referral_extended_perms" )]
-        public string AuthReferralExtendedPerms { get; set; }
+        public JsonObject AuthReferralExtendedPerms { get; set; }
 
         /// <summary>
         /// The format that an app receives the Auth token from the Auth Dialog in. App <code>access_token</code> required; only returned if specifically requested via the fields URL parameter. <code>string</code> which is one of, <code>code</code> or <code>token</code>.
@@ -235,7 +236,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "canvas_fluid_height" )]
-        public string CanvasFluidHeight { get; set; }
+        public bool CanvasFluidHeight { get; set; }
 
         /// <summary>
         /// Indicates whether app uses fluid or fixed width values for Canvas. App <code>access_token</code> required.
@@ -243,7 +244,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "canvas_fluid_width" )]
-        public string CanvasFluidWidth { get; set; }
+        public bool CanvasFluidWidth { get; set; }
 
         /// <summary>
         /// The non-secure URL from which Canvas app content is loaded. App <code>access_token</code> required.
@@ -363,7 +364,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "social_discovery" )]
-        public string SocialDiscovery { get; set; }
+        public bool SocialDiscovery { get; set; }
 
         /// <summary>
         /// URL to Terms of Service which is linked to in Auth Dialog. App <code>access_token</code> required.

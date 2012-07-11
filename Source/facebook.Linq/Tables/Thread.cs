@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -43,7 +44,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "recipients" )]
-        public string Recipients { get; set; }
+        public JsonObject Recipients { get; set; }
 
         /// <summary>
         /// The created_time of the most recent message in the thread.

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -51,7 +52,7 @@ namespace facebook.Tables
         /// original type is: float
         /// </summary>
         [Column(Name = "xcoord" )]
-        public string Xcoord { get; set; }
+        public float Xcoord { get; set; }
 
         /// <summary>
         /// The center of the tag's vertical position, measured as a floating-point percentage from 0 to 100, from the top edge of the photo.
@@ -59,7 +60,7 @@ namespace facebook.Tables
         /// original type is: float
         /// </summary>
         [Column(Name = "ycoord" )]
-        public string Ycoord { get; set; }
+        public float Ycoord { get; set; }
 
         /// <summary>
         /// The date that the tag being queried was created.

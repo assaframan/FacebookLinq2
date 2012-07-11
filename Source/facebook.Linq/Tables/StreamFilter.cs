@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -59,7 +60,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "is_visible" )]
-        public string IsVisible { get; set; }
+        public bool IsVisible { get; set; }
 
         /// <summary>
         /// The type of filter. One of <code>application</code>, <code>newsfeed</code>, <code>friendlist</code>, <code>network</code>, or <code>public_profiles</code>.

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -27,7 +28,7 @@ namespace facebook.Tables
         /// original type is: boolean
         /// </summary>
         [Column(Name = "can_post" )]
-        public string CanPost { get; set; }
+        public bool CanPost { get; set; }
 
         /// <summary>
         /// The full name of the object being queried.
@@ -83,7 +84,7 @@ namespace facebook.Tables
         /// original type is: object
         /// </summary>
         [Column(Name = "pic_crop" )]
-        public string PicCrop { get; set; }
+        public JsonObject PicCrop { get; set; }
 
         /// <summary>
         /// The type of profile, one of <code>user</code>, <code>group</code>, <code>page</code>, <code>event</code>, or <code>application</code>.

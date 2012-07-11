@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -27,7 +28,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "PERMISSION_NAME" )]
-        public string PERMISSIONNAME { get; set; }
+        public bool PERMISSIONNAME { get; set; }
 
     }
 }

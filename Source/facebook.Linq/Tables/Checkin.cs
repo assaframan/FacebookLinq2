@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -59,7 +60,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "coords" )]
-        public string Coords { get; set; }
+        public JsonObject Coords { get; set; }
 
         /// <summary>
         /// A Unix timestamp of the checkin.
@@ -75,7 +76,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "tagged_uids" )]
-        public string TaggedUids { get; set; }
+        public JsonObject TaggedUids { get; set; }
 
         /// <summary>
         /// The message the author posted with the checkin.

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -35,7 +36,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "administrator" )]
-        public string Administrator { get; set; }
+        public bool Administrator { get; set; }
 
         /// <summary>
         /// Any positions taken by the member of the group being queried. Possible values are <code>OWNER</code>, <code>ADMIN</code> or <code>OFFICER</code>

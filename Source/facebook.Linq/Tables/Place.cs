@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -43,7 +44,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "geometry" )]
-        public string Geometry { get; set; }
+        public JsonObject Geometry { get; set; }
 
         /// <summary>
         /// The latitude of the location.
@@ -51,7 +52,7 @@ namespace facebook.Tables
         /// original type is: float
         /// </summary>
         [Column(Name = "latitude" )]
-        public string Latitude { get; set; }
+        public float Latitude { get; set; }
 
         /// <summary>
         /// The longitude of the location.
@@ -59,7 +60,7 @@ namespace facebook.Tables
         /// original type is: float
         /// </summary>
         [Column(Name = "longitude" )]
-        public string Longitude { get; set; }
+        public float Longitude { get; set; }
 
         /// <summary>
         /// The number of times users have checked into the location.

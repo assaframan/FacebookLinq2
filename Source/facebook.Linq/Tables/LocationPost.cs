@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -51,7 +52,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "tagged_uids" )]
-        public string TaggedUids { get; set; }
+        public JsonObject TaggedUids { get; set; }
 
         /// <summary>
         /// ID of the Facebook page associated with the location or event in the post
@@ -75,7 +76,7 @@ namespace facebook.Tables
         /// original type is: object
         /// </summary>
         [Column(Name = "coords" )]
-        public string Coords { get; set; }
+        public JsonObject Coords { get; set; }
 
         /// <summary>
         /// The type of post. Either <code>photo</code>, <code>checkin</code>, <code>video</code>, or <code>status</code>

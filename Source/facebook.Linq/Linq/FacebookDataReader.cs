@@ -232,7 +232,7 @@ namespace Facebook.Linq
 					{
 						return asJsonObject[name]; 
 					}
-					return ConvertPropertyFromJson(name, (string)asJsonObject[name], type);
+					return ConvertPropertyFromJson(name, asJsonObject[name], type);
 				}
 				else
 				{
@@ -248,22 +248,22 @@ namespace Facebook.Linq
 
 		#endregion
 
-		object ConvertPropertyFromJson(string objectName, string value, Type propType)
+		object ConvertPropertyFromJson(string objectName, object value, Type propType)
 		{
 			var uType = Nullable.GetUnderlyingType(propType);
 			if (uType!=null && uType!=propType) //is nullable
 			{
-				if (value.IsNullOrEmpty())
+				if (value == null)
 					return null;
 				propType = uType;
 			}
 			if (propType == typeof(Int64))
 			{
-				return ParseLong(value);
+				return (value);
 			}
 			else if (propType == typeof(Decimal))
 			{
-				return ParseDecimal(value);
+				return (value);
 			}
 			else if (propType == typeof(string))
 			{
@@ -271,15 +271,23 @@ namespace Facebook.Linq
 			}
 			else if (propType == typeof(bool))
 			{
-				return ParseBool(value);
+				return (value);
 			}
 			else if (propType == typeof(DateTime))
 			{
-				return ParseFacebookDateTime(value);
+				return ParseFacebookDateTime((long)value);
 			}
 			else if (propType.IsEnum)
 			{
-				return ParseFacebookEnum(propType, value);
+				return ParseFacebookEnum(propType, value as string);
+			}
+			else if (value is Facebook.JsonObject)
+			{
+				return value;
+			}
+			else if (value is Facebook.JsonArray)
+			{
+				return value;
 			}
 			else
 				throw new NotImplementedException();
@@ -357,14 +365,9 @@ namespace Facebook.Linq
 					}
 			}
 		}
-		public static DateTime ParseFacebookDateTime(string s)
+		public static DateTime ParseFacebookDateTime(long i)
 		{
-			if (s.IsNullOrEmpty())
-				return DateTime.MinValue;
-			int i = 0;
-			if (Int32.TryParse(s, out i))
-				return DateHelper.ConvertDoubleToDate(Convert.ToDouble(i));
-			return DateTime.Parse(s);
+			return DateHelper.ConvertDoubleToDate(Convert.ToDouble(i));
 		}
 	}
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -55,7 +56,7 @@ namespace facebook.Tables
         /// original type is: mixed
         /// </summary>
         [Column(Name = "value" )]
-        public string Value { get; set; }
+        public object Value { get; set; }
 
     }
 }

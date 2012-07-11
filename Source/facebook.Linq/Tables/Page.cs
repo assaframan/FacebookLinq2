@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -59,7 +60,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "categories" )]
-        public string Categories { get; set; }
+        public JsonObject Categories { get; set; }
 
         /// <summary>
         /// Indicates whether the Page is a community Page.
@@ -115,7 +116,7 @@ namespace facebook.Tables
         /// original type is: object
         /// </summary>
         [Column(Name = "pic_cover" )]
-        public string PicCover { get; set; }
+        public JsonObject PicCover { get; set; }
 
         /// <summary>
         /// Number of unread notifications. Only viewable by the page admin.
@@ -163,7 +164,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "has_added_app" )]
-        public string HasAddedApp { get; set; }
+        public bool HasAddedApp { get; set; }
 
         /// <summary>
         /// General information provided by the Page.
@@ -179,7 +180,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "can_post" )]
-        public string CanPost { get; set; }
+        public bool CanPost { get; set; }
 
         /// <summary>
         /// Number of checkins at a <code>place</code> represented by a Page.
@@ -195,7 +196,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "is_published" )]
-        public string IsPublished { get; set; }
+        public bool IsPublished { get; set; }
 
         /// <summary>
         /// Applicable to <strong>Companies</strong>.
@@ -235,7 +236,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "location" )]
-        public string Location { get; set; }
+        public JsonObject Location { get; set; }
 
         /// <summary>
         /// Applicable to <strong>Businesses</strong> and <strong>Places</strong>. Can be one of <code>street</code>, <code>lot</code> or <code>valet</code>
@@ -243,7 +244,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "parking" )]
-        public string Parking { get; set; }
+        public JsonObject Parking { get; set; }
 
         /// <summary>
         /// Applicable to <strong>Businesses</strong> and <strong>Places</strong>.
@@ -251,7 +252,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "hours" )]
-        public string Hours { get; set; }
+        public JsonObject Hours { get; set; }
 
         /// <summary>
         /// Applicable to <strong>Pharmaceutical</strong> companies.
@@ -283,7 +284,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "payment_options" )]
-        public string PaymentOptions { get; set; }
+        public JsonObject PaymentOptions { get; set; }
 
         /// <summary>
         /// Applicable to <strong>Restaurants</strong> or <strong>Nightlife</strong>
@@ -315,7 +316,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "restaurant_services" )]
-        public string RestaurantServices { get; set; }
+        public JsonObject RestaurantServices { get; set; }
 
         /// <summary>
         /// Applicable to <strong>Restaurants</strong>.
@@ -323,7 +324,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "restaurant_specialties" )]
-        public string RestaurantSpecialties { get; set; }
+        public JsonObject RestaurantSpecialties { get; set; }
 
         /// <summary>
         /// Phone number provided by a Page.

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -131,7 +132,7 @@ namespace facebook.Tables
         /// original type is: object
         /// </summary>
         [Column(Name = "venue" )]
-        public string Venue { get; set; }
+        public JsonObject Venue { get; set; }
 
         /// <summary>
         /// The privacy setting of the group being queried, indicating whether the group is <code>OPEN</code>, <code>CLOSED</code>, or <code>SECRET</code>.

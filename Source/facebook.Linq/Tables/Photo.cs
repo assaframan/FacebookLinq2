@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -179,7 +180,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "images" )]
-        public string Images { get; set; }
+        public JsonObject Images { get; set; }
 
         /// <summary>
         /// The like information of the photo being queried. This is an object containing <code>can_like</code>, <code>like_count</code>, and <code>user_likes</code>
@@ -187,7 +188,7 @@ namespace facebook.Tables
         /// original type is: object
         /// </summary>
         [Column(Name = "like_info" )]
-        public string LikeInfo { get; set; }
+        public JsonObject LikeInfo { get; set; }
 
         /// <summary>
         /// The comment information of the photo being queried. This is an object containing <code>can_comment</code> and <code>comment_count</code>
@@ -195,7 +196,7 @@ namespace facebook.Tables
         /// original type is: object
         /// </summary>
         [Column(Name = "comment_info" )]
-        public string CommentInfo { get; set; }
+        public JsonObject CommentInfo { get; set; }
 
         /// <summary>
         /// <code>true</code> if the viewer is able to delete the photo
@@ -203,7 +204,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "can_delete" )]
-        public string CanDelete { get; set; }
+        public bool CanDelete { get; set; }
 
     }
 }

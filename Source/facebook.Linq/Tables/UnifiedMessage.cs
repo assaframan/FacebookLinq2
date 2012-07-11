@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -51,7 +52,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "unread" )]
-        public string Unread { get; set; }
+        public bool Unread { get; set; }
 
         /// <summary>
         /// Unique version identifier that increases in the same order as messages are received by Facebook. If messages arrive out of order, this ordering can theoretically be different from the timestamp-based ordering, since timestamps for email-originated messages are based on the timestamp of the sender's email client.
@@ -75,7 +76,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "tags" )]
-        public string Tags { get; set; }
+        public JsonObject Tags { get; set; }
 
         /// <summary>
         /// Sender of the message. This field is an object with properties <code>name</code> (string), <code>email</code> (string) and <code>user_id</code> (string).
@@ -83,7 +84,7 @@ namespace facebook.Tables
         /// original type is: object
         /// </summary>
         [Column(Name = "sender" )]
-        public string Sender { get; set; }
+        public JsonObject Sender { get; set; }
 
         /// <summary>
         /// List of message recipients. Each element of the list is an object with properties <code>name</code> (string), <code>email</code> (string) and <code>user_id</code> (string).
@@ -91,7 +92,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "recipients" )]
-        public string Recipients { get; set; }
+        public JsonObject Recipients { get; set; }
 
         /// <summary>
         /// Sender of the message in the case that it is a Facebook page, group or event. This field is an object with properties <code>object_address_type</code> (int) and <code>id</code> (string).
@@ -99,7 +100,7 @@ namespace facebook.Tables
         /// original type is: object
         /// </summary>
         [Column(Name = "object_sender" )]
-        public string ObjectSender { get; set; }
+        public JsonObject ObjectSender { get; set; }
 
         /// <summary>
         /// HTML representation of the message body.
@@ -115,7 +116,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "attachments" )]
-        public string Attachments { get; set; }
+        public JsonObject Attachments { get; set; }
 
         /// <summary>
         /// Map from attachment identifiers to objects containing information about the attachment (file size, type, etc.). Each object has the following properties: <code>id</code> (string), <code>type</code> (int), <code>mime_type</code> (string), <code>filename</code> (string) and <code>file_size</code> (int).
@@ -123,7 +124,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "attachment_map" )]
-        public string AttachmentMap { get; set; }
+        public JsonObject AttachmentMap { get; set; }
 
         /// <summary>
         /// List of share identifiers.  Shared items include links, videos, and photos as were supported in the old messaging system.
@@ -131,7 +132,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "shares" )]
-        public string Shares { get; set; }
+        public JsonObject Shares { get; set; }
 
         /// <summary>
         /// Map from share identifiers to objects containing information about the shared objects. Each object has the following properties: <code>share_id</code> (string), <code>type</code> (int), <code>href</code> (string), <code>title</code> (string), <code>summary</code> (string) and <code>image</code> (string).
@@ -139,7 +140,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "share_map" )]
-        public string ShareMap { get; set; }
+        public JsonObject ShareMap { get; set; }
 
     }
 }

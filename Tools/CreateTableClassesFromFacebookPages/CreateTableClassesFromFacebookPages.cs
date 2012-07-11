@@ -110,6 +110,8 @@ namespace CreateTableClassesFromFacebookPages
 			file.WriteLine("using System.Text;");
 			file.WriteLine("using Facebook.Linq;");
 			file.WriteLine("using System.Data.Linq.Mapping;");
+			file.WriteLine("using Facebook;");
+			
 			file.WriteLine("");
 			file.WriteLine("namespace facebook.Tables");
 			file.WriteLine("{");
@@ -182,13 +184,53 @@ namespace CreateTableClassesFromFacebookPages
 			{
 				cSharpTypeToUse = "long";
 			}
+			else if (theType == "uid")
+			{
+				cSharpTypeToUse = "long";
+			}
 			else if (theType == "time")
 			{
 				cSharpTypeToUse = "DateTime";
 			}
-			else
+			else if (theType == "ISO-8601 datetime")
+			{
+				cSharpTypeToUse = "DateTime";
+			}				
+			else if (theType == "object")
+			{
+				cSharpTypeToUse = "JsonObject";
+			}
+			else if (theType == "array")
+			{
+				cSharpTypeToUse = "JsonObject";
+			}
+			else if (theType == "comments")
+			{
+				cSharpTypeToUse = "object";
+			}
+			else if (theType == "mixed")
+			{
+				cSharpTypeToUse = "object";
+			}
+			else if (theType == "bool")
+			{
+				cSharpTypeToUse = "bool";
+			}
+			else if (theType == "boolean")
+			{
+				cSharpTypeToUse = "bool";
+			}	
+			else if (theType == "float")
+			{
+				cSharpTypeToUse = "float";
+			}	
+			else if (theType == "string")
 			{
 				cSharpTypeToUse = "string";
+			}
+			else				
+			{
+				cSharpTypeToUse = "object";
 			}
 
 			file.WriteLine("        /// <summary>");

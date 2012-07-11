@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -83,7 +84,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "image_urls" )]
-        public string ImageUrls { get; set; }
+        public JsonObject ImageUrls { get; set; }
 
     }
 }

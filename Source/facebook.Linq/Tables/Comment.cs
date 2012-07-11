@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -115,7 +116,7 @@ namespace facebook.Tables
         /// original type is: comments
         /// </summary>
         [Column(Name = "comments" )]
-        public string Comments { get; set; }
+        public object Comments { get; set; }
 
         /// <summary>
         /// If the current user is able to like this comment.
@@ -123,7 +124,7 @@ namespace facebook.Tables
         /// original type is: boolean
         /// </summary>
         [Column(Name = "can_like" )]
-        public string CanLike { get; set; }
+        public bool CanLike { get; set; }
 
         /// <summary>
         /// If the current user liked this comment.
@@ -131,7 +132,7 @@ namespace facebook.Tables
         /// original type is: boolean
         /// </summary>
         [Column(Name = "user_likes" )]
-        public string UserLikes { get; set; }
+        public bool UserLikes { get; set; }
 
         /// <summary>
         /// Array of mention objects for each object tagged in the comment.
@@ -139,7 +140,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "text_tags" )]
-        public string TextTags { get; set; }
+        public JsonObject TextTags { get; set; }
 
         /// <summary>
         /// If this comment is private.
@@ -147,7 +148,7 @@ namespace facebook.Tables
         /// original type is: boolean
         /// </summary>
         [Column(Name = "is_private" )]
-        public string IsPrivate { get; set; }
+        public bool IsPrivate { get; set; }
 
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Facebook.Linq;
 using System.Data.Linq.Mapping;
+using Facebook;
 
 namespace facebook.Tables
 {
@@ -147,7 +148,7 @@ namespace facebook.Tables
         /// original type is: bool
         /// </summary>
         [Column(Name = "can_upload" )]
-        public string CanUpload { get; set; }
+        public bool CanUpload { get; set; }
 
         /// <summary>
         /// The number of photos in the album
@@ -171,7 +172,7 @@ namespace facebook.Tables
         /// original type is: object
         /// </summary>
         [Column(Name = "like_info" )]
-        public string LikeInfo { get; set; }
+        public JsonObject LikeInfo { get; set; }
 
         /// <summary>
         /// The comment information of the album being queried. This is an object containing <code>can_comment</code> and <code>comment_count</code>
@@ -179,7 +180,7 @@ namespace facebook.Tables
         /// original type is: object
         /// </summary>
         [Column(Name = "comment_info" )]
-        public string CommentInfo { get; set; }
+        public JsonObject CommentInfo { get; set; }
 
     }
 }
