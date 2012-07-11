@@ -213,6 +213,14 @@ namespace Facebook.Linq
 				return this[name, null];
 			}
 		}
+
+		public ICollection<string> GetCurrentKeys()
+		{
+			Facebook.JsonObject asJsonObject = (Facebook.JsonObject)(CurrentNode.Current);
+			return asJsonObject.Keys;
+
+		}
+
 		public object this[string name, Type type]
 		{
 			get

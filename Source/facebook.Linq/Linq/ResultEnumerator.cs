@@ -33,11 +33,15 @@ namespace Facebook.Linq
 			{
 				TRowType item = Activator.CreateInstance<TRowType>();
 				var typeData = KnownTypeData.GetTypeData(typeof(TRowType));
-				foreach (var p in typeData.Properties)
+
+				var currentKeys = Reader.GetCurrentKeys();
+
+				foreach (var k in currentKeys)
 				{
-					var realPropertyName = p.Key;
-					var fqlFieldName = p.Value.FqlFieldName;
-					var propInfo = p.Value.PropertyInfo;
+					var p = typeData.PropertiesByFieldName[k];
+					var realPropertyName = k;
+					var fqlFieldName = p.FqlFieldName;
+					var propInfo = p.PropertyInfo;
 					var value = Reader[fqlFieldName, propInfo.PropertyType];
 					if(value!=null)
 						propInfo.SetValue(item, value, null);					
