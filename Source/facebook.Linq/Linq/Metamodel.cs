@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Reflection;
 using System.Data.Linq.Mapping;
-using Microsoft.Xml.Schema.Linq;
 
 
 namespace Facebook.Linq
@@ -132,7 +131,7 @@ namespace Facebook.Linq
 	{
 		internal static bool IsFqlColumn(this PropertyInfo pi)
 		{
-			if (pi.DeclaringType.IsSubclassOf(typeof(XTypedElement)) && pi.GetSetMethod()!=null && IsSupported(pi.PropertyType))
+			if (pi.GetSetMethod()!=null && IsSupported(pi.PropertyType))
 				return true;
 			return pi.GetCustomAttributes(typeof(ColumnAttribute), true).Length > 0;
 		}
@@ -159,14 +158,6 @@ namespace Facebook.Linq
 
 		internal static string GetLinqTableName(this Type type)
 		{
-			if (type.IsSubclassOf(typeof(XTypedElement)))
-			{
-				if (type.Name == "facebookevent")
-					return "event";
-				else if (type.Name == "friend_info")
-					return "friend";
-				return type.Name;
-			}
 			var t = type.GetCustomAttributes(typeof(TableAttribute), true);
 			if (t.Length > 0)
 				return (t[0] as TableAttribute).Name;
