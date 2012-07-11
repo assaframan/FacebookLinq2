@@ -6,7 +6,11 @@ Facebook Linq to Fql makes it easier for facebook developers to work with facebo
 You’ll no longer have to use untyped Fql queries.
 Instead, you can work with compiled Linq queries using the Facebook object model.
 
+<<<<<<< HEAD
 FacebookLinq was a dead project that didn't compile and wasn't updated since 2009, I decided that the idea is good and created my modified version that is based on the original FacebookLinq.
+=======
+FacebookLinq was a dead project that didn't compile and wasn't updated since 2009, I decided that the idea is good andcreated my modified version that is based on the original FacebookLinq.
+>>>>>>> 5d0b2a87a74cd6c5a06c4a9b826274a95902491e
 My goals where:
 
 * Get the code to run with the latest facebook-csharp-sdk.
