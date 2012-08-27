@@ -15,7 +15,7 @@ namespace SimpleQuery
 	{
 		string m_clientId = "231464590266507";
 		string m_clientSecret = "9dd6ce54b4405dd1325d271d2419bc34";
-		string m_scope = "email,read_stream,offline_access";
+		string m_scope = "email,read_stream,offline_access,user_checkins,manage_notifications,read_mailbox,friends_birthday,user_hometown,friends_hometown,friends_relationship_details ";
 
 		// the getting the token code is from here: http://multitiered.wordpress.com/tag/c/
 
@@ -94,10 +94,36 @@ namespace SimpleQuery
 
 			if (useQuerySyntax)
 			{
+				//var albumQuery = from album in db.Album where album.Aid == "20531316728_324257" select album.CanUpload;
+				//var albumResult = albumQuery.ToArray();
+
+				//var CheckinQuery = from Checkin in db.Checkin where Checkin.AuthorUid == db.Me  select Checkin;
+				//var CheckinResult = CheckinQuery.ToArray();
+
+
+				//var CheckinQuery = from Checkin in db.Comment where Checkin. == db.Me  select Checkin;
+				//var CheckinResult = CheckinQuery.ToArray();
+
+				///var ThreadQuery = from Thread in db.Thread where Thread.FolderId == "0" select Thread.ThreadId;
+				//var MessageQuery = from Message in db.Message where ThreadQuery.Contains(Message.ThreadId) select Message;
+
+				//var MessageResult = MessageQuery.ToArray();
+			
+
+				//var NotificationQuery = from Notification in db.Notification where Notification.RecipientId == db.Me select Notification.CreatedTime;
+				//var NotificationResult = NotificationQuery.ToArray();
+
+				//var CommentsQuery = from Comments in db.Comment where Comments.ObjectId == "483854529708" select Comments.Comments;
+				//var CommentsResult = CommentsQuery.ToArray();
+
+				//var GroupQuery = from Group in db.Group where Group.Gid == 146797922030397 select Group.Venue;
+				//var GroupResult = GroupQuery.ToArray();
+				
+
 				var friendIds = from friend in db.Friend where friend.Uid1 == db.Me select friend.Uid2;
-				var friendDetails = (from user in db.User where friendIds.Contains(user.Uid) select new { Name = user.Name, Picture = user.PicSmall }).Take(5);
+				var friendDetails = (from user in db.User where friendIds.Contains(user.Uid) select new { Name = user.MeetingSex, Picture = user.PicSmall });
 				listFriends.DataSource = friendDetails.ToArray();
-				DataBind();
+					DataBind();
 			}
 			else if (useMethodSyntax)
 			{

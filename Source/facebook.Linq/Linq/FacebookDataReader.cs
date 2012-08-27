@@ -251,11 +251,12 @@ namespace Facebook.Linq
 
 		object ConvertPropertyFromJson(string objectName, object value, Type propType)
 		{
+			if (value == null)
+				return null;
+
 			var uType = Nullable.GetUnderlyingType(propType);
 			if (uType!=null && uType!=propType) //is nullable
 			{
-				if (value == null)
-					return null;
 				propType = uType;
 			}
 			if (propType == typeof(Int64))
@@ -282,6 +283,18 @@ namespace Facebook.Linq
 			{
 				return new CoordsType((JsonObject)value);
 			}
+			else if (propType == typeof(DeviceList))
+			{
+				return new DeviceList((JsonArray)value);
+			}
+			else if (propType == typeof(GenderList))
+			{
+				return new GenderList((JsonArray)value);
+			}
+			else if (propType == typeof(HometownLocationType))
+			{
+				return new HometownLocationType((JsonObject)value);
+			}				
 			else if (propType.IsEnum)
 			{
 				return ParseFacebookEnum(propType, value as string);

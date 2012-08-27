@@ -229,6 +229,18 @@ namespace CreateTableClassesFromFacebookPages
 				{
 					cSharpTypeToUse = "VenueType";
 				}
+				else if (name == "devices")
+				{
+					cSharpTypeToUse = "DeviceList";
+				}
+				else if (name == "hometown_location")
+				{
+					cSharpTypeToUse = "HometownLocationType";
+				}
+				else if (name == "meeting_sex")
+				{
+					cSharpTypeToUse = "GenderList";
+				}
 				else
 				{
 					cSharpTypeToUse = "JsonObject";
