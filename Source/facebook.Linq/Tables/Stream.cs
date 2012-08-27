@@ -31,7 +31,7 @@ namespace facebook.Tables
         public long? ViewerId { get; set; }
 
         /// <summary>
-        /// For posts published by apps, the ID of that app
+        /// For posts published by apps, the ID of that app. If the value is empty, it indicates a Facebook feature generated the post
         /// 
         /// original type is: int
         /// </summary>

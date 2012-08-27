@@ -17,10 +17,10 @@ namespace facebook.Tables
         /// <summary>
         /// The Facebook Page ID of the place
         /// 
-        /// original type is: string
+        /// original type is: int
         /// </summary>
         [Column(Name = "page_id" , IsPrimaryKey = true)]
-        public string PageId { get; set; }
+        public long? PageId { get; set; }
 
         /// <summary>
         /// The name of the place.

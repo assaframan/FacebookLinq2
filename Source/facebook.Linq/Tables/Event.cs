@@ -31,22 +31,6 @@ namespace facebook.Tables
         public string Name { get; set; }
 
         /// <summary>
-        /// The tagline or summary of the event being queried. <strong><em>Deprecated</em></strong> - This column <a href="/roadmap/#event-object-fields">will be removed</a> on July 5th, 2012.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "tagline" )]
-        public string Tagline { get; set; }
-
-        /// <summary>
-        /// The network ID of the event being queried. <strong><em>Deprecated</em></strong> - This column <a href="/roadmap/#event-object-fields">will be removed</a> on July 5th, 2012.
-        /// 
-        /// original type is: int
-        /// </summary>
-        [Column(Name = "nid" )]
-        public long? Nid { get; set; }
-
-        /// <summary>
         /// The URL to the small-sized profile picture for the event being queried. The image can have a maximum width of 50px and a maximum height of 150px. This URL may be blank.
         /// 
         /// original type is: string
@@ -95,36 +79,20 @@ namespace facebook.Tables
         public string Description { get; set; }
 
         /// <summary>
-        /// The category of the event being queried. <strong><em>Deprecated</em></strong> - This column <a href="/roadmap/#event-object-fields">will be removed</a> on July 5th, 2012.
+        /// An ISO-8601 string representing the starting date and (optionally) time of the event being queried.  <strong>Note</strong> - before the 'Events Timezone' migration, this field was a timestamp.  See 'Events Timezone Migration Note' above for more information.
         /// 
         /// original type is: string
-        /// </summary>
-        [Column(Name = "event_type" )]
-        public string EventType { get; set; }
-
-        /// <summary>
-        /// The event type for the event being queried. <strong><em>Deprecated</em></strong> - This column <a href="/roadmap/#event-object-fields">will be removed</a> on July 5th, 2012.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "event_subtype" )]
-        public string EventSubtype { get; set; }
-
-        /// <summary>
-        /// The starting date and time of the event being queried.
-        /// 
-        /// original type is: time
         /// </summary>
         [Column(Name = "start_time" )]
-        public DateTime? StartTime { get; set; }
+        public string StartTime { get; set; }
 
         /// <summary>
-        /// The ending date and time of the event being queried.
+        /// An ISO-8601 string representing the ending date and time of the event being queried.  This can be empty if no end time has been specified.  <strong>Note</strong> - before the 'Events Timezone' migration, this field was a timestamp.  See 'Events Timezone Migration Note' above for more information.
         /// 
-        /// original type is: time
+        /// original type is: string
         /// </summary>
         [Column(Name = "end_time" )]
-        public DateTime? EndTime { get; set; }
+        public string EndTime { get; set; }
 
         /// <summary>
         /// The user ID of the creator of the event being queried.

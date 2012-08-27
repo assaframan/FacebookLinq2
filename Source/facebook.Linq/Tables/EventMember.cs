@@ -39,12 +39,12 @@ namespace facebook.Tables
         public string RsvpStatus { get; set; }
 
         /// <summary>
-        /// The timestamp when the event began or will begin.  This is particularly useful as a WHERE filter to speed up your query when querying for one or more user's events.  But it cannot be used when querying for users invited to a particular event.
+        /// An ISO-8601 string representing the starting date and (optionally) time of the event being queried.  This is particularly useful as a WHERE filter to speed up your query when querying for one or more user's events.  But it cannot be used when querying for users invited to a particular event.  <strong>Note</strong> - before the 'Events Timezone' migration, this field was a timestamp.  See 'Events Timezone Migration Note' above for more information.
         /// 
-        /// original type is: time
+        /// original type is: string
         /// </summary>
         [Column(Name = "start_time" )]
-        public DateTime? StartTime { get; set; }
+        public string StartTime { get; set; }
 
     }
 }

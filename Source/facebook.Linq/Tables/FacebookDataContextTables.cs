@@ -369,6 +369,14 @@ namespace Facebook
             }
         }
 
+        public FqlTable<ProfilePic> ProfilePic
+        {
+            get
+            {
+                return GetTable<ProfilePic>();
+            }
+        }
+
         public FqlTable<ProfileView> ProfileView
         {
             get

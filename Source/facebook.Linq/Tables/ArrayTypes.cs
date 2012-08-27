@@ -110,4 +110,120 @@ namespace facebook.Tables
 		public UrlList(JsonArray jsonArray) : base(jsonArray) { }
 	};
 
+	public class GenderList : FromJsonList<string>
+	{
+		public GenderList() { }
+		public GenderList(JsonArray jsonArray) : base(jsonArray) { }
+	};
+
+
+
+	public class DeviceType
+	{
+		[Column(Name = "os")]
+		public string Os { get; set; }
+		[Column(Name = "hardware")]
+		public string Hardware { get; set; }
+
+		public DeviceType()
+		{
+
+		}
+
+		public DeviceType(JsonObject jsonValue)
+		{
+			if (jsonValue.ContainsKey("os"))
+			{
+				Os = (string)jsonValue["os"];
+			}
+			if (jsonValue.ContainsKey("hardware"))
+			{
+				Hardware = (string)jsonValue["hardware"];
+			}
+		}
+
+	}
+	
+	
+	public class DeviceList : List<DeviceType>
+	{
+		public DeviceList() { }
+		public DeviceList(JsonArray jsonArray)
+		{
+ 			foreach(JsonObject obj in jsonArray)
+			{
+				Add(new DeviceType(obj));
+			}
+		}
+	};
+
+	public class HometownLocationType 
+	{
+		[Column(Name = "id")]
+		public long Id { get; set; }
+		[Column(Name = "street")]
+		public string Street { get; set; }
+		[Column(Name = "city")]
+		public string City { get; set; }
+		[Column(Name = "state")]
+		public string State { get; set; }
+		[Column(Name = "zip")]
+		public long? Zip { get; set; }
+		[Column(Name = "country")]
+		public string Country { get; set; }
+		[Column(Name = "name")]
+		public string Name { get; set; }
+
+		public HometownLocationType()
+		{
+
+		}
+
+		public HometownLocationType(JsonObject jsonValue)
+		{
+			if (jsonValue.ContainsKey("street"))
+			{
+				Street = (string)jsonValue["street"];
+			}
+			if (jsonValue.ContainsKey("city"))
+			{
+				City = (string)jsonValue["city"];
+			}
+			if (jsonValue.ContainsKey("state"))
+			{
+				State = (string)jsonValue["state"];
+			}
+			if (jsonValue.ContainsKey("zip"))
+			{
+				string zipAsString = (string)jsonValue["zip"];
+				if(zipAsString == "")
+				{
+					Zip = null;
+				}
+				else
+				{
+					Zip = long.Parse(zipAsString);
+				}
+			}
+			if (jsonValue.ContainsKey("country"))
+			{
+				Country = (string)jsonValue["country"];
+			}
+			if (jsonValue.ContainsKey("id"))
+			{
+				Id = (long)jsonValue["id"];
+			}
+			if (jsonValue.ContainsKey("name"))
+			{
+				Name = (string)jsonValue["name"];
+			}
+
+
+		}
+
+	}
+
+
 }
+
+

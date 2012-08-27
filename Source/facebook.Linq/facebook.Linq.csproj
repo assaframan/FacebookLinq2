@@ -119,6 +119,7 @@
     <Compile Include="Tables\Privacy.cs" />
     <Compile Include="Tables\PrivacySetting.cs" />
     <Compile Include="Tables\Profile.cs" />
+    <Compile Include="Tables\ProfilePic.cs" />
     <Compile Include="Tables\ProfileView.cs" />
     <Compile Include="Tables\Question.cs" />
     <Compile Include="Tables\QuestionOption.cs" />

@@ -148,7 +148,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "devices" )]
-        public JsonObject Devices { get; set; }
+        public DeviceList Devices { get; set; }
 
         /// <summary>
         /// The gender of the user being queried.
@@ -164,7 +164,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "hometown_location" )]
-        public JsonObject HometownLocation { get; set; }
+        public HometownLocationType HometownLocation { get; set; }
 
         /// <summary>
         /// A list of the genders the person the user being queried wants to meet.
@@ -172,7 +172,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "meeting_sex" )]
-        public JsonObject MeetingSex { get; set; }
+        public GenderList MeetingSex { get; set; }
 
         /// <summary>
         /// A list of the reasons the user being queried wants to meet someone.

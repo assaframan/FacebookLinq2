@@ -33,10 +33,10 @@ namespace facebook.Tables
         /// <summary>
         /// For tagged users, use the user ID of the subject for the tag being queried. For photos associated with events or groups, use the eid or gid for subject.
         /// 
-        /// original type is: int
+        /// original type is: string
         /// </summary>
         [Column(Name = "subject" )]
-        public long? Subject { get; set; }
+        public string Subject { get; set; }
 
         /// <summary>
         /// The content of the tag being queried. It contains either the name of the user tagged or the text tag.
