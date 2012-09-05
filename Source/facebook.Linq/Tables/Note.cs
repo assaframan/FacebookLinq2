@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "uid" , IsPrimaryKey = true)]
-        public long? Uid { get; set; }
+        public Uid Uid { get; set; }
 
         /// <summary>
         /// The unique identifier for the note.

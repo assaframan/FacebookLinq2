@@ -22,11 +22,11 @@ namespace Facebook
 		{
 		}
 
-		public long Me
+		public Uid Me
 		{ 
 			get
 			{
-				return -1; // some fake value
+				return new Uid(-1); // some fake value
 			}			
 		}
 	}

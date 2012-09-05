@@ -317,8 +317,11 @@ namespace Facebook.Linq
 				{
 					return new UrlList((JsonArray)value);
 				}				
-				
 				return value;
+			}
+			else if (propType == typeof(Uid))
+			{
+				return new Uid(value as long?);
 			}
 			else
 				throw new NotImplementedException();

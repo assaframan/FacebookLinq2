@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.Linq.Mapping;
 using Facebook;
+using System.Diagnostics;
 
 namespace facebook.Tables
 {
@@ -93,15 +94,42 @@ namespace facebook.Tables
 		{
 			foreach(var val in jsonArray)
 			{
-				Add((T)val);
+				Add(AllocateVal(val));
 			}
+		}
+		virtual protected T AllocateVal(object val)
+		{
+			return (T)val;
 		}
 	}
 
-	public class UidsList : FromJsonList<long> 
+	[DebuggerDisplay("{Value}")]
+	public class Uid
+	{
+		public long? Value { get; set; }
+
+		public Uid(long? value)
+		{
+			Value = value;
+		}
+		public override bool Equals(System.Object obj)
+		{
+			// If parameter cannot be cast to Point return false.
+			Uid other = obj as Uid;
+
+			// Return true if the fields match:
+			return this.Value == other.Value;
+		}
+	}
+	public class UidsList : FromJsonList<Uid> 
 	{
 		public UidsList(){}
 		public UidsList(JsonArray jsonArray) :base(jsonArray) { }
+
+		override protected Uid AllocateVal(object val)
+		{
+			return new Uid((long?)val);
+		}
 	};
 
 	public class UrlList : FromJsonList<string>

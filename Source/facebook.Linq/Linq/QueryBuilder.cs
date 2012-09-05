@@ -119,6 +119,8 @@ namespace Facebook.Linq
 				_Build((double)value);
 			else if (value is float)
 				_Build((float)value);
+			else if (value is bool)
+				_Build((bool)value);
 			else if (value is IFqlDataQuery)
 			{
 				var innerQuery = (IFqlDataQuery)value;
@@ -580,6 +582,11 @@ namespace Facebook.Linq
 		private void _Build(ulong p)
 		{
 			Write(p.ToString());
+		}
+
+		private void _Build(bool p)
+		{
+			Write("'" + p.ToString() + "'");
 		}
 
 		private void _Build(float p)

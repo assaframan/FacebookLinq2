@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "uid" , IsPrimaryKey = true)]
-        public long? Uid { get; set; }
+        public Uid Uid { get; set; }
 
         /// <summary>
         /// The username of the user being queried.
@@ -196,7 +196,7 @@ namespace facebook.Tables
         /// original type is: uid
         /// </summary>
         [Column(Name = "significant_other_id" )]
-        public long? SignificantOtherId { get; set; }
+        public object SignificantOtherId { get; set; }
 
         /// <summary>
         /// The political views of the user being queried.

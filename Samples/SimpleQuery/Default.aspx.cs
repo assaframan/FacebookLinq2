@@ -97,8 +97,8 @@ namespace SimpleQuery
 				//var albumQuery = from album in db.Album where album.Aid == "20531316728_324257" select album.CanUpload;
 				//var albumResult = albumQuery.ToArray();
 
-				//var CheckinQuery = from Checkin in db.Checkin where Checkin.AuthorUid == db.Me  select Checkin;
-				//var CheckinResult = CheckinQuery.ToArray();
+			//	var CheckinQuery = from Checkin in db.Checkin where Checkin.AuthorUid == db.Me  select Checkin;
+			//	var CheckinResult = CheckinQuery.ToArray();
 
 
 				//var CheckinQuery = from Checkin in db.Comment where Checkin. == db.Me  select Checkin;
@@ -121,7 +121,7 @@ namespace SimpleQuery
 				
 
 				var friendIds = from friend in db.Friend where friend.Uid1 == db.Me select friend.Uid2;
-				var friendDetails = (from user in db.User where friendIds.Contains(user.Uid) select new { Name = user.MeetingSex, Picture = user.PicSmall });
+				var friendDetails = (from user in db.User where friendIds.Contains(user.Uid) select new { Uid = user.Uid, Name = user.Name, Picture = user.PicSmall });
 				listFriends.DataSource = friendDetails.ToArray();
 					DataBind();
 			}

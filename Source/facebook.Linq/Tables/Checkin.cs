@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "author_uid" )]
-        public long? AuthorUid { get; set; }
+        public Uid AuthorUid { get; set; }
 
         /// <summary>
         /// The ID of the Page representing the <code>place</code>.

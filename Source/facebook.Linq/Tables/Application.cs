@@ -276,7 +276,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "creator_uid" )]
-        public long? CreatorUid { get; set; }
+        public Uid CreatorUid { get; set; }
 
         /// <summary>
         /// URL that is pinged whenever a user removes the app. App <code>access_token</code> required.
