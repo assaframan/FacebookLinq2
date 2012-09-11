@@ -21,7 +21,7 @@ namespace facebook.Tables
         /// Indexable
         /// </summary>
         [Column(Name = "id" , IsPrimaryKey = true)]
-        public long? Id { get; set; }
+        public QuestionOptionId Id { get; set; }
 
         /// <summary>
         /// ID of the question associated with this option.

@@ -248,6 +248,38 @@ namespace CreateTableClassesFromFacebookPages
 			{
 				cSharpTypeToUse = "StreamType";
 			}
+			else if (name == "id" && tableName == "comment")
+			{
+				cSharpTypeToUse = "CommentId";
+			}
+			else if (name == "id" && tableName == "object_url")
+			{
+				cSharpTypeToUse = "ObjectUrlId";
+			}
+			else if (name == "id" && tableName == "profile")
+			{
+				cSharpTypeToUse = "ProfileId";
+			}
+			else if (name == "id" && tableName == "question")
+			{
+				cSharpTypeToUse = "QuestionId";
+			}
+			else if (name == "id" && tableName == "question_option")
+			{
+				cSharpTypeToUse = "QuestionOptionId";
+			}
+			else if (name == "id" && tableName == "note")
+			{
+				cSharpTypeToUse = "NoteId";
+			}
+			else if (name == "aid")
+			{
+				cSharpTypeToUse = "AlbumId";
+			}
+			else if (name == "id" && tableName == "privacy")
+			{
+				cSharpTypeToUse = "ObjectId";
+			}
 			else if (name == "coords")
 			{
 				cSharpTypeToUse = "Coords";

@@ -21,7 +21,7 @@ namespace facebook.Tables
         /// Indexable
         /// </summary>
         [Column(Name = "id" , IsPrimaryKey = true)]
-        public long? Id { get; set; }
+        public QuestionId Id { get; set; }
 
         /// <summary>
         /// ID of the user who created the question

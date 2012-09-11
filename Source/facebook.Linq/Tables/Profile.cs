@@ -21,7 +21,7 @@ namespace facebook.Tables
         /// Indexable
         /// </summary>
         [Column(Name = "id" , IsPrimaryKey = true)]
-        public long? Id { get; set; }
+        public ProfileId Id { get; set; }
 
         /// <summary>
         /// Whether the current user can post to the objects profile wall.

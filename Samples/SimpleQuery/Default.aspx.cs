@@ -16,7 +16,7 @@ namespace SimpleQuery
 	{
 		string m_clientId = "231464590266507";
 		string m_clientSecret = "9dd6ce54b4405dd1325d271d2419bc34";
-		string m_scope = "email,read_stream,offline_access,user_checkins,manage_notifications,read_mailbox,friends_birthday,user_hometown,friends_hometown,friends_relationship_details ";
+		string m_scope = "email,read_stream,read_insights,offline_access,user_checkins,manage_notifications,read_mailbox,friends_birthday,user_hometown,friends_hometown,friends_relationship_details ";
 
 		// the getting the token code is from here: http://multitiered.wordpress.com/tag/c/
 
@@ -95,8 +95,9 @@ namespace SimpleQuery
 
 			if (useQuerySyntax)
 			{
+
 				/*
-				var albumQuery = from album in db.Album where album.Aid == "20531316728_324257" select album;
+				var albumQuery = from album in db.Album where album.Aid == new AlbumId("20531316728_324257") select album;
 				var albumResult = albumQuery.ToArray();
 
 				var applicationQuery = from application in db.Application where
@@ -108,16 +109,23 @@ namespace SimpleQuery
 				
 				var applicationResult = applicationQuery.ToArray();
 
+				var apprequestQuery = from apprequest in db.Apprequest
+									  where apprequest.RecipientUid == db.Me
+										 && apprequest.AppId == new AppId("231464590266507")
+									  select apprequest;
+				var apprequestResult = apprequestQuery.ToArray();
+				 
+				var checkinQuery = from checkin in db.Checkin where checkin.AuthorUid == db.Me  select checkin;
+				var checkinResult = checkinQuery.ToArray();
+
+				var albumObjectIdQuery = from album in db.Album where album.Aid == new AlbumId("20531316728_324257") select album.ObjectId;
+				var commentQuery = from comment in db.Comment where albumObjectIdQuery.Contains(comment.ObjectId) select comment;
+				var commentResult = commentQuery.ToArray();
+
 				int a = 1;
-				*/
 
+				 */
 
-			//	var CheckinQuery = from Checkin in db.Checkin where Checkin.AuthorUid == db.Me  select Checkin;
-			//	var CheckinResult = CheckinQuery.ToArray();
-
-
-				//var CheckinQuery = from Checkin in db.Comment where Checkin. == db.Me  select Checkin;
-				//var CheckinResult = CheckinQuery.ToArray();
 
 				///var ThreadQuery = from Thread in db.Thread where Thread.FolderId == "0" select Thread.ThreadId;
 				//var MessageQuery = from Message in db.Message where ThreadQuery.Contains(Message.ThreadId) select Message;

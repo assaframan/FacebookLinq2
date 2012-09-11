@@ -39,7 +39,7 @@ namespace facebook.Tables
         /// Indexable
         /// </summary>
         [Column(Name = "aid" )]
-        public string Aid { get; set; }
+        public AlbumId Aid { get; set; }
 
         /// <summary>
         /// The user ID of the owner of the photo being queried.

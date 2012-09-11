@@ -31,7 +31,8 @@ namespace facebook.Tables
 		CheckinToPlace				= 285,
 		PostInGroup					= 308,
 	}
-	
+
+	[DebuggerDisplay("Latitude = {Latitude} | Longitude = {Longitude};")]
 	public class Coords
 	{
 		[Column(Name = "latitude")]
@@ -107,7 +108,7 @@ namespace facebook.Tables
 
 	}
 
-	[DebuggerDisplay("CanLike = {CanLike}; LikeCount = {LikeCount}; UserLikes = {UserLikes}")]
+	[DebuggerDisplay("CanLike = {CanLike} | LikeCount = {LikeCount} | UserLikes = {UserLikes}")]
 	public class LikeInfo
 	{
 		[Column(Name = "can_like")]
@@ -141,7 +142,7 @@ namespace facebook.Tables
 	}
 
 
-	[DebuggerDisplay("CanComment = {CanComment}; CommentCount = {CommentCount}")]
+	[DebuggerDisplay("CanComment = {CanComment} | CommentCount = {CommentCount}")]
 	public class CommentInfo
 	{
 		[Column(Name = "can_comment")]
@@ -182,7 +183,7 @@ namespace facebook.Tables
 		public override bool Equals(System.Object obj)
 		{
 			// If parameter cannot be cast to Point return false.
-			Uid other = obj as Uid;
+			Fid other = obj as Fid;
 
 			// Return true if the fields match:
 			return this.Value == other.Value;
@@ -336,6 +337,55 @@ namespace facebook.Tables
 		public VideoId(string value) : base(value) { }
 	}
 
+	// comment id
+	[DebuggerDisplay("{Value}")]
+	public class CommentId : Fid
+	{
+		public CommentId(string value) : base(value) { }
+	}
+
+	// Object Url id
+	[DebuggerDisplay("{Value}")]
+	public class ObjectUrlId : Fid
+	{
+		public ObjectUrlId(string value) : base(value) { }
+	}
+
+	// Profile id
+	[DebuggerDisplay("{Value}")]
+	public class ProfileId : Fid
+	{
+		public ProfileId(string value) : base(value) { }
+	}
+
+	// Question id
+	[DebuggerDisplay("{Value}")]
+	public class QuestionId : Fid
+	{
+		public QuestionId(string value) : base(value) { }
+	}
+
+	// Question Option id
+	[DebuggerDisplay("{Value}")]
+	public class QuestionOptionId : Fid
+	{
+		public QuestionOptionId(string value) : base(value) { }
+	}
+
+	// note id
+	[DebuggerDisplay("{Value}")]
+	public class NoteId : Fid
+	{
+		public NoteId(string value) : base(value) { }
+	}
+
+	// Album id
+	[DebuggerDisplay("{Value}")]
+	public class AlbumId : Fid
+	{
+		public AlbumId(string value) : base(value) { }
+	}	
+	
 	// third_party_id
 	[DebuggerDisplay("{Value}")]
 	public class ThirdPartyId : Fid
@@ -355,6 +405,36 @@ namespace facebook.Tables
 	public class ObjectId : Fid
 	{
 		public ObjectId(string value) : base(value) { }
+
+		public static implicit operator PostId(ObjectId d)  
+		{
+			return new PostId(d.Value);
+		}
+		public static implicit operator VideoId(ObjectId d) 
+		{
+			return new VideoId(d.Value);
+		}
+		public static implicit operator NoteId(ObjectId d)  
+		{
+			return new NoteId(d.Value);
+		}
+		public static implicit operator LinkId(ObjectId d)
+		{
+			return new LinkId(d.Value);
+		}
+		public static implicit operator PhotoId(ObjectId d)
+		{
+			return new PhotoId(d.Value);
+		}
+		public static implicit operator AlbumId(ObjectId d)
+		{
+			return new AlbumId(d.Value);
+		}
+		public static implicit operator Xid(ObjectId d)   
+		{
+			return new Xid(d.Value);
+		}
+
 	}
 
 	public class FromJsonList<T> : List<T>

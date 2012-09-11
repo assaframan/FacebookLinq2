@@ -21,7 +21,7 @@ namespace facebook.Tables
         /// Indexable
         /// </summary>
         [Column(Name = "id" , IsPrimaryKey = true)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
         /// <summary>
         /// id is an alias of this column

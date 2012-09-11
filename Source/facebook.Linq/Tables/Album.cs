@@ -21,7 +21,7 @@ namespace facebook.Tables
         /// Indexable
         /// </summary>
         [Column(Name = "aid" , IsPrimaryKey = true)]
-        public string Aid { get; set; }
+        public AlbumId Aid { get; set; }
 
         /// <summary>
         /// The object_id of the album on Facebook. This is used to identify the equivalent Album object in the Graph API. You can also use the object_id to let users comment on an album with the Graph API Comments

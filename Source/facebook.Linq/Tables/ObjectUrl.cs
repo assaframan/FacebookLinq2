@@ -30,7 +30,7 @@ namespace facebook.Tables
         /// Indexable
         /// </summary>
         [Column(Name = "id" )]
-        public long? Id { get; set; }
+        public ObjectUrlId Id { get; set; }
 
         /// <summary>
         /// The type of object the URL represents (note: 'Page' incorporates any URL with an 'og:type' specified)

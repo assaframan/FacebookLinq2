@@ -464,6 +464,46 @@ namespace Facebook.Linq
 				string val = FixValueForId(value);
 				return new VideoId(val);
 			}
+			else if (propType == typeof(VideoId))
+			{
+				string val = FixValueForId(value);
+				return new VideoId(val);
+			}
+			else if (propType == typeof(CommentId))
+			{
+				string val = FixValueForId(value);
+				return new CommentId(val);
+			}
+			else if (propType == typeof(ObjectUrlId))
+			{
+				string val = FixValueForId(value);
+				return new ObjectUrlId(val);
+			}
+			else if (propType == typeof(ProfileId))
+			{
+				string val = FixValueForId(value);
+				return new ProfileId(val);
+			}
+			else if (propType == typeof(QuestionId))
+			{
+				string val = FixValueForId(value);
+				return new QuestionId(val);
+			}
+			else if (propType == typeof(QuestionOptionId))
+			{
+				string val = FixValueForId(value);
+				return new QuestionOptionId(val);
+			}
+			else if (propType == typeof(NoteId))
+			{
+				string val = FixValueForId(value);
+				return new NoteId(val);
+			}
+			else if (propType == typeof(AlbumId))
+			{
+				string val = FixValueForId(value);
+				return new AlbumId(val);
+			}
 			else if (propType == typeof(ObjectId))
 			{
 				string val = FixValueForId(value);

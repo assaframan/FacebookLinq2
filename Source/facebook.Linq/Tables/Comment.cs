@@ -71,7 +71,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "id" )]
-        public long? Id { get; set; }
+        public CommentId Id { get; set; }
 
         /// <summary>
         /// The user name that a user entered when they posted a comment. In these cases, the fromid returned will be 0. Note that user names for valid users are not returned here.
