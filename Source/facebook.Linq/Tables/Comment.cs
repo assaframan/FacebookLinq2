@@ -30,7 +30,7 @@ namespace facebook.Tables
         /// Indexable
         /// </summary>
         [Column(Name = "object_id" )]
-        public string ObjectId { get; set; }
+        public ObjectId ObjectId { get; set; }
 
         /// <summary>
         /// The ID of the post in the stream.

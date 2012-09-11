@@ -452,6 +452,11 @@ namespace Facebook.Linq
 				string val = FixValueForId(value);
 				return new VideoId(val);
 			}
+			else if (propType == typeof(ObjectId))
+			{
+				string val = FixValueForId(value);
+				return new ObjectId(val);
+			}
 			else if (propType == typeof(ThirdPartyId))
 			{
 				string val = FixValueForId(value);

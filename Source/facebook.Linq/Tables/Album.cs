@@ -30,7 +30,7 @@ namespace facebook.Tables
         /// Indexable
         /// </summary>
         [Column(Name = "object_id" )]
-        public long? ObjectId { get; set; }
+        public ObjectId ObjectId { get; set; }
 
         /// <summary>
         /// The user ID of the owner of the album

@@ -23,7 +23,7 @@ namespace facebook.Tables
         /// Indexable
         /// </summary>
         [Column(Name = "object_id" , IsPrimaryKey = true)]
-        public string ObjectId { get; set; }
+        public ObjectId ObjectId { get; set; }
 
         /// <summary>
         /// The id of a post on Facebook. This can be a stream post containing a status, video, note, link, photo, or photo album.</p>

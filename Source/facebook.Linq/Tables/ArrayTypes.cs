@@ -349,6 +349,13 @@ namespace facebook.Tables
 		public Xid(string value) : base(value) { }
 	}
 
+	// object id
+	[DebuggerDisplay("{Value}")]
+	public class ObjectId : Fid
+	{
+		public ObjectId(string value) : base(value) { }
+	}
+
 	public class FromJsonList<T> : List<T>
 	{
 		public FromJsonList()

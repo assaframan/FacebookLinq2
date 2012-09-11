@@ -125,7 +125,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "object_id" )]
-        public string ObjectId { get; set; }
+        public ObjectId ObjectId { get; set; }
 
         /// <summary>
         /// The object type (e.g. stream, photo, event etc.) of the notification.

@@ -54,7 +54,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "object_id" )]
-        public long? ObjectId { get; set; }
+        public ObjectId ObjectId { get; set; }
 
         /// <summary>
         /// User ID of the owner

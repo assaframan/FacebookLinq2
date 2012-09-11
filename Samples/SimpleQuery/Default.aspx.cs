@@ -95,8 +95,8 @@ namespace SimpleQuery
 
 			if (useQuerySyntax)
 			{
-				//var albumQuery = from album in db.Album where album.Aid == "20531316728_324257" select album.CanUpload;
-				//var albumResult = albumQuery.ToArray();
+				var albumQuery = from album in db.Album where album.Aid == "20531316728_324257" select album;
+				var albumResult = albumQuery.ToArray();
 
 			//	var CheckinQuery = from Checkin in db.Checkin where Checkin.AuthorUid == db.Me  select Checkin;
 			//	var CheckinResult = CheckinQuery.ToArray();
