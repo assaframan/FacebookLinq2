@@ -18,14 +18,16 @@ namespace facebook.Tables
         /// The external ID of the fb:comments being queried. You can specify more than one XID.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "xid" , IsPrimaryKey = true)]
-        public string Xid { get; set; }
+        public Xid Xid { get; set; }
 
         /// <summary>
         /// The object_id of an object on Facebook. This can be a video, note, link, photo, or photo album. Note that for photos and albums, the object_id must be queried from the photo and album FQL tables. Note that in the photo and album tables, object_id is a different field from pid and aid. You must specify either an xid or an object_id.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "object_id" )]
         public string ObjectId { get; set; }
@@ -34,6 +36,7 @@ namespace facebook.Tables
         /// The ID of the post in the stream.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "post_id" )]
         public PostId PostId { get; set; }
@@ -75,7 +78,7 @@ namespace facebook.Tables
         /// 
         /// original type is: string
         /// </summary>
-        [Column(Name = "username " )]
+        [Column(Name = "username" )]
         public string Username { get; set; }
 
         /// <summary>
@@ -84,7 +87,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "reply_xid" )]
-        public string ReplyXid { get; set; }
+        public Xid ReplyXid { get; set; }
 
         /// <summary>
         /// The object_id of this comment. This can be used for querying likes for this comment or replies to this comment if the comment came from the comments plugin.

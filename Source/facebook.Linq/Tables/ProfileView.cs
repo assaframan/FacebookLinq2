@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The ID of the Page.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "profile_id" , IsPrimaryKey = true)]
         public long? ProfileId { get; set; }

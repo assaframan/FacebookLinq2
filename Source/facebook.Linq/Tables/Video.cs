@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The ID of the video being queried. The vid cannot be longer than 50 characters.<br /><strong>Note:</strong> Because the vid is a string, you should always wrap the vid in quotes when referenced in a query. The vid is unique only for a given user. You can use the vid as an object ID in the Graph API.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "vid" , IsPrimaryKey = true)]
         public VideoId Vid { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The user ID of the owner of the video being queried.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "owner" )]
         public Uid Owner { get; set; }

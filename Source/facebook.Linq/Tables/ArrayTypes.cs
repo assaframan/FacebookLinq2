@@ -8,19 +8,43 @@ using System.Diagnostics;
 
 namespace facebook.Tables
 {
-	public class CoordsType
+	public enum FolderId
+	{
+		 Inbox		= 0,
+		 Outbox		= 1, 
+		 Updates	= 4,
+	}
+	
+	public enum StreamType
+	{
+		GroupCreated				= 11,
+		EventCreated				= 12,
+		StatusUpdate				= 46,
+		PostOnWallFromAnotherUser	= 56,
+		NoteCreated					= 66,
+		LinkPosted					= 80,
+		VideoPosted					= 128,
+		PhotosPosted				= 247,
+		AppStory_1					= 237,
+		CommentCreated				= 257,
+		AppStory_2					= 272,
+		CheckinToPlace				= 285,
+		PostInGroup					= 308,
+	}
+	
+	public class Coords
 	{
 		[Column(Name = "latitude")]
 		public double? Latitude { get; set; }
 		[Column(Name = "longitude")]
 		public double? Longitude { get; set; }
 
-		public CoordsType()
+		public Coords()
 		{
 
 		}
 
-		public CoordsType(JsonObject jsonValue)
+		public Coords(JsonObject jsonValue)
 		{
 			if (jsonValue.ContainsKey("latitude"))
 			{
@@ -45,7 +69,7 @@ namespace facebook.Tables
 	/// <code>latitude</code>
 	/// <code>longitude</code>.
 
-	public class VenueType : CoordsType
+	public class Venue : Coords
 	{
 		[Column(Name = "street")]
 		public string Street { get; set; }
@@ -56,12 +80,12 @@ namespace facebook.Tables
 		[Column(Name = "zip")]
 		public long Zip { get; set; }
 
-		public VenueType()
+		public Venue()
 		{
 
 		}
 
-		public VenueType(JsonObject jsonValue) : base(jsonValue)	
+		public Venue(JsonObject jsonValue) : base(jsonValue)	
 		{
 			if (jsonValue.ContainsKey("street"))
 			{
@@ -82,33 +106,75 @@ namespace facebook.Tables
 		}
 
 	}
-	
-	
-	public class FromJsonList<T> : List<T>
+
+
+	public class LikeInfo
 	{
-		public FromJsonList()
+		[Column(Name = "can_like")]
+		public bool CanLike { get; set; }
+		[Column(Name = "like_count")]
+		public long LikeCount { get; set; }
+		[Column(Name = "user_likes")]
+		public bool UserLikes { get; set; }
+
+		public LikeInfo()
 		{
 
 		}
-		public FromJsonList(JsonArray jsonArray)
+
+		public LikeInfo(JsonObject jsonValue)
 		{
-			foreach(var val in jsonArray)
+			if (jsonValue.ContainsKey("can_like"))
 			{
-				Add(AllocateVal(val));
+				CanLike = bool.Parse((string)jsonValue["can_like"]);
+			}
+			if (jsonValue.ContainsKey("like_count"))
+			{
+				LikeCount = (long)jsonValue["like_count"];
+			}
+			if (jsonValue.ContainsKey("user_likes"))
+			{
+				UserLikes = bool.Parse((string)jsonValue["user_likes"]);
 			}
 		}
-		virtual protected T AllocateVal(object val)
-		{
-			return (T)val;
-		}
+
 	}
 
+
+	public class CommentInfo
+	{
+		[Column(Name = "can_comment")]
+		public bool CanComment { get; set; }
+		[Column(Name = "comment_count")]
+		public long CommentCount { get; set; }
+
+		public CommentInfo()
+		{
+
+		}
+
+		public CommentInfo(JsonObject jsonValue)
+		{
+			if (jsonValue.ContainsKey("can_comment"))
+			{
+				CanComment = bool.Parse((string)jsonValue["can_comment"]);
+			}
+			if (jsonValue.ContainsKey("comment_count"))
+			{
+				CommentCount = (long)jsonValue["comment_count"];
+			}
+		}
+
+	}
+
+
+	
 	[DebuggerDisplay("{Value}")]
 	public class Fid
 	{
-		public long? Value { get; set; }
+		public String Value { get; set; }
 
-		public Fid(long? value)
+		public Fid(String value)
 		{
 			Value = value;
 		}
@@ -120,6 +186,10 @@ namespace facebook.Tables
 			// Return true if the fields match:
 			return this.Value == other.Value;
 		}
+		public override int GetHashCode()
+		{
+			return this.Value.GetHashCode();
+		}
 	}
 
 
@@ -127,28 +197,28 @@ namespace facebook.Tables
 	[DebuggerDisplay("{Value}")]
 	public class Uid : Fid
 	{
-		public Uid(long? value) : base(value) {}
+		public Uid(string value) : base(value) {}
 	}
 
 	// application id
 	[DebuggerDisplay("{Value}")]
 	public class AppId : Fid
 	{
-		public AppId(long? value) : base(value) { }
+		public AppId(string value) : base(value) { }
 	}
 
 	// domain id
 	[DebuggerDisplay("{Value}")]
 	public class DomainId : Fid
 	{
-		public DomainId(long? value) : base(value) { }
+		public DomainId(string value) : base(value) { }
 	}
 
 	// Status id
 	[DebuggerDisplay("{Value}")]
 	public class StatusId : Fid
 	{
-		public StatusId(long? value) : base(value) { }
+		public StatusId(string value) : base(value) { }
 	}
 	
 
@@ -157,113 +227,148 @@ namespace facebook.Tables
 	[DebuggerDisplay("{Value}")]
 	public class RequestId : Fid
 	{
-		public RequestId(long? value) : base(value) { }
+		public RequestId(string value) : base(value) { }
 	}
 
 	// Checkin id
 	[DebuggerDisplay("{Value}")]
 	public class CheckinId : Fid
 	{
-		public CheckinId(long? value) : base(value) { }
+		public CheckinId(string value) : base(value) { }
 	}
 
 	// Page id
 	[DebuggerDisplay("{Value}")]
 	public class PageId : Fid
 	{
-		public PageId(long? value) : base(value) { }
+		public PageId(string value) : base(value) { }
 	}
 
 	// Post id
 	[DebuggerDisplay("{Value}")]
 	public class PostId : Fid
 	{
-		public PostId(long? value) : base(value) { }
+		public PostId(string value) : base(value) { }
 	}	
 
 	// Event id
 	[DebuggerDisplay("{Value}")]
 	public class EventId : Fid
 	{
-		public EventId(long? value) : base(value) { }
+		public EventId(string value) : base(value) { }
 	}
 
 	// friend list id
 	[DebuggerDisplay("{Value}")]
 	public class FriendListId : Fid
 	{
-		public FriendListId(long? value) : base(value) { }
+		public FriendListId(string value) : base(value) { }
 	}
 
 	// link id
 	[DebuggerDisplay("{Value}")]
 	public class LinkId : Fid
 	{
-		public LinkId(long? value) : base(value) { }
+		public LinkId(string value) : base(value) { }
 	}
 
 	// group list id
 	[DebuggerDisplay("{Value}")]
 	public class GroupId : Fid
 	{
-		public GroupId(long? value) : base(value) { }
+		public GroupId(string value) : base(value) { }
 	}
 
 	// thread id
 	[DebuggerDisplay("{Value}")]
 	public class ThreadId : Fid
 	{
-		public ThreadId(long? value) : base(value) { }
+		public ThreadId(string value) : base(value) { }
 	}
 
 	// notification id
 	[DebuggerDisplay("{Value}")]
 	public class NotificationId : Fid
 	{
-		public NotificationId(long? value) : base(value) { }
+		public NotificationId(string value) : base(value) { }
 	}
 
 	// Offer id
 	[DebuggerDisplay("{Value}")]
 	public class OfferId : Fid
 	{
-		public OfferId(long? value) : base(value) { }
+		public OfferId(string value) : base(value) { }
 	}
 
 	// milestone id
 	[DebuggerDisplay("{Value}")]
 	public class MilestoneId : Fid
 	{
-		public MilestoneId(long? value) : base(value) { }
+		public MilestoneId(string value) : base(value) { }
 	}
 
 	// photo id
 	[DebuggerDisplay("{Value}")]
 	public class PhotoId : Fid
 	{
-		public PhotoId(long? value) : base(value) { }
+		public PhotoId(string value) : base(value) { }
 	}
 
 	// review id
 	[DebuggerDisplay("{Value}")]
 	public class ReviewId : Fid
 	{
-		public ReviewId(long? value) : base(value) { }
+		public ReviewId(string value) : base(value) { }
 	}
 
 	// message id
 	[DebuggerDisplay("{Value}")]
 	public class MessageId : Fid
 	{
-		public MessageId(long? value) : base(value) { }
+		public MessageId(string value) : base(value) { }
 	}
 
 	// video id
 	[DebuggerDisplay("{Value}")]
 	public class VideoId : Fid
 	{
-		public VideoId(long? value) : base(value) { }
-	}	
+		public VideoId(string value) : base(value) { }
+	}
+
+	// third_party_id
+	[DebuggerDisplay("{Value}")]
+	public class ThirdPartyId : Fid
+	{
+		public ThirdPartyId(string value) : base(value) { }
+	}
+
+	// xid
+	[DebuggerDisplay("{Value}")]
+	public class Xid : Fid
+	{
+		public Xid(string value) : base(value) { }
+	}
+
+	public class FromJsonList<T> : List<T>
+	{
+		public FromJsonList()
+		{
+
+		}
+		public FromJsonList(JsonArray jsonArray)
+		{
+			foreach (var val in jsonArray)
+			{
+				Add(AllocateVal(val));
+			}
+		}
+		virtual protected T AllocateVal(object val)
+		{
+			return (T)val;
+		}
+	}
+
+
 	public class UidsList : FromJsonList<Uid> 
 	{
 		public UidsList(){}
@@ -271,7 +376,15 @@ namespace facebook.Tables
 
 		override protected Uid AllocateVal(object val)
 		{
-			return new Uid((long?)val);
+			if(val is string)
+			{
+				return new Uid((string)val);
+			}
+			else
+			{
+				return new Uid(val.ToString());
+
+			}
 		}
 	};
 
@@ -289,19 +402,19 @@ namespace facebook.Tables
 
 
 
-	public class DeviceType
+	public class Device
 	{
 		[Column(Name = "os")]
 		public string Os { get; set; }
 		[Column(Name = "hardware")]
 		public string Hardware { get; set; }
 
-		public DeviceType()
+		public Device()
 		{
 
 		}
 
-		public DeviceType(JsonObject jsonValue)
+		public Device(JsonObject jsonValue)
 		{
 			if (jsonValue.ContainsKey("os"))
 			{
@@ -316,14 +429,73 @@ namespace facebook.Tables
 	}
 	
 	
-	public class DeviceList : List<DeviceType>
+	public class Devices : List<Device>
 	{
-		public DeviceList() { }
-		public DeviceList(JsonArray jsonArray)
+		public Devices() { }
+		public Devices(JsonArray jsonArray)
 		{
  			foreach(JsonObject obj in jsonArray)
 			{
-				Add(new DeviceType(obj));
+				Add(new Device(obj));
+			}
+		}
+	};
+
+	public class Tag
+	{
+		[Column(Name = "id")]
+		public Fid Id { get; set; }
+		[Column(Name = "name")]
+		public string Name { get; set; }
+		[Column(Name = "offset")]
+		public long Offset { get; set; }
+		[Column(Name = "length")]
+		public long Length { get; set; }
+		[Column(Name = "type")]
+		public string ObjectType { get; set; }
+
+		public Tag()
+		{
+
+		}
+
+		public Tag(JsonObject jsonValue)
+		{
+			if (jsonValue.ContainsKey("id"))
+			{
+				Id = new Fid(((long)jsonValue["id"]).ToString());
+			}
+			if (jsonValue.ContainsKey("name"))
+			{
+				Name = (string)jsonValue["name"];
+			}
+			if (jsonValue.ContainsKey("offset"))
+			{
+				Offset = (long)jsonValue["offset"];
+			}
+			if (jsonValue.ContainsKey("length"))
+			{
+				Length = (long)jsonValue["length"];
+			}
+			if (jsonValue.ContainsKey("type"))
+			{
+				ObjectType = (string)jsonValue["type"];
+			}
+		}
+
+	}
+
+	public class Tags : List<Tag>
+	{
+		public Tags() { }
+		public Tags(JsonArray jsonArray)
+		{
+			foreach (JsonArray arr in jsonArray)
+			{
+				foreach (JsonObject obj in arr)
+				{
+					Add(new Tag(obj));
+				}
 			}
 		}
 	};
@@ -388,8 +560,6 @@ namespace facebook.Tables
 			{
 				Name = (string)jsonValue["name"];
 			}
-
-
 		}
 
 	}

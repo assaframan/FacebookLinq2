@@ -26,6 +26,7 @@ namespace facebook.Tables
         /// Flag indicating whether the thread is archived.
         /// 
         /// original type is: bool
+        /// Indexable
         /// </summary>
         [Column(Name = "archived" )]
         public bool? Archived { get; set; }
@@ -42,6 +43,7 @@ namespace facebook.Tables
         /// Folder name (‘inbox’, ‘other’ or ‘spam’).
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "folder" )]
         public string Folder { get; set; }
@@ -130,6 +132,7 @@ namespace facebook.Tables
         /// For threads representing a two-person conversation this is the user ID of the other thread participant.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "single_recipient" )]
         public Uid SingleRecipient { get; set; }
@@ -164,7 +167,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "subject" )]
-        public string Subject { get; set; }
+        public Fid Subject { get; set; }
 
         /// <summary>
         /// Thread tags. See below.
@@ -178,6 +181,7 @@ namespace facebook.Tables
         /// Unique identifier of the thread.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "thread_id" )]
         public ThreadId ThreadId { get; set; }
@@ -194,6 +198,7 @@ namespace facebook.Tables
         /// Last update time of the thread (Unix-type timestamp with millisecond resolution).
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "timestamp" )]
         public string Timestamp { get; set; }
@@ -202,6 +207,7 @@ namespace facebook.Tables
         /// Flag indicating whether the thread contains unread messages.
         /// 
         /// original type is: bool
+        /// Indexable
         /// </summary>
         [Column(Name = "unread" )]
         public bool? Unread { get; set; }

@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The id of the photo being queried.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "photo_id" , IsPrimaryKey = true)]
         public PhotoId PhotoId { get; set; }

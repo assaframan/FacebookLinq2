@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The user ID of the current user.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "uid" , IsPrimaryKey = true)]
         public Uid Uid { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The ID of the status message.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "status_id" )]
         public StatusId StatusId { get; set; }

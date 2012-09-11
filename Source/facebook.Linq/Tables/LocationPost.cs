@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// ID of the object associated with this location
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "id" , IsPrimaryKey = true)]
         public long? Id { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// ID of person publishing the post
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "author_uid" )]
         public Uid AuthorUid { get; set; }
@@ -50,6 +52,7 @@ namespace facebook.Tables
         /// array of ints representing the Facebook IDs tagged in the post
         /// 
         /// original type is: array
+        /// Indexable
         /// </summary>
         [Column(Name = "tagged_uids" )]
         public UidsList TaggedUids { get; set; }
@@ -58,6 +61,7 @@ namespace facebook.Tables
         /// ID of the Facebook page associated with the location or event in the post
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "page_id" )]
         public PageId PageId { get; set; }
@@ -76,7 +80,7 @@ namespace facebook.Tables
         /// original type is: object
         /// </summary>
         [Column(Name = "coords" )]
-        public JsonObject Coords { get; set; }
+        public Coords Coords { get; set; }
 
         /// <summary>
         /// The type of post. Either photo, checkin, video, or status

@@ -26,7 +26,7 @@ namespace Facebook
 		{ 
 			get
 			{
-				return new Uid(-1); // some fake value
+				return new Uid("Me"); // some fake value
 			}			
 		}
 	}

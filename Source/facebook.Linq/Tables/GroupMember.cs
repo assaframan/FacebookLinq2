@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The user ID of the member of the group being queried.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "uid" , IsPrimaryKey = true)]
         public Uid Uid { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The ID of the group being queried.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "gid" )]
         public GroupId Gid { get; set; }

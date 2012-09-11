@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The ID of any video, note, link, photo, or photo album published by the current session user
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "id" , IsPrimaryKey = true)]
         public string Id { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// id is an alias of this column
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "object_id" )]
         public string ObjectId { get; set; }
@@ -35,7 +37,7 @@ namespace facebook.Tables
         /// 
         /// original type is: string
         /// </summary>
-        [Column(Name = "value " )]
+        [Column(Name = "value" )]
         public string Value { get; set; }
 
         /// <summary>

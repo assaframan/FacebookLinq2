@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The ID of the post
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "post_id" , IsPrimaryKey = true)]
         public PostId PostId { get; set; }
@@ -27,8 +28,8 @@ namespace facebook.Tables
         /// 
         /// original type is: int
         /// </summary>
-        [Column(Name = "viewer_id " )]
-        public long? ViewerId { get; set; }
+        [Column(Name = "viewer_id" )]
+        public Uid ViewerId { get; set; }
 
         /// <summary>
         /// For posts published by apps, the ID of that app. If the value is empty, it indicates a Facebook feature generated the post
@@ -42,9 +43,10 @@ namespace facebook.Tables
         /// The ID of the user, page, group, or event whose wall the post is on
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
-        [Column(Name = "source_id " )]
-        public Uid SourceId { get; set; }
+        [Column(Name = "source_id" )]
+        public Fid SourceId { get; set; }
 
         /// <summary>
         /// The time the post was last updated, which occurs when a user comments on the post, expressed as a Unix timestamp. Querying by updated_time is currently not supported
@@ -66,6 +68,7 @@ namespace facebook.Tables
         /// The filter key to fetch data with. This key should be retrieved from by querying the stream_filter FQL table or with the special values 'others' or 'owner'.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "filter_key" )]
         public string FilterKey { get; set; }
@@ -75,7 +78,7 @@ namespace facebook.Tables
         /// 
         /// original type is: string
         /// </summary>
-        [Column(Name = "attribution " )]
+        [Column(Name = "attribution" )]
         public string Attribution { get; set; }
 
         /// <summary>
@@ -84,7 +87,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "actor_id" )]
-        public string ActorId { get; set; }
+        public Fid ActorId { get; set; }
 
         /// <summary>
         /// The user, page, group, or event to whom the post was directed
@@ -92,7 +95,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "target_id" )]
-        public string TargetId { get; set; }
+        public Fid TargetId { get; set; }
 
         /// <summary>
         /// The message written in the post
@@ -178,9 +181,10 @@ namespace facebook.Tables
         /// When querying for the feed of a live stream box, this is the xid associated with the Live Stream box (you can provide 'default' if one is not available)
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "xid" )]
-        public long? Xid { get; set; }
+        public Xid Xid { get; set; }
 
         /// <summary>
         /// An array of IDs tagged in the message of the post.
@@ -212,7 +216,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "description_tags" )]
-        public JsonObject DescriptionTags { get; set; }
+        public Tags DescriptionTags { get; set; }
 
         /// <summary>
         /// The type of this story. Possible values are:
@@ -220,7 +224,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "type" )]
-        public long? Type { get; set; }
+        public StreamType Type { get; set; }
 
     }
 }

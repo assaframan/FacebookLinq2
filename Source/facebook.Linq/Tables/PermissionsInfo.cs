@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The name of the extended permission.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "permission_name" , IsPrimaryKey = true)]
         public string PermissionName { get; set; }

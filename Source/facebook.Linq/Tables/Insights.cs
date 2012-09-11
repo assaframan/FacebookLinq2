@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The object for which you are retrieving metrics.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "object_id" , IsPrimaryKey = true)]
         public long? ObjectId { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The usage data to retrieve.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "metric" )]
         public string Metric { get; set; }
@@ -38,9 +40,10 @@ namespace facebook.Tables
         /// <p><strong>Note:</strong> end_time should not be specified when querying lifetime metrics.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "end_time" )]
-        public long? EndTime { get; set; }
+        public DateTime? EndTime { get; set; }
 
         /// <summary>
         /// The length of the period during which the metrics were collected, expressed in seconds as one of 86400 (day), 604800 (week), 2592000 (month) or 0 (lifetime) or using the function period() which takes one of the strings day, week, month or lifetime.</p>
@@ -48,6 +51,7 @@ namespace facebook.Tables
         /// <p><strong>Note:</strong> Each metric may not have all periods available.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "period" )]
         public long? Period { get; set; }

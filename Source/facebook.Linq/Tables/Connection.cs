@@ -18,9 +18,10 @@ namespace facebook.Tables
         /// The ID of the user, the source of the connection.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "source_id" , IsPrimaryKey = true)]
-        public long? SourceId { get; set; }
+        public Fid SourceId { get; set; }
 
         /// <summary>
         /// The target(s) of the connection. The ID of the friend or Facebook Page with whom the specified user is either a friend or fan/supporter.
@@ -28,7 +29,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "target_id" )]
-        public long? TargetId { get; set; }
+        public Fid TargetId { get; set; }
 
         /// <summary>
         /// Indicates whether the target is a user or a page.

@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The URL to the Web page users can share with Facebook Share. This is the indexable field in the table, so you must specify it in your query's WHERE clause. To specify more than one URL, you must use the IN operator in the query's WHERE clause.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "url" , IsPrimaryKey = true)]
         public string Url { get; set; }

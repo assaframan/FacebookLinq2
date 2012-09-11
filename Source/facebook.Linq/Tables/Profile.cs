@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// A 64-bit int representing the user, group, page, event, or application ID.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "id" , IsPrimaryKey = true)]
         public long? Id { get; set; }
@@ -98,6 +99,7 @@ namespace facebook.Tables
         /// The username or alias of the object being queried.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "username" )]
         public string Username { get; set; }

@@ -8,6 +8,7 @@ using facebook;
 using Facebook;
 using System.Net;
 using System.IO;
+using facebook.Tables;
 
 namespace SimpleQuery
 {
@@ -122,6 +123,22 @@ namespace SimpleQuery
 				//var links = (from link in db.Link
 				//			 where link.Owner == db.Me
 				//			 select link).ToList();
+
+				//var links = (from link in db.Link
+				//			 where link.Owner == db.Me
+				//			 select link).ToList();
+
+// 				DateTime yesterday = DateTime.Today.AddDays(-1) ;
+// 				var ThreadQuery = from thread in db.Thread where thread.FolderId == FolderId.Inbox select thread.ThreadId;
+// 				var MessageQuery = from message in db.Message where ThreadQuery.Contains(message.ThreadId) 
+// 								   && message.CreatedTime > yesterday select message;
+// 				var MessageResult = MessageQuery.ToArray();
+
+				//var ThreadQuery = from thread in db.Thread where thread.FolderId == FolderId.Inbox select thread;
+				//var ThreadResult = ThreadQuery.ToArray();
+
+				//var StreamQuery = from stream in db.Stream where stream.SourceId == db.Me select stream;
+				//var StreamResult = StreamQuery.ToArray();
 
 				var friendIds = from friend in db.Friend where friend.Uid1 == db.Me select friend.Uid2;
 				var friendDetails = (from user in db.User where friendIds.Contains(user.Uid) select new { Uid = user.Uid, Name = user.Name, Picture = user.PicSmall });

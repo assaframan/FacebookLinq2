@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The user ID of the current user, or the ID of the Page.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "uid" , IsPrimaryKey = true)]
         public Uid Uid { get; set; }

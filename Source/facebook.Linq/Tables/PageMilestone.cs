@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The ID of the milestone.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "id" , IsPrimaryKey = true)]
         public MilestoneId Id { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The ID of the page that this milestone belongs to.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "owner_id" )]
         public PageId OwnerId { get; set; }

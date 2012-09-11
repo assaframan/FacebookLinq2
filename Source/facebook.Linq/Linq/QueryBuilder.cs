@@ -121,6 +121,8 @@ namespace Facebook.Linq
 				_Build((float)value);
 			else if (value is bool)
 				_Build((bool)value);
+			else if (value is DateTime)
+				_Build((DateTime)value);
 			else if (value is IFqlDataQuery)
 			{
 				var innerQuery = (IFqlDataQuery)value;
@@ -156,6 +158,11 @@ namespace Facebook.Linq
 			}
 			else
 				throw new NotImplementedException(value.GetType() + " is not a supported type");
+		}
+
+		private void _Build(DateTime dateTime)
+		{
+			sb.AppendFormat("'{0}' ", DateTimeConvertor.ToUnixTime(dateTime));
 		}
 
 		private void Build(string literal)
@@ -475,7 +482,16 @@ namespace Facebook.Linq
 					Write("AND");
 					break;
 				case ExpressionType.Equal:
-					Write("=");
+					if (exp.Right != null
+						&& exp.Right.NodeType == ExpressionType.Constant
+						&& (exp.Right as ConstantExpression).Value == null)
+					{
+						Write("IS");
+					}
+					else
+					{
+						Write("=");
+					}
 					break;
 				case ExpressionType.OrElse:
 					Write("OR");
@@ -499,7 +515,16 @@ namespace Facebook.Linq
 					Write("*");
 					break;
 				case ExpressionType.NotEqual:
-					Write("<>");
+					if (exp.Right != null
+						&& exp.Right.NodeType == ExpressionType.Constant
+						&& (exp.Right as ConstantExpression).Value == null)
+					{
+						Write("IS NOT");
+					}
+					else
+					{
+						Write("<>");
+					}
 					break;
 				case ExpressionType.AddChecked:
 				case ExpressionType.And:
@@ -550,15 +575,22 @@ namespace Facebook.Linq
 		private void _Build(ConstantExpression exp)
 		{
 			var value = exp.Value;
-			var type = value.GetType();
-			if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(FqlTable<>))
+			if(value == null)
 			{
-				var elemType = EnumerableHelper.GetEnumerableItemType(type);
-				var tblName = GetTableName(KnownTypeData.GetTypeData(elemType));
-				Write("{0}", tblName);
+				Write("NULL");
 			}
 			else
-				Build(exp.Value);
+			{
+				var type = value.GetType();
+				if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(FqlTable<>))
+				{
+					var elemType = EnumerableHelper.GetEnumerableItemType(type);
+					var tblName = GetTableName(KnownTypeData.GetTypeData(elemType));
+					Write("{0}", tblName);
+				}
+				else
+					Build(exp.Value);
+			}
 		}
 
 		#endregion

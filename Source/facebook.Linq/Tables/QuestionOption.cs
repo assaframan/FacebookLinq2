@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// ID of the specific question option
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "id" , IsPrimaryKey = true)]
         public long? Id { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// ID of the question associated with this option.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "question_id" )]
         public string QuestionId { get; set; }
@@ -68,7 +70,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "created_time" )]
-        public long? CreatedTime { get; set; }
+        public DateTime? CreatedTime { get; set; }
 
     }
 }

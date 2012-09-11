@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The ID of the profile who owns the domain.  This can be a page, application, or user ID.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "owner_id" , IsPrimaryKey = true)]
         public Uid OwnerId { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The ID of the domain being queried.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "domain_id" )]
         public DomainId DomainId { get; set; }

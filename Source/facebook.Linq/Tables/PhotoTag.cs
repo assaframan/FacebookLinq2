@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The object_id of the photo being queried. Preferred over pid.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "object_id" , IsPrimaryKey = true)]
         public long? ObjectId { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The ID of the photo being queried. The pid cannot be longer than 50 characters.<br /><strong>Note:</strong> Because the pid is a string, you should always wrap the pid in quotes when referenced in a query.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "pid" )]
         public PhotoId Pid { get; set; }
@@ -34,9 +36,10 @@ namespace facebook.Tables
         /// For tagged users, use the user ID of the subject for the tag being queried. For photos associated with events or groups, use the eid or gid for subject.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "subject" )]
-        public string Subject { get; set; }
+        public Fid Subject { get; set; }
 
         /// <summary>
         /// The content of the tag being queried. It contains either the name of the user tagged or the text tag.

@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// Folder name (‘inbox’, ‘other’ or ‘spam’).
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "folder" , IsPrimaryKey = true)]
         public string Folder { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// Number of unread threads in the folder.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "unread_count" )]
         public long? UnreadCount { get; set; }
@@ -34,6 +36,7 @@ namespace facebook.Tables
         /// Number of unseen threads in the folder.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "unseen_count" )]
         public long? UnseenCount { get; set; }
@@ -42,6 +45,7 @@ namespace facebook.Tables
         /// The highest action ID of a thread in a particular folder. This can be useful for checking whether there are any new threads in the folder.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "last_action_id" )]
         public long? LastActionId { get; set; }
@@ -50,14 +54,16 @@ namespace facebook.Tables
         /// Last time the folder was accessed (Unix-type timestamp with millisecond resolution).
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "last_seen_time" )]
-        public long? LastSeenTime { get; set; }
+        public DateTime? LastSeenTime { get; set; }
 
         /// <summary>
         /// Total number of non-archived threads.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "total_threads" )]
         public long? TotalThreads { get; set; }

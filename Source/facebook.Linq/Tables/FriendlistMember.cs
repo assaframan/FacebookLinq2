@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The ID of the friendlist.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "flid" , IsPrimaryKey = true)]
         public FriendListId Flid { get; set; }

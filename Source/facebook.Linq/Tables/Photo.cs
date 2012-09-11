@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The object_id of the photo.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "object_id" , IsPrimaryKey = true)]
         public long? ObjectId { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The ID of the photo being queried. The pid cannot be longer than 50 characters.<br /><strong>Note:</strong> Because the pid is a string, you should always wrap the pid in quotes when referenced in a query.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "pid" )]
         public PhotoId Pid { get; set; }
@@ -34,6 +36,7 @@ namespace facebook.Tables
         /// The ID of the album containing the photo being queried. The aid cannot be longer than 50 characters.<br /><strong>Note:</strong> Because the aid is a string, you should always wrap the aid in quotes when referenced in a query.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "aid" )]
         public string Aid { get; set; }
@@ -170,6 +173,7 @@ namespace facebook.Tables
         /// The object_id of the album the photo belongs to.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "album_object_id" )]
         public long? AlbumObjectId { get; set; }
@@ -196,7 +200,7 @@ namespace facebook.Tables
         /// original type is: object
         /// </summary>
         [Column(Name = "like_info" )]
-        public JsonObject LikeInfo { get; set; }
+        public LikeInfo LikeInfo { get; set; }
 
         /// <summary>
         /// The comment information of the photo being queried. This is an object containing can_comment and comment_count
@@ -204,7 +208,7 @@ namespace facebook.Tables
         /// original type is: object
         /// </summary>
         [Column(Name = "comment_info" )]
-        public JsonObject CommentInfo { get; set; }
+        public CommentInfo CommentInfo { get; set; }
 
         /// <summary>
         /// true if the viewer is able to delete the photo

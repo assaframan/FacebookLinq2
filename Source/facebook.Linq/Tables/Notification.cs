@@ -34,6 +34,7 @@ namespace facebook.Tables
         /// The user ID of the recipient of the notification. It is always the current session user.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "recipient_id" )]
         public Uid RecipientId { get; set; }

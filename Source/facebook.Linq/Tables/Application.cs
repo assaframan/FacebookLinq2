@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The ID of the application being queried.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "app_id" , IsPrimaryKey = true)]
         public AppId AppId { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The API key of the application being queried.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "api_key" )]
         public string ApiKey { get; set; }
@@ -34,6 +36,7 @@ namespace facebook.Tables
         /// The string appended to apps.facebook.com/ to navigate to the application's canvas page.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "namespace" )]
         public string Namespace { get; set; }
@@ -83,7 +86,7 @@ namespace facebook.Tables
         /// 
         /// original type is: string
         /// </summary>
-        [Column(Name = "description " )]
+        [Column(Name = "description" )]
         public string Description { get; set; }
 
         /// <summary>
@@ -268,7 +271,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "created_time" )]
-        public long? CreatedTime { get; set; }
+        public DateTime? CreatedTime { get; set; }
 
         /// <summary>
         /// User ID of the creator of this app. App access_token required.

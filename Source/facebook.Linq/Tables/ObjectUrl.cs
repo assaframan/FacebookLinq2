@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The URL for the webpage being queried
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "url" , IsPrimaryKey = true)]
         public string Url { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The ID of the Graph object represented by the URL
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "id" )]
         public long? Id { get; set; }

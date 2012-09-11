@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The User ID of an admin of a Page.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "uid" , IsPrimaryKey = true)]
         public Uid Uid { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The ID of a Page.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "page_id" )]
         public PageId PageId { get; set; }

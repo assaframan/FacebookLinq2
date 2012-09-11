@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The user ID associated with the cookie.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "uid" , IsPrimaryKey = true)]
         public Uid Uid { get; set; }

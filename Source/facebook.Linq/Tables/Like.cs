@@ -20,6 +20,7 @@ namespace facebook.Tables
         /// <p><strong>Note:</strong> For photos and albums, the object_id is a different field from the <a href="/docs/reference/fql/photo">photo</a> table pid field and the <a href="/docs/reference/fql/album">album</a> table aid field, use the specified object_id from those tables instead.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "object_id" , IsPrimaryKey = true)]
         public string ObjectId { get; set; }
@@ -30,6 +31,7 @@ namespace facebook.Tables
         /// <p><strong>Note:</strong> These post IDs must be queried from the <a href="/docs/reference/fql/stream">stream</a> FQL table.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "post_id" )]
         public PostId PostId { get; set; }
@@ -40,6 +42,7 @@ namespace facebook.Tables
         /// <p><strong>Note:</strong> Indexable only for the current session user with read_stream permission.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "user_id" )]
         public long? UserId { get; set; }

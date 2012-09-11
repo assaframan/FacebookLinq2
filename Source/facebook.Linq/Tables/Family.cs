@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The ID of the user being queried.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "profile_id" , IsPrimaryKey = true)]
         public Uid ProfileId { get; set; }

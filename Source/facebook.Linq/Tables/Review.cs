@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The ID of the application to which a review applies.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "reviewee_id" , IsPrimaryKey = true)]
         public AppId RevieweeId { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The ID of the user who created a review.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "reviewer_id" )]
         public Uid ReviewerId { get; set; }
@@ -52,7 +54,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "created_time" )]
-        public long? CreatedTime { get; set; }
+        public DateTime? CreatedTime { get; set; }
 
         /// <summary>
         /// The review rating.

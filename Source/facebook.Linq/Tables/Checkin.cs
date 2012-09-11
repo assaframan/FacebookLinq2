@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The ID of the check-in.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "checkin_id" , IsPrimaryKey = true)]
         public CheckinId CheckinId { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The ID of the user making the checkin.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "author_uid" )]
         public Uid AuthorUid { get; set; }
@@ -34,6 +36,7 @@ namespace facebook.Tables
         /// The ID of the Page representing the place.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "page_id" )]
         public PageId PageId { get; set; }
@@ -60,7 +63,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "coords" )]
-        public CoordsType Coords { get; set; }
+        public Coords Coords { get; set; }
 
         /// <summary>
         /// A Unix timestamp of the checkin.

@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The domain id.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "domain_id" , IsPrimaryKey = true)]
         public DomainId DomainId { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The domain name.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "domain_name" )]
         public string DomainName { get; set; }

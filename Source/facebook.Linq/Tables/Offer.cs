@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The ID of the offer.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "id" , IsPrimaryKey = true)]
         public OfferId Id { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The ID of the Page that this offer belongs to.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "owner_id" )]
         public long? OwnerId { get; set; }
@@ -68,7 +70,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "created_time" )]
-        public long? CreatedTime { get; set; }
+        public DateTime? CreatedTime { get; set; }
 
         /// <summary>
         /// The UNIX timestamp when the offer expires (this is only for display purposes).
@@ -76,7 +78,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "expiration_time" )]
-        public string ExpirationTime { get; set; }
+        public DateTime? ExpirationTime { get; set; }
 
     }
 }

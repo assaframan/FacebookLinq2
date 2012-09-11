@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The user ID.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "developer_id" , IsPrimaryKey = true)]
         public Uid DeveloperId { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The application ID.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "application_id" )]
         public string ApplicationId { get; set; }

@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The ID of the Page to retrieve a list of blocked users for
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "page_id" , IsPrimaryKey = true)]
         public PageId PageId { get; set; }

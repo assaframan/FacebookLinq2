@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The user ID of the first user in the pair being queried.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "uid1" , IsPrimaryKey = true)]
         public Uid Uid1 { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The user ID of the second user in the pair being queried.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "uid2" )]
         public Uid Uid2 { get; set; }

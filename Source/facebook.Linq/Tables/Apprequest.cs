@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The ID of an individual request
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "request_id" , IsPrimaryKey = true)]
         public RequestId RequestId { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The ID of the app used to send the request. <strong>Note</strong> when indexing by app_id, you must also specify the recipient_uid.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "app_id" )]
         public AppId AppId { get; set; }
@@ -34,6 +36,7 @@ namespace facebook.Tables
         /// The ID of the user who received the request. <strong>Note</strong> when indexing by recipient_uid, you must also specify the app_id.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "recipient_uid" )]
         public Uid RecipientUid { get; set; }

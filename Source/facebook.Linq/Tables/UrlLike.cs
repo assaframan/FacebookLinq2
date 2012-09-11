@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The ID of the user who has liked the URL
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "user_id" , IsPrimaryKey = true)]
         public Uid UserId { get; set; }

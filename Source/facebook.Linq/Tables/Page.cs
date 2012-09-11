@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The ID of the Page.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "page_id" , IsPrimaryKey = true)]
         public PageId PageId { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The name of the Page.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "name" )]
         public string Name { get; set; }
@@ -34,6 +36,7 @@ namespace facebook.Tables
         /// The username of the Page, eg. For www.facebook.com/platform the username is 'platform'.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "username" )]
         public string Username { get; set; }

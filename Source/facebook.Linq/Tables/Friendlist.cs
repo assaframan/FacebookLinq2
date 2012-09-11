@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The ID of the user who created the friend list.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "owner" , IsPrimaryKey = true)]
         public Uid Owner { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The ID of the friend list. <strong>Note:</strong> This is only indexable for friend lists belonging to the current session user
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "flid" )]
         public FriendListId Flid { get; set; }

@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The ID of the event being queried.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "eid" , IsPrimaryKey = true)]
         public EventId Eid { get; set; }
@@ -84,7 +85,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "start_time" )]
-        public string StartTime { get; set; }
+        public DateTime? StartTime { get; set; }
 
         /// <summary>
         /// An ISO-8601 string representing the ending date and time of the event being queried.  This can be empty if no end time has been specified.  <strong>Note</strong> - before the 'Events Timezone' migration, this field was a timestamp.  See 'Events Timezone Migration Note' above for more information.
@@ -92,7 +93,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "end_time" )]
-        public string EndTime { get; set; }
+        public DateTime? EndTime { get; set; }
 
         /// <summary>
         /// The user ID of the creator of the event being queried.
@@ -124,7 +125,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "venue" )]
-        public VenueType Venue { get; set; }
+        public Venue Venue { get; set; }
 
         /// <summary>
         /// The privacy setting of the event being queried, indicating whether the event is OPEN, CLOSED, or SECRET.

@@ -184,15 +184,23 @@ namespace CreateTableClassesFromFacebookPages
 
 			string cSharpTypeToUse = theType;
 
-			if (theType != "array" &&
+			name = name.Trim();
+
+			if (    (name == "source_id")
+				 || (name == "actor_id")
+				 || (name == "subject")
+				 || (name == "target_id")
+				)
+			{
+				cSharpTypeToUse = "Fid";
+			}
+			else if (theType != "array" &&
 					(
 						description.Contains("user ID") 
 						|| description.Contains("User ID")
-						|| description.Contains("ID of the user")				
+						|| description.Contains("ID of the user")
+						|| name == "viewer_id"
 					)
-				&& name != "subject"
-				&& name != "actor_id"
-				&& name != "source_id"
 				&& name != "third_party_id"
 				)
 			{
@@ -217,6 +225,39 @@ namespace CreateTableClassesFromFacebookPages
 			else if (IsIdField("Review", false, description, name, ref cSharpTypeToUse)) { }
 			else if (IsIdField("Message", false, description, name, ref cSharpTypeToUse)) { }
 			else if (IsIdField("Video", false, description, name, ref cSharpTypeToUse)) { }
+			else if (IsIdField("ThirdParty", name == "third_party_id", description, name, ref cSharpTypeToUse)) { }
+			else if (name.EndsWith("_xid") || name == "xid")
+			{
+				cSharpTypeToUse = "Xid";
+			}
+			else if (name == "folder_id")
+			{
+				cSharpTypeToUse = "FolderId";
+			}
+			else if (name == "type" && tableName == "stream")
+			{
+				cSharpTypeToUse = "StreamType";
+			}
+			else if (name == "coords")
+			{
+				cSharpTypeToUse = "Coords";
+			}
+			else if (name == "venue")
+			{
+				cSharpTypeToUse = "Venue";
+			}
+			else if (name == "like_info")
+			{
+				cSharpTypeToUse = "LikeInfo";
+			}
+			else if (name == "comment_info")
+			{
+				cSharpTypeToUse = "CommentInfo";
+			}
+			else if (name.EndsWith("_time"))
+			{
+				cSharpTypeToUse = "DateTime?";
+			}
 			else if (theType == "int")
 			{
 				if (name == "post_id")
@@ -239,18 +280,14 @@ namespace CreateTableClassesFromFacebookPages
 			else if (theType == "ISO-8601 datetime")
 			{
 				cSharpTypeToUse = "DateTime?";
-			}				
+			}
 			else if (theType == "object")
 			{
 				cSharpTypeToUse = "JsonObject";
 			}
 			else if (theType == "array")
 			{
-				if (name == "coords")
-				{
-					cSharpTypeToUse = "CoordsType";
-				}
-				else if (name == "tagged_uids")
+				if (name == "tagged_uids")
 				{
 					cSharpTypeToUse = "UidsList";
 				}
@@ -262,13 +299,13 @@ namespace CreateTableClassesFromFacebookPages
 				{
 					cSharpTypeToUse = "UrlList";
 				}					
-				else if (name == "venue")
-				{
-					cSharpTypeToUse = "VenueType";
-				}
 				else if (name == "devices")
 				{
-					cSharpTypeToUse = "DeviceList";
+					cSharpTypeToUse = "Devices";
+				}
+				else if ((name == "description_tags") || (name == "message_tags"))
+				{
+					cSharpTypeToUse = "Tags";
 				}
 				else if (name == "hometown_location")
 				{
@@ -327,7 +364,11 @@ namespace CreateTableClassesFromFacebookPages
 			}
 			file.WriteLine("        /// ");
 			file.WriteLine("        /// original type is: " + theType);
-			file.WriteLine("        /// </summary>");
+			if (parts[1] == "*</td")
+			{
+				file.WriteLine("        /// Indexable");
+			} file.WriteLine("        /// </summary>");
+
 
 			file.WriteLine("        [Column(Name = \"" + name + "\" " + IsPrimaryKeyString  + ")]");
 			file.WriteLine("        public " + cSharpTypeToUse + " " + capitalName + " { get; set; }");

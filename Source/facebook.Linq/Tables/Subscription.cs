@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The user ID of the subscribed-to user in a particular subscription link.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "subscribed_id" , IsPrimaryKey = true)]
         public Uid SubscribedId { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The user ID of the subscribing user in a particular subscription link.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "subscriber_id" )]
         public Uid SubscriberId { get; set; }

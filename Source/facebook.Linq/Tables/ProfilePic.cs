@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// ID of the user
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "id" , IsPrimaryKey = true)]
         public Uid Id { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// requested width of the profile pic, in pixels
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "width" )]
         public long? Width { get; set; }
@@ -34,6 +36,7 @@ namespace facebook.Tables
         /// requested height of the profile pic, in pixels
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "height" )]
         public long? Height { get; set; }

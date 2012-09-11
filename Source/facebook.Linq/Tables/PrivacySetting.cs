@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// Name of the privacy setting to retrived. This column must be specified in the WHERE clauses and currently must be 'default_stream_privacy' as shown in the example above
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "name" , IsPrimaryKey = true)]
         public string Name { get; set; }
@@ -27,7 +28,7 @@ namespace facebook.Tables
         /// 
         /// original type is: string
         /// </summary>
-        [Column(Name = "value " )]
+        [Column(Name = "value" )]
         public string Value { get; set; }
 
         /// <summary>

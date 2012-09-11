@@ -34,6 +34,7 @@ namespace facebook.Tables
         /// Unique identifier of the thread.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "thread_id" )]
         public ThreadId ThreadId { get; set; }

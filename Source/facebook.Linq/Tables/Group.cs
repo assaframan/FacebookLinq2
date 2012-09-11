@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The group ID of the group being queried.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "gid" , IsPrimaryKey = true)]
         public GroupId Gid { get; set; }
@@ -132,7 +133,7 @@ namespace facebook.Tables
         /// original type is: object
         /// </summary>
         [Column(Name = "venue" )]
-        public JsonObject Venue { get; set; }
+        public Venue Venue { get; set; }
 
         /// <summary>
         /// The privacy setting of the group being queried, indicating whether the group is OPEN, CLOSED, or SECRET.

@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The user ID of the user being queried.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "uid" , IsPrimaryKey = true)]
         public Uid Uid { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The full name of the user.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "name" )]
         public string Name { get; set; }
@@ -34,6 +36,7 @@ namespace facebook.Tables
         /// The username of the user.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "username" )]
         public string Username { get; set; }
@@ -42,9 +45,10 @@ namespace facebook.Tables
         /// Third party ID of the user.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "third_party_id" )]
-        public string ThirdPartyId { get; set; }
+        public ThirdPartyId ThirdPartyId { get; set; }
 
         /// <summary>
         /// The first name of the user.

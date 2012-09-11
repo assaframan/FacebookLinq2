@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// A unique ID for the message being queried.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "message_id" , IsPrimaryKey = true)]
         public MessageId MessageId { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The ID of the thread the message belongs to.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "thread_id" )]
         public ThreadId ThreadId { get; set; }
@@ -52,7 +54,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "created_time" )]
-        public long? CreatedTime { get; set; }
+        public DateTime? CreatedTime { get; set; }
 
         /// <summary>
         /// An array of information about the attachment to the message. This is the attachment that Facebook returns.

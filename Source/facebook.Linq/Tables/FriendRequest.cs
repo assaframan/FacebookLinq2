@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The ID of the user receiving the friend request.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "uid_to" , IsPrimaryKey = true)]
         public Uid UidTo { get; set; }

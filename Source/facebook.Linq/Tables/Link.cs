@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The unique identifier for the link.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "link_id" , IsPrimaryKey = true)]
         public LinkId LinkId { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The user ID for the user who posted the link.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "owner" )]
         public Uid Owner { get; set; }

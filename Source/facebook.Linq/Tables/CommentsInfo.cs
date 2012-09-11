@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The application ID. You can specify more than one application ID.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "app_id" , IsPrimaryKey = true)]
         public AppId AppId { get; set; }
@@ -28,7 +29,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "xid" )]
-        public string Xid { get; set; }
+        public Xid Xid { get; set; }
 
         /// <summary>
         /// The number of comments associated with an XID.
@@ -44,7 +45,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "updated_time" )]
-        public long? UpdatedTime { get; set; }
+        public DateTime? UpdatedTime { get; set; }
 
     }
 }

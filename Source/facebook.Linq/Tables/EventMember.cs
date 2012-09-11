@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The user ID of the user for the event being queried.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "uid" , IsPrimaryKey = true)]
         public Uid Uid { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The ID of the event being queried.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "eid" )]
         public EventId Eid { get; set; }
@@ -44,7 +46,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "start_time" )]
-        public string StartTime { get; set; }
+        public DateTime? StartTime { get; set; }
 
     }
 }

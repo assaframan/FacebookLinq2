@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The album ID
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "aid" , IsPrimaryKey = true)]
         public string Aid { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The object_id of the album on Facebook. This is used to identify the equivalent Album object in the Graph API. You can also use the object_id to let users comment on an album with the Graph API Comments
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "object_id" )]
         public long? ObjectId { get; set; }
@@ -34,6 +36,7 @@ namespace facebook.Tables
         /// The user ID of the owner of the album
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "owner" )]
         public Uid Owner { get; set; }
@@ -99,7 +102,7 @@ namespace facebook.Tables
         /// 
         /// original type is: int
         /// </summary>
-        [Column(Name = "size " )]
+        [Column(Name = "size" )]
         public long? Size { get; set; }
 
         /// <summary>
@@ -172,7 +175,7 @@ namespace facebook.Tables
         /// original type is: object
         /// </summary>
         [Column(Name = "like_info" )]
-        public JsonObject LikeInfo { get; set; }
+        public LikeInfo LikeInfo { get; set; }
 
         /// <summary>
         /// The comment information of the album being queried. This is an object containing can_comment and comment_count
@@ -180,7 +183,7 @@ namespace facebook.Tables
         /// original type is: object
         /// </summary>
         [Column(Name = "comment_info" )]
-        public JsonObject CommentInfo { get; set; }
+        public CommentInfo CommentInfo { get; set; }
 
     }
 }

@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The ID of the user whose filters you are querying.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "uid" , IsPrimaryKey = true)]
         public Uid Uid { get; set; }
@@ -26,8 +27,9 @@ namespace facebook.Tables
         /// A key identifying a particular filter for a user's stream. This filter is useful to retrieve relevant items from the stream table.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
-        [Column(Name = "filter_key " )]
+        [Column(Name = "filter_key" )]
         public string FilterKey { get; set; }
 
         /// <summary>
@@ -43,7 +45,7 @@ namespace facebook.Tables
         /// 
         /// original type is: int
         /// </summary>
-        [Column(Name = "rank " )]
+        [Column(Name = "rank" )]
         public long? Rank { get; set; }
 
         /// <summary>

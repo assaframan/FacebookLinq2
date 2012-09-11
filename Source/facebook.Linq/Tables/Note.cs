@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The user ID of the current user.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "uid" , IsPrimaryKey = true)]
         public Uid Uid { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The unique identifier for the note.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "note_id" )]
         public string NoteId { get; set; }
@@ -76,7 +78,7 @@ namespace facebook.Tables
         /// original type is: object
         /// </summary>
         [Column(Name = "like_info" )]
-        public JsonObject LikeInfo { get; set; }
+        public LikeInfo LikeInfo { get; set; }
 
         /// <summary>
         /// The comment information of the note being queried. This is an object containing can_comment and comment_count
@@ -84,7 +86,7 @@ namespace facebook.Tables
         /// original type is: object
         /// </summary>
         [Column(Name = "comment_info" )]
-        public JsonObject CommentInfo { get; set; }
+        public CommentInfo CommentInfo { get; set; }
 
     }
 }

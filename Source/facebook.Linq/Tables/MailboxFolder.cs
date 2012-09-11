@@ -18,14 +18,16 @@ namespace facebook.Tables
         /// The ID of the folder being queried. The ID can be one of: 0 (for Inbox), 1 (for Outbox), or 4 (for Updates).
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "folder_id" , IsPrimaryKey = true)]
-        public string FolderId { get; set; }
+        public FolderId FolderId { get; set; }
 
         /// <summary>
         /// The ID of the user whose Inbox you are querying.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "viewer_id" )]
         public Uid ViewerId { get; set; }

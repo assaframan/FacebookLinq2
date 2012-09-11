@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// ID of the option associated with these votes
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "option_id" , IsPrimaryKey = true)]
         public long? OptionId { get; set; }

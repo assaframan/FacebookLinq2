@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The Facebook Page ID of the place
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "page_id" , IsPrimaryKey = true)]
         public PageId PageId { get; set; }

@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The ID of the thread being queried.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "thread_id" , IsPrimaryKey = true)]
         public ThreadId ThreadId { get; set; }
@@ -26,9 +27,10 @@ namespace facebook.Tables
         /// The ID of the folder that belongs to the thread you are querying. The ID can be one of: 0 (for Inbox), 1 (for Outbox), or 4 (for Updates).
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "folder_id" )]
-        public string FolderId { get; set; }
+        public FolderId FolderId { get; set; }
 
         /// <summary>
         /// The subject of the thread.
@@ -36,7 +38,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "subject" )]
-        public string Subject { get; set; }
+        public Fid Subject { get; set; }
 
         /// <summary>
         /// The user IDs of the recipients of the thread.
@@ -52,7 +54,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "updated_time" )]
-        public long? UpdatedTime { get; set; }
+        public DateTime? UpdatedTime { get; set; }
 
         /// <summary>
         /// The ID of the message from which this thread was branched, or 0 if this thread is not a branch. The parent_message_id is a concatenation of the thread ID and the message ID, joined by an underscore.

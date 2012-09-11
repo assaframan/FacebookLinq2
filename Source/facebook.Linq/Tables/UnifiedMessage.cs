@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// Unique identifier of the message.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "message_id" , IsPrimaryKey = true)]
         public MessageId MessageId { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// Unique identifier of the thread.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "thread_id" )]
         public ThreadId ThreadId { get; set; }
@@ -36,7 +38,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "subject" )]
-        public string Subject { get; set; }
+        public Fid Subject { get; set; }
 
         /// <summary>
         /// Body of the message.
@@ -50,6 +52,7 @@ namespace facebook.Tables
         /// Flag indicating whether the message is unread.
         /// 
         /// original type is: bool
+        /// Indexable
         /// </summary>
         [Column(Name = "unread" )]
         public bool? Unread { get; set; }
@@ -66,6 +69,7 @@ namespace facebook.Tables
         /// Last update time of the thread (Unix-type timestamp with millisecond resolution).
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "timestamp" )]
         public string Timestamp { get; set; }

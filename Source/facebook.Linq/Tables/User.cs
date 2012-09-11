@@ -18,6 +18,7 @@ namespace facebook.Tables
         /// The user ID of the user being queried.
         /// 
         /// original type is: int
+        /// Indexable
         /// </summary>
         [Column(Name = "uid" , IsPrimaryKey = true)]
         public Uid Uid { get; set; }
@@ -26,6 +27,7 @@ namespace facebook.Tables
         /// The username of the user being queried.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "username" )]
         public string Username { get; set; }
@@ -58,6 +60,7 @@ namespace facebook.Tables
         /// The full name of the user being queried.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "name" )]
         public string Name { get; set; }
@@ -148,7 +151,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "devices" )]
-        public DeviceList Devices { get; set; }
+        public Devices Devices { get; set; }
 
         /// <summary>
         /// The gender of the user being queried.
@@ -501,9 +504,10 @@ namespace facebook.Tables
         /// A string containing an anonymous, but unique identifier for the user.  You can use this identifier with third-parties.
         /// 
         /// original type is: string
+        /// Indexable
         /// </summary>
         [Column(Name = "third_party_id" )]
-        public string ThirdPartyId { get; set; }
+        public ThirdPartyId ThirdPartyId { get; set; }
 
         /// <summary>
         /// The user's name formatted to correctly handle Chinese, Japanese, Korean ordering.
