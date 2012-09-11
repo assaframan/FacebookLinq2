@@ -111,7 +111,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "app_data" )]
-        public JsonObject AppData { get; set; }
+        public object AppData { get; set; }
 
         /// <summary>
         /// An array containing the text and URL for each action link
@@ -119,7 +119,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "action_links" )]
-        public JsonObject ActionLinks { get; set; }
+        public object ActionLinks { get; set; }
 
         /// <summary>
         /// An array of information about the attachment to the post. This is the attachment that Facebook returns
@@ -127,7 +127,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "attachment" )]
-        public JsonObject Attachment { get; set; }
+        public object Attachment { get; set; }
 
         /// <summary>
         /// Number of impressions of this post. This data is visible only if you have <a href="/docs/authentication/permissions/">read_insights</a> permission from a page owner
@@ -143,7 +143,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "comments" )]
-        public JsonObject Comments { get; set; }
+        public object Comments { get; set; }
 
         /// <summary>
         /// An array containing the following information about likes for the post:
@@ -151,7 +151,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "likes" )]
-        public JsonObject Likes { get; set; }
+        public object Likes { get; set; }
 
         /// <summary>
         /// Facebook ID of the place associated with the post, if any
@@ -167,7 +167,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "privacy" )]
-        public JsonObject Privacy { get; set; }
+        public object Privacy { get; set; }
 
         /// <summary>
         /// A link to the stream post on Facebook
@@ -192,7 +192,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "tagged_ids" )]
-        public JsonObject TaggedIds { get; set; }
+        public object TaggedIds { get; set; }
 
         /// <summary>
         /// An array indexed by offset of arrays of the tags in the message of the post, containing the id of the tagged object, the name of the tag, the offset of where the tag occurs in the message and the length of the tag.

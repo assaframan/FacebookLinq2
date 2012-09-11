@@ -396,17 +396,38 @@ namespace facebook.Tables
 		}
 	};
 
-	public class UrlList : FromJsonList<string>
+	public class Urls : FromJsonList<string>
 	{
-		public UrlList() { }
-		public UrlList(JsonArray jsonArray) : base(jsonArray) { }
+		public Urls() { }
+		public Urls(JsonArray jsonArray) : base(jsonArray) { }
 	};
 
-	public class GenderList : FromJsonList<string>
+	public class Genders : FromJsonList<string>
 	{
-		public GenderList() { }
-		public GenderList(JsonArray jsonArray) : base(jsonArray) { }
+		public Genders() { }
+		public Genders(JsonArray jsonArray) : base(jsonArray) { }
 	};
+
+	public class Developers : FromJsonList<string>
+	{
+		public Developers() { }
+		public Developers(JsonArray jsonArray) : base(jsonArray) { }
+	};
+
+	public class AppDomains : FromJsonList<string>
+	{
+		public AppDomains() { }
+		public AppDomains(JsonArray jsonArray) : base(jsonArray) { }
+	};
+
+	public class Auths : FromJsonList<string>
+	{
+		public Auths() { }
+		public Auths(JsonArray jsonArray) : base(jsonArray) { }
+	};
+	
+
+	
 
 
 

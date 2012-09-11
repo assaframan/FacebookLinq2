@@ -61,7 +61,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "users" )]
-        public JsonObject Users { get; set; }
+        public object Users { get; set; }
 
     }
 }

@@ -54,7 +54,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "former_participants" )]
-        public JsonObject FormerParticipants { get; set; }
+        public object FormerParticipants { get; set; }
 
         /// <summary>
         /// Flag indicating whether the thread contains a message which includes an attachment.
@@ -110,7 +110,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "object_participants" )]
-        public JsonObject ObjectParticipants { get; set; }
+        public object ObjectParticipants { get; set; }
 
         /// <summary>
         /// List of participants who are currently subscribed to the thread. Each element of the list is an object with properties name (string), email (string) and user_id (string).
@@ -118,7 +118,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "participants" )]
-        public JsonObject Participants { get; set; }
+        public object Participants { get; set; }
 
         /// <summary>
         /// List of participants who have sent a message in the thread. Each element of the list is an object with properties name (string), email (string) and user_id (string).
@@ -126,7 +126,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "senders" )]
-        public JsonObject Senders { get; set; }
+        public object Senders { get; set; }
 
         /// <summary>
         /// For threads representing a two-person conversation this is the user ID of the other thread participant.
@@ -151,7 +151,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "snippet_sender" )]
-        public JsonObject SnippetSender { get; set; }
+        public object SnippetSender { get; set; }
 
         /// <summary>
         /// Flag indicating whether the thread contains a message which includes an attachment.
@@ -175,7 +175,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "tags" )]
-        public JsonObject Tags { get; set; }
+        public object Tags { get; set; }
 
         /// <summary>
         /// Unique identifier of the thread.
@@ -192,7 +192,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "thread_participants" )]
-        public JsonObject ThreadParticipants { get; set; }
+        public object ThreadParticipants { get; set; }
 
         /// <summary>
         /// Last update time of the thread (Unix-type timestamp with millisecond resolution).

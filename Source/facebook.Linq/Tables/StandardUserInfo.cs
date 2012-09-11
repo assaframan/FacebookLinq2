@@ -80,7 +80,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "affiliations" )]
-        public JsonObject Affiliations { get; set; }
+        public object Affiliations { get; set; }
 
         /// <summary>
         /// The URL to a user's profile.

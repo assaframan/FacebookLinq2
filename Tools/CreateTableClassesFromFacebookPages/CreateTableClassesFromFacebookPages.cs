@@ -186,6 +186,15 @@ namespace CreateTableClassesFromFacebookPages
 
 			name = name.Trim();
 
+			if ( 
+				   (name == "update_ip_whitelist")
+				|| (name == "server_ip_whitelist")
+			   )
+				
+			{
+				return;
+			}
+
 			if (    (name == "source_id")
 				 || (name == "actor_id")
 				 || (name == "subject")
@@ -286,40 +295,48 @@ namespace CreateTableClassesFromFacebookPages
 			{
 				cSharpTypeToUse = "JsonObject";
 			}
-			else if (theType == "array")
+			else if (name == "tagged_uids")
 			{
-				if (name == "tagged_uids")
-				{
-					cSharpTypeToUse = "UidsList";
-				}
-				else if (name == "recipients")
-				{
-					cSharpTypeToUse = "UidsList";
-				}					
-				else if (name == "image_urls")
-				{
-					cSharpTypeToUse = "UrlList";
-				}					
-				else if (name == "devices")
-				{
-					cSharpTypeToUse = "Devices";
-				}
-				else if ((name == "description_tags") || (name == "message_tags"))
-				{
-					cSharpTypeToUse = "Tags";
-				}
-				else if (name == "hometown_location")
-				{
-					cSharpTypeToUse = "HometownLocationType";
-				}
-				else if (name == "meeting_sex")
-				{
-					cSharpTypeToUse = "GenderList";
-				}
-				else
-				{
-					cSharpTypeToUse = "JsonObject";
-				}
+				cSharpTypeToUse = "UidsList";
+			}
+			else if (name == "recipients")
+			{
+				cSharpTypeToUse = "UidsList";
+			}					
+			else if (name == "image_urls")
+			{
+				cSharpTypeToUse = "Urls";
+			}					
+			else if (name == "devices")
+			{
+				cSharpTypeToUse = "Devices";
+			}
+			else if ((name == "description_tags") || (name == "message_tags"))
+			{
+				cSharpTypeToUse = "Tags";
+			}
+			else if (name == "hometown_location")
+			{
+				cSharpTypeToUse = "HometownLocationType";
+			}
+			else if (name == "meeting_sex")
+			{
+				cSharpTypeToUse = "Genders";
+			}
+			else if (name == "developers")
+			{
+				cSharpTypeToUse = "Developers";
+			}
+			else if (name == "app_domains")
+			{
+				cSharpTypeToUse = "AppDomains";
+			}
+			else if (   name == "auth_referral_user_perms" 
+					 || name == "auth_referral_friend_perms"
+					 || name == "auth_referral_extended_perms"				
+				    )
+			{
+				cSharpTypeToUse = "Auths";
 			}
 			else if (theType == "comments")
 			{

@@ -143,7 +143,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "text_tags" )]
-        public JsonObject TextTags { get; set; }
+        public object TextTags { get; set; }
 
         /// <summary>
         /// If this comment is private.

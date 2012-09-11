@@ -103,7 +103,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "affiliations" )]
-        public JsonObject Affiliations { get; set; }
+        public object Affiliations { get; set; }
 
         /// <summary>
         /// The time the profile of the user being queried was most recently updated. If the user's profile has not been updated in the past three days, this value will be 0.
@@ -175,7 +175,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "meeting_sex" )]
-        public GenderList MeetingSex { get; set; }
+        public Genders MeetingSex { get; set; }
 
         /// <summary>
         /// A list of the reasons the user being queried wants to meet someone.
@@ -183,7 +183,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "meeting_for" )]
-        public JsonObject MeetingFor { get; set; }
+        public object MeetingFor { get; set; }
 
         /// <summary>
         /// The type of relationship for the user being queried.
@@ -215,7 +215,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "current_location" )]
-        public JsonObject CurrentLocation { get; set; }
+        public object CurrentLocation { get; set; }
 
         /// <summary>
         /// The activities of the user being queried.
@@ -295,7 +295,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "hs_info" )]
-        public JsonObject HsInfo { get; set; }
+        public object HsInfo { get; set; }
 
         /// <summary>
         /// <strong>Deprecated.</strong> This value is now equivalent to education entry of type ''College''.
@@ -303,7 +303,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "education_history" )]
-        public JsonObject EducationHistory { get; set; }
+        public object EducationHistory { get; set; }
 
         /// <summary>
         /// <strong>Deprecated.</strong> This value is now equivalent to work.
@@ -311,7 +311,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "work_history" )]
-        public JsonObject WorkHistory { get; set; }
+        public object WorkHistory { get; set; }
 
         /// <summary>
         /// The number of notes created by the user being queried.
@@ -383,7 +383,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "email_hashes" )]
-        public JsonObject EmailHashes { get; set; }
+        public object EmailHashes { get; set; }
 
         /// <summary>
         /// The URL to the small-sized profile picture for the user being queried. The image can have a maximum width of 50px and a maximum height of 150px, and is overlaid with the Facebook favicon. This URL may be blank.
@@ -423,7 +423,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "pic_cover" )]
-        public JsonObject PicCover { get; set; }
+        public object PicCover { get; set; }
 
         /// <summary>
         /// A comma-delimited list of <a href="/docs/reference/rest/admin.setRestrictionInfo">Demographic Restrictions</a> types a user is allowed to access. Currently, alcohol is the only type that can get returned.
@@ -466,7 +466,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "family" )]
-        public JsonObject Family { get; set; }
+        public object Family { get; set; }
 
         /// <summary>
         /// The website of the user being queried.
@@ -523,7 +523,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "video_upload_limits" )]
-        public JsonObject VideoUploadLimits { get; set; }
+        public object VideoUploadLimits { get; set; }
 
         /// <summary>
         /// The user's favorite games; this field is deprecated and will be removed in the near future. The string is a comma-separated list.
@@ -539,7 +539,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "work" )]
-        public JsonObject Work { get; set; }
+        public object Work { get; set; }
 
         /// <summary>
         /// A list of the user's education history. Contains year and type fields, and school object (name, id, type, and optional year, degree, concentration array, classes array, and with array ).
@@ -547,7 +547,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "education" )]
-        public JsonObject Education { get; set; }
+        public object Education { get; set; }
 
         /// <summary>
         /// The sports that the user plays. The array objects contain id and name fields.
@@ -555,7 +555,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "sports" )]
-        public JsonObject Sports { get; set; }
+        public object Sports { get; set; }
 
         /// <summary>
         /// The user's favorite athletes; this field is deprecated and will be removed in the near future. The array objects contain id and name fields.
@@ -563,7 +563,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "favorite_athletes" )]
-        public JsonObject FavoriteAthletes { get; set; }
+        public object FavoriteAthletes { get; set; }
 
         /// <summary>
         /// The user's favorite teams; this field is deprecated and will be removed in the near future. The array objects contain id and name fields.
@@ -571,7 +571,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "favorite_teams" )]
-        public JsonObject FavoriteTeams { get; set; }
+        public object FavoriteTeams { get; set; }
 
         /// <summary>
         /// The people who inspire the user. The array objects contain id and name fields.
@@ -579,7 +579,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "inspirational_people" )]
-        public JsonObject InspirationalPeople { get; set; }
+        public object InspirationalPeople { get; set; }
 
         /// <summary>
         /// The user's languages. The array objects contain id and name fields.
@@ -587,7 +587,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "languages" )]
-        public JsonObject Languages { get; set; }
+        public object Languages { get; set; }
 
         /// <summary>
         /// Count of all the pages this user has liked.

@@ -86,7 +86,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "image_urls" )]
-        public UrlList ImageUrls { get; set; }
+        public Urls ImageUrls { get; set; }
 
     }
 }

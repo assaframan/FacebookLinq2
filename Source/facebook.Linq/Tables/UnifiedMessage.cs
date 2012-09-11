@@ -80,7 +80,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "tags" )]
-        public JsonObject Tags { get; set; }
+        public object Tags { get; set; }
 
         /// <summary>
         /// Sender of the message. This field is an object with properties name (string), email (string) and user_id (string).
@@ -120,7 +120,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "attachments" )]
-        public JsonObject Attachments { get; set; }
+        public object Attachments { get; set; }
 
         /// <summary>
         /// Map from attachment identifiers to objects containing information about the attachment (file size, type, etc.). Each object has the following properties: id (string), type (int), mime_type (string), filename (string) and file_size (int).
@@ -128,7 +128,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "attachment_map" )]
-        public JsonObject AttachmentMap { get; set; }
+        public object AttachmentMap { get; set; }
 
         /// <summary>
         /// List of share identifiers.  Shared items include links, videos, and photos as were supported in the old messaging system.
@@ -136,7 +136,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "shares" )]
-        public JsonObject Shares { get; set; }
+        public object Shares { get; set; }
 
         /// <summary>
         /// Map from share identifiers to objects containing information about the shared objects. Each object has the following properties: share_id (string), type (int), href (string), title (string), summary (string) and image (string).
@@ -144,7 +144,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "share_map" )]
-        public JsonObject ShareMap { get; set; }
+        public object ShareMap { get; set; }
 
     }
 }

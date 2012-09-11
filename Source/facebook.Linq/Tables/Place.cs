@@ -45,7 +45,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "geometry" )]
-        public JsonObject Geometry { get; set; }
+        public object Geometry { get; set; }
 
         /// <summary>
         /// The latitude of the location.

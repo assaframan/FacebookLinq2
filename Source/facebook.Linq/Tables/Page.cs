@@ -63,7 +63,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "categories" )]
-        public JsonObject Categories { get; set; }
+        public object Categories { get; set; }
 
         /// <summary>
         /// Indicates whether the Page is a community Page.
@@ -239,7 +239,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "location" )]
-        public JsonObject Location { get; set; }
+        public object Location { get; set; }
 
         /// <summary>
         /// Applicable to <strong>Businesses</strong> and <strong>Places</strong>. Can be one of street, lot or valet
@@ -247,7 +247,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "parking" )]
-        public JsonObject Parking { get; set; }
+        public object Parking { get; set; }
 
         /// <summary>
         /// Applicable to <strong>Businesses</strong> and <strong>Places</strong>.
@@ -255,7 +255,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "hours" )]
-        public JsonObject Hours { get; set; }
+        public object Hours { get; set; }
 
         /// <summary>
         /// Applicable to <strong>Pharmaceutical</strong> companies.
@@ -287,7 +287,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "payment_options" )]
-        public JsonObject PaymentOptions { get; set; }
+        public object PaymentOptions { get; set; }
 
         /// <summary>
         /// Applicable to <strong>Restaurants</strong> or <strong>Nightlife</strong>
@@ -319,7 +319,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "restaurant_services" )]
-        public JsonObject RestaurantServices { get; set; }
+        public object RestaurantServices { get; set; }
 
         /// <summary>
         /// Applicable to <strong>Restaurants</strong>.
@@ -327,7 +327,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "restaurant_specialties" )]
-        public JsonObject RestaurantSpecialties { get; set; }
+        public object RestaurantSpecialties { get; set; }
 
         /// <summary>
         /// Phone number provided by a Page.

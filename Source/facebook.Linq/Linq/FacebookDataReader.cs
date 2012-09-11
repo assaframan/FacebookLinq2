@@ -320,9 +320,21 @@ namespace Facebook.Linq
 					return res;
 				}
 			}
-			else if (propType == typeof(GenderList))
+			else if (propType == typeof(Genders))
 			{
-				return new GenderList((JsonArray)value);
+				return new Genders((JsonArray)value);
+			}
+			else if (propType == typeof(Developers))
+			{
+				return new Developers((JsonArray)value);
+			}
+			else if (propType == typeof(AppDomains))
+			{
+				return new AppDomains((JsonArray)value);
+			}
+			else if (propType == typeof(Auths))
+			{
+				return new Auths((JsonArray)value);
 			}
 			else if (propType == typeof(HometownLocationType))
 			{
@@ -346,9 +358,9 @@ namespace Facebook.Linq
 				{
 					return new UidsList((JsonArray)value);
 				}
-				if (propType == typeof(UrlList))
+				if (propType == typeof(Urls))
 				{
-					return new UrlList((JsonArray)value);
+					return new Urls((JsonArray)value);
 				}				
 				return value;
 			}

@@ -62,7 +62,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "attachment" )]
-        public JsonObject Attachment { get; set; }
+        public object Attachment { get; set; }
 
         /// <summary>
         /// The ID of the user whose Inbox you are querying. Defaults to session user.

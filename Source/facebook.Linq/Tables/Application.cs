@@ -79,7 +79,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "developers" )]
-        public string Developers { get; set; }
+        public Developers Developers { get; set; }
 
         /// <summary>
         /// The description of the application, as provided by the developer.
@@ -151,7 +151,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "app_domains" )]
-        public JsonObject AppDomains { get; set; }
+        public AppDomains AppDomains { get; set; }
 
         /// <summary>
         /// The URL of a special landing page that helps users of an app begin publishing Open Graph activity. App access_token required.
@@ -191,7 +191,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "auth_referral_user_perms" )]
-        public JsonObject AuthReferralUserPerms { get; set; }
+        public Auths AuthReferralUserPerms { get; set; }
 
         /// <summary>
         /// Basic friends permissions that a user must grant when Authenticated Referrals are enabled. App access_token required.
@@ -199,7 +199,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "auth_referral_friend_perms" )]
-        public JsonObject AuthReferralFriendPerms { get; set; }
+        public Auths AuthReferralFriendPerms { get; set; }
 
         /// <summary>
         /// The default privacy setting selected for Open Graph activities in the Auth Dialog. App access_token required; only returned if specifically requested via the fields URL parameter. string which is one of, SELF, EVERYONE, ALL_FRIENDS or NONE.
@@ -223,7 +223,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "auth_referral_extended_perms" )]
-        public JsonObject AuthReferralExtendedPerms { get; set; }
+        public Auths AuthReferralExtendedPerms { get; set; }
 
         /// <summary>
         /// The format that an app receives the Auth token from the Auth Dialog in. App access_token required; only returned if specifically requested via the fields URL parameter. string which is one of, code or token.
@@ -354,14 +354,6 @@ namespace facebook.Tables
         public string SecurePageTabUrl { get; set; }
 
         /// <summary>
-        /// App requests must originate from this comma-separated list of IP addresses. App access_token required.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "server_ip_whitelist" )]
-        public string ServerIpWhitelist { get; set; }
-
-        /// <summary>
         /// Indicates whether app usage stories show up in the Ticker or News Feed. App access_token required.
         /// 
         /// original type is: bool
@@ -376,14 +368,6 @@ namespace facebook.Tables
         /// </summary>
         [Column(Name = "terms_of_service_url" )]
         public string TermsOfServiceUrl { get; set; }
-
-        /// <summary>
-        /// App settings changes can only be made from an IP address in this comma-separated list. App access_token required.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "update_ip_whitelist" )]
-        public string UpdateIpWhitelist { get; set; }
 
         /// <summary>
         /// Main contact email for this app. App access_token required.

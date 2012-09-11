@@ -143,7 +143,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "caption_tags" )]
-        public JsonObject CaptionTags { get; set; }
+        public object CaptionTags { get; set; }
 
         /// <summary>
         /// The date when the photo being queried was added.
@@ -192,7 +192,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "images" )]
-        public JsonObject Images { get; set; }
+        public object Images { get; set; }
 
         /// <summary>
         /// The like information of the photo being queried. This is an object containing can_like, like_count, and user_likes

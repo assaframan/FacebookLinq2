@@ -95,8 +95,22 @@ namespace SimpleQuery
 
 			if (useQuerySyntax)
 			{
+				/*
 				var albumQuery = from album in db.Album where album.Aid == "20531316728_324257" select album;
 				var albumResult = albumQuery.ToArray();
+
+				var applicationQuery = from application in db.Application where
+										   application.AppId == new AppId("231464590266507") // servicestack-dev
+										   || application.Namespace == "skype" // Skype
+										   || application.Namespace == "inthemafia" // Mafia Wars
+										   || application.Namespace == "m_calendar" // MyCalendar
+									   select application;  
+				
+				var applicationResult = applicationQuery.ToArray();
+
+				int a = 1;
+				*/
+
 
 			//	var CheckinQuery = from Checkin in db.Checkin where Checkin.AuthorUid == db.Me  select Checkin;
 			//	var CheckinResult = CheckinQuery.ToArray();
