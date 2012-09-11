@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "eid" , IsPrimaryKey = true)]
-        public long? Eid { get; set; }
+        public EventId Eid { get; set; }
 
         /// <summary>
         /// The name of the event being queried.
@@ -100,7 +100,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "creator" )]
-        public long? Creator { get; set; }
+        public Uid Creator { get; set; }
 
         /// <summary>
         /// The time that the event being queried was last updated.
@@ -119,7 +119,7 @@ namespace facebook.Tables
         public string Location { get; set; }
 
         /// <summary>
-        /// The venue where the event being queried is being held. Contains one or more of the following fields: <code>street</code>, <code>city</code>, <code>state</code>, <code>zip</code>, <code>country</code>, <code>latitude</code>, and <code>longitude</code>.
+        /// The venue where the event being queried is being held. Contains one or more of the following fields: street, city, state, zip, country, latitude, and longitude.
         /// 
         /// original type is: array
         /// </summary>
@@ -127,7 +127,7 @@ namespace facebook.Tables
         public VenueType Venue { get; set; }
 
         /// <summary>
-        /// The privacy setting of the event being queried, indicating whether the event is <code>OPEN</code>, <code>CLOSED</code>, or <code>SECRET</code>.
+        /// The privacy setting of the event being queried, indicating whether the event is OPEN, CLOSED, or SECRET.
         /// 
         /// original type is: string
         /// </summary>

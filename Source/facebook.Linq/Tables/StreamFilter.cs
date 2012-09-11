@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "uid" , IsPrimaryKey = true)]
-        public string Uid { get; set; }
+        public Uid Uid { get; set; }
 
         /// <summary>
         /// A key identifying a particular filter for a user's stream. This filter is useful to retrieve relevant items from the stream table.
@@ -63,7 +63,7 @@ namespace facebook.Tables
         public bool? IsVisible { get; set; }
 
         /// <summary>
-        /// The type of filter. One of <code>application</code>, <code>newsfeed</code>, <code>friendlist</code>, <code>network</code>, or <code>public_profiles</code>.
+        /// The type of filter. One of application, newsfeed, friendlist, network, or public_profiles.
         /// 
         /// original type is: string
         /// </summary>

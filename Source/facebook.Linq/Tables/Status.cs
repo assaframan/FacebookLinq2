@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "status_id" )]
-        public string StatusId { get; set; }
+        public StatusId StatusId { get; set; }
 
         /// <summary>
         /// UNIX timestamp of the date and time the status message was posted.

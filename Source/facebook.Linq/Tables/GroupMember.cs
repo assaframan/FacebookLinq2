@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "uid" , IsPrimaryKey = true)]
-        public string Uid { get; set; }
+        public Uid Uid { get; set; }
 
         /// <summary>
         /// The ID of the group being queried.
@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "gid" )]
-        public string Gid { get; set; }
+        public GroupId Gid { get; set; }
 
         /// <summary>
         /// Returns true if the user is an administrator of the group.
@@ -39,7 +39,7 @@ namespace facebook.Tables
         public bool? Administrator { get; set; }
 
         /// <summary>
-        /// Any positions taken by the member of the group being queried. Possible values are <code>OWNER</code>, <code>ADMIN</code> or <code>OFFICER</code>
+        /// Any positions taken by the member of the group being queried. Possible values are OWNER, ADMIN or OFFICER
         /// 
         /// original type is: string
         /// </summary>
@@ -47,7 +47,7 @@ namespace facebook.Tables
         public string Positions { get; set; }
 
         /// <summary>
-        /// A count of items in this group which have not been read by the user. This field requires the <code>user_groups</code> permission, and is only present when you query by <code>uid</code>
+        /// A count of items in this group which have not been read by the user. This field requires the user_groups permission, and is only present when you query by uid
         /// 
         /// original type is: int
         /// </summary>
@@ -55,7 +55,7 @@ namespace facebook.Tables
         public long? Unread { get; set; }
 
         /// <summary>
-        /// The order in which the group appears in the user's list of groups. This field requires the <code>user_groups</code> permission, and is only present when you query by <code>uid</code>
+        /// The order in which the group appears in the user's list of groups. This field requires the user_groups permission, and is only present when you query by uid
         /// 
         /// original type is: int
         /// </summary>

@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "message_id" , IsPrimaryKey = true)]
-        public string MessageId { get; set; }
+        public MessageId MessageId { get; set; }
 
         /// <summary>
         /// The ID of the thread the message belongs to.
@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "thread_id" )]
-        public string ThreadId { get; set; }
+        public ThreadId ThreadId { get; set; }
 
         /// <summary>
         /// The ID of the user who wrote this message.
@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "author_id" )]
-        public long? AuthorId { get; set; }
+        public Uid AuthorId { get; set; }
 
         /// <summary>
         /// The content of the message.
@@ -68,7 +68,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "viewer_id" )]
-        public string ViewerId { get; set; }
+        public Uid ViewerId { get; set; }
 
     }
 }

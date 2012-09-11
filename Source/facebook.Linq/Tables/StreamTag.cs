@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "post_id" , IsPrimaryKey = true)]
-        public string PostId { get; set; }
+        public PostId PostId { get; set; }
 
         /// <summary>
         /// The user ID of the user or Page who tagged one or more entities in a post. This field, when used as an index, is used to retrieve all the posts and the entities the user has tagged.

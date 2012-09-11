@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "uid" , IsPrimaryKey = true)]
-        public string Uid { get; set; }
+        public Uid Uid { get; set; }
 
         /// <summary>
         /// Indicates whether the user granted your app a specific permission. Substitute the name of a specific <a href="/docs/authentication/permissions">permission</a> for PERMISSION_NAME.

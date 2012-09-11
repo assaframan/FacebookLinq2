@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "post_id" , IsPrimaryKey = true)]
-        public string PostId { get; set; }
+        public PostId PostId { get; set; }
 
         /// <summary>
         /// The ID of the current session user
@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "app_id" )]
-        public long? AppId { get; set; }
+        public AppId AppId { get; set; }
 
         /// <summary>
         /// The ID of the user, page, group, or event whose wall the post is on
@@ -44,10 +44,10 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "source_id " )]
-        public long? SourceId { get; set; }
+        public Uid SourceId { get; set; }
 
         /// <summary>
-        /// The time the post was last updated, which occurs when a user comments on the post, expressed as a Unix timestamp. Querying by <code>updated_time</code> is currently not supported
+        /// The time the post was last updated, which occurs when a user comments on the post, expressed as a Unix timestamp. Querying by updated_time is currently not supported
         /// 
         /// original type is: time
         /// </summary>
@@ -127,7 +127,7 @@ namespace facebook.Tables
         public JsonObject Attachment { get; set; }
 
         /// <summary>
-        /// Number of impressions of this post. This data is visible only if you have <a href="/docs/authentication/permissions/"><code>read_insights</code></a> permission from a page owner
+        /// Number of impressions of this post. This data is visible only if you have <a href="/docs/authentication/permissions/">read_insights</a> permission from a page owner
         /// 
         /// original type is: int
         /// </summary>
@@ -183,7 +183,7 @@ namespace facebook.Tables
         public long? Xid { get; set; }
 
         /// <summary>
-        /// An array of IDs tagged in the <code>message</code> of the post.
+        /// An array of IDs tagged in the message of the post.
         /// 
         /// original type is: array
         /// </summary>
@@ -191,7 +191,7 @@ namespace facebook.Tables
         public JsonObject TaggedIds { get; set; }
 
         /// <summary>
-        /// An array indexed by offset of arrays of the tags in the <code>message</code> of the post, containing the <code>id</code> of the tagged object, the <code>name</code> of the tag, the <code>offset</code> of where the tag occurs in the message and the <code>length</code> of the tag.
+        /// An array indexed by offset of arrays of the tags in the message of the post, containing the id of the tagged object, the name of the tag, the offset of where the tag occurs in the message and the length of the tag.
         /// 
         /// original type is: array
         /// </summary>
@@ -207,7 +207,7 @@ namespace facebook.Tables
         public string Description { get; set; }
 
         /// <summary>
-        /// An array indexed by offset of arrays of the tags in the <code>description</code> of the post, containing the <code>id</code> of the tagged object, the <code>name</code> of the tag, the <code>offset</code> of where the tag occurs in the message and the <code>length</code> of the tag; You must have the "Include recent activity stories" migration enabled in your app to retrieve this field.
+        /// An array indexed by offset of arrays of the tags in the description of the post, containing the id of the tagged object, the name of the tag, the offset of where the tag occurs in the message and the length of the tag; You must have the "Include recent activity stories" migration enabled in your app to retrieve this field.
         /// 
         /// original type is: array
         /// </summary>

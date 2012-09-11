@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "gid" , IsPrimaryKey = true)]
-        public long? Gid { get; set; }
+        public GroupId Gid { get; set; }
 
         /// <summary>
         /// The name of the group being queried.
@@ -100,7 +100,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "creator" )]
-        public long? Creator { get; set; }
+        public Uid Creator { get; set; }
 
         /// <summary>
         /// The last time the group being queried was updated.
@@ -127,7 +127,7 @@ namespace facebook.Tables
         public string Website { get; set; }
 
         /// <summary>
-        /// The venue of the group being queried.  This is an object containing <code>street</code>, <code>city</code>, <code>state</code>, <code>country</code>, <code>zip</code>, <code>latitude</code>, and <code>longitude</code> fields.
+        /// The venue of the group being queried.  This is an object containing street, city, state, country, zip, latitude, and longitude fields.
         /// 
         /// original type is: object
         /// </summary>
@@ -135,7 +135,7 @@ namespace facebook.Tables
         public JsonObject Venue { get; set; }
 
         /// <summary>
-        /// The privacy setting of the group being queried, indicating whether the group is <code>OPEN</code>, <code>CLOSED</code>, or <code>SECRET</code>.
+        /// The privacy setting of the group being queried, indicating whether the group is OPEN, CLOSED, or SECRET.
         /// 
         /// original type is: string
         /// </summary>
@@ -151,7 +151,7 @@ namespace facebook.Tables
         public string Icon { get; set; }
 
         /// <summary>
-        /// The URL of the bookmark icon for the group being queried. The maximum dimensions will be 34px height and 34px width. If a 34x34 size icon is unavailable this field will have the same value as <code>icon</code>)
+        /// The URL of the bookmark icon for the group being queried. The maximum dimensions will be 34px height and 34px width. If a 34x34 size icon is unavailable this field will have the same value as icon)
         /// 
         /// original type is: string
         /// </summary>
@@ -159,7 +159,7 @@ namespace facebook.Tables
         public string Icon34 { get; set; }
 
         /// <summary>
-        /// The URL of the bookmark icon for the group being queried. The maximum dimensions will be 68px height and 68px width. If a 68x68 size icon is unavailable this field will have the same value as <code>icon</code>)
+        /// The URL of the bookmark icon for the group being queried. The maximum dimensions will be 68px height and 68px width. If a 68x68 size icon is unavailable this field will have the same value as icon)
         /// 
         /// original type is: string
         /// </summary>

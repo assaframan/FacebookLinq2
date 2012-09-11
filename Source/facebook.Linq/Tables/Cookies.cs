@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "uid" , IsPrimaryKey = true)]
-        public string Uid { get; set; }
+        public Uid Uid { get; set; }
 
         /// <summary>
         /// The name of the cookie.

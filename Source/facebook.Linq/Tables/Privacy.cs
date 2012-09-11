@@ -23,7 +23,7 @@ namespace facebook.Tables
         public string Id { get; set; }
 
         /// <summary>
-        /// <code>id</code> is an alias of this column
+        /// id is an alias of this column
         /// 
         /// original type is: string
         /// </summary>
@@ -68,7 +68,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "owner_id" )]
-        public long? OwnerId { get; set; }
+        public Uid OwnerId { get; set; }
 
         /// <summary>
         /// The ID of the network that can see the object, or 1 for all of the user's networks.

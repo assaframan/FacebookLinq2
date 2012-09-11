@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "id" , IsPrimaryKey = true)]
-        public long? Id { get; set; }
+        public OfferId Id { get; set; }
 
         /// <summary>
         /// The ID of the Page that this offer belongs to.

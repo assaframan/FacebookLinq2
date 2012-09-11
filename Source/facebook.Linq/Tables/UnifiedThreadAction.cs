@@ -23,7 +23,7 @@ namespace facebook.Tables
         public string ActionId { get; set; }
 
         /// <summary>
-        /// The user who performed the action. This field is an object with properties <code>name</code> (string), <code>email</code> (string) and <code>user_id</code> (string).
+        /// The user who performed the action. This field is an object with properties name (string), email (string) and user_id (string).
         /// 
         /// original type is: object
         /// </summary>
@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "thread_id" )]
-        public string ThreadId { get; set; }
+        public ThreadId ThreadId { get; set; }
 
         /// <summary>
         /// Time at which the action was performed (Unix-type timestamp with millisecond resolution).
@@ -55,7 +55,7 @@ namespace facebook.Tables
         public long? Type { get; set; }
 
         /// <summary>
-        /// List of users on whom the action was performed. Each element of the list is an object with properties <code>name</code> (string), <code>email</code> (string) and <code>user_id</code> (string).
+        /// List of users on whom the action was performed. Each element of the list is an object with properties name (string), email (string) and user_id (string).
         /// 
         /// original type is: array
         /// </summary>

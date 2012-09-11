@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "link_id" , IsPrimaryKey = true)]
-        public string LinkId { get; set; }
+        public LinkId LinkId { get; set; }
 
         /// <summary>
         /// The user ID for the user who posted the link.
@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "owner" )]
-        public long? Owner { get; set; }
+        public Uid Owner { get; set; }
 
         /// <summary>
         /// The comment the owner made about the link.

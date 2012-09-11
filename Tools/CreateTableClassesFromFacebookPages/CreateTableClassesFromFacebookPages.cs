@@ -171,7 +171,10 @@ namespace CreateTableClassesFromFacebookPages
 
 			int posOfEndP = description.LastIndexOf("</p>");
 
-			description = description.Substring(0, posOfEndP);			
+			description = description.Substring(0, posOfEndP);
+
+			description = description.Replace("<code>", "");
+			description = description.Replace("</code>", "");
 
 			string IsPrimaryKeyString = "";
 			if (isFirst)
@@ -180,7 +183,41 @@ namespace CreateTableClassesFromFacebookPages
 			}
 
 			string cSharpTypeToUse = theType;
-			if (theType == "int")
+
+			if (theType != "array" &&
+					(
+						description.Contains("user ID") 
+						|| description.Contains("User ID")
+						|| description.Contains("ID of the user")				
+					)
+				&& name != "subject"
+				&& name != "actor_id"
+				&& name != "source_id"
+				&& name != "third_party_id"
+				)
+			{
+				cSharpTypeToUse = "Uid";
+			}
+			else if (IsIdField("App", false, description, name, ref cSharpTypeToUse)) {}
+			else if (IsIdField("Request", false, description, name, ref cSharpTypeToUse)) { }
+			else if (IsIdField("Status", false, description, name, ref cSharpTypeToUse)) { }
+			else if (IsIdField("Domain", false, description, name, ref cSharpTypeToUse)) { }
+			else if (IsIdField("Checkin", false, description, name, ref cSharpTypeToUse)) { }
+			else if (IsIdField("Page", false, description, name, ref cSharpTypeToUse)) { }
+			else if (IsIdField("Post", false, description, name, ref cSharpTypeToUse)) { }
+			else if (IsIdField("Event", false, description, name, ref cSharpTypeToUse)) { }
+			else if (IsIdField("FriendList", name == "flid", description, name, ref cSharpTypeToUse)) { }
+			else if (IsIdField("Link", false, description, name, ref cSharpTypeToUse)) { }
+			else if (IsIdField("Group", false, description, name, ref cSharpTypeToUse)) { }
+			else if (IsIdField("Thread", false, description, name, ref cSharpTypeToUse)) { }
+			else if (IsIdField("Notification", false, description, name, ref cSharpTypeToUse)) { }
+			else if (IsIdField("Offer", false, description, name, ref cSharpTypeToUse)) { }
+			else if (IsIdField("Milestone", false, description, name, ref cSharpTypeToUse)) { }
+			else if (IsIdField("Photo", false, description, name, ref cSharpTypeToUse)) { }
+			else if (IsIdField("Review", false, description, name, ref cSharpTypeToUse)) { }
+			else if (IsIdField("Message", false, description, name, ref cSharpTypeToUse)) { }
+			else if (IsIdField("Video", false, description, name, ref cSharpTypeToUse)) { }
+			else if (theType == "int")
 			{
 				if (name == "post_id")
 				{
@@ -297,6 +334,20 @@ namespace CreateTableClassesFromFacebookPages
 			file.WriteLine("");
 
 		}
+
+		private static bool IsIdField(string idName, bool thisIsTheField, string description, string name, ref string cSharpTypeToUse)
+		{
+			if (description.Contains("ID of the " + idName.ToLower())
+			|| name == idName.ToLower() + "_id"
+			|| thisIsTheField
+			)
+			{
+				cSharpTypeToUse = idName + "Id";
+				return true;
+			}
+			return false;
+		}
+
 	}
 
 }

@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "id" , IsPrimaryKey = true)]
-        public long? Id { get; set; }
+        public MilestoneId Id { get; set; }
 
         /// <summary>
         /// The ID of the page that this milestone belongs to.
@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "owner_id" )]
-        public long? OwnerId { get; set; }
+        public PageId OwnerId { get; set; }
 
         /// <summary>
         /// The title of the milestone.
@@ -71,7 +71,7 @@ namespace facebook.Tables
         public DateTime? StartTime { get; set; }
 
         /// <summary>
-        /// The end time of a milestone (UNIX timestamp). Page milestones have the same <code>start_time</code> and <code>end_time</code>.
+        /// The end time of a milestone (UNIX timestamp). Page milestones have the same start_time and end_time.
         /// 
         /// original type is: time
         /// </summary>

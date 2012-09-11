@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "request_id" , IsPrimaryKey = true)]
-        public string RequestId { get; set; }
+        public RequestId RequestId { get; set; }
 
         /// <summary>
         /// The ID of the app used to send the request. <strong>Note</strong> when indexing by app_id, you must also specify the recipient_uid.
@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "app_id" )]
-        public string AppId { get; set; }
+        public AppId AppId { get; set; }
 
         /// <summary>
         /// The ID of the user who received the request. <strong>Note</strong> when indexing by recipient_uid, you must also specify the app_id.
@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "recipient_uid" )]
-        public string RecipientUid { get; set; }
+        public Uid RecipientUid { get; set; }
 
         /// <summary>
         /// The ID of the user who sent the request. This may be empty or not present for app-to-user requests made with the Graph API.
@@ -44,7 +44,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "sender_uid" )]
-        public string SenderUid { get; set; }
+        public Uid SenderUid { get; set; }
 
         /// <summary>
         /// The message included with the request

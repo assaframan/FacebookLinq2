@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "app_id" , IsPrimaryKey = true)]
-        public long? AppId { get; set; }
+        public AppId AppId { get; set; }
 
         /// <summary>
         /// The API key of the application being queried.
@@ -135,7 +135,7 @@ namespace facebook.Tables
         public bool? IsFacebookApp { get; set; }
 
         /// <summary>
-        /// Returns demographic restrictions for the app in a object with zero or more of the following fields: <code>type</code>, <code>location</code>, <code>age</code>, and <code>age_distr</code>. See <code>restrictions</code> field on the Graph API <a href="/docs/reference/api/application/">Application</a> object for more information.
+        /// Returns demographic restrictions for the app in a object with zero or more of the following fields: type, location, age, and age_distr. See restrictions field on the Graph API <a href="/docs/reference/api/application/">Application</a> object for more information.
         /// 
         /// original type is: object
         /// </summary>
@@ -143,7 +143,7 @@ namespace facebook.Tables
         public JsonObject RestrictionInfo { get; set; }
 
         /// <summary>
-        /// Domains and subdomains this app can use. App <code>access_token</code> required.
+        /// Domains and subdomains this app can use. App access_token required.
         /// 
         /// original type is: array
         /// </summary>
@@ -151,7 +151,7 @@ namespace facebook.Tables
         public JsonObject AppDomains { get; set; }
 
         /// <summary>
-        /// The URL of a special landing page that helps users of an app begin publishing Open Graph activity. App <code>access_token</code> required.
+        /// The URL of a special landing page that helps users of an app begin publishing Open Graph activity. App access_token required.
         /// 
         /// original type is: string
         /// </summary>
@@ -159,7 +159,7 @@ namespace facebook.Tables
         public string AuthDialogDataHelpUrl { get; set; }
 
         /// <summary>
-        /// The description of an app that appears in the Auth Dialog. App <code>access_token</code> required.
+        /// The description of an app that appears in the Auth Dialog. App access_token required.
         /// 
         /// original type is: string
         /// </summary>
@@ -167,7 +167,7 @@ namespace facebook.Tables
         public string AuthDialogDescription { get; set; }
 
         /// <summary>
-        /// One line description of an app that appears in the Auth Dialog. App <code>access_token</code> required; only returned if specifically requested via the fields URL parameter. <code>string</code>
+        /// One line description of an app that appears in the Auth Dialog. App access_token required; only returned if specifically requested via the fields URL parameter. string
         /// 
         /// original type is: string
         /// </summary>
@@ -175,7 +175,7 @@ namespace facebook.Tables
         public string AuthDialogHeadline { get; set; }
 
         /// <summary>
-        /// The text to explain why an app needs additional permissions that appears in the Auth Dialog. App <code>access_token</code> required.
+        /// The text to explain why an app needs additional permissions that appears in the Auth Dialog. App access_token required.
         /// 
         /// original type is: string
         /// </summary>
@@ -183,7 +183,7 @@ namespace facebook.Tables
         public string AuthDialogPermsExplanation { get; set; }
 
         /// <summary>
-        /// Basic user permissions that a user must grant when Authenticated Referrals are enabled. App <code>access_token</code> required.
+        /// Basic user permissions that a user must grant when Authenticated Referrals are enabled. App access_token required.
         /// 
         /// original type is: array
         /// </summary>
@@ -191,7 +191,7 @@ namespace facebook.Tables
         public JsonObject AuthReferralUserPerms { get; set; }
 
         /// <summary>
-        /// Basic friends permissions that a user must grant when Authenticated Referrals are enabled. App <code>access_token</code> required.
+        /// Basic friends permissions that a user must grant when Authenticated Referrals are enabled. App access_token required.
         /// 
         /// original type is: array
         /// </summary>
@@ -199,7 +199,7 @@ namespace facebook.Tables
         public JsonObject AuthReferralFriendPerms { get; set; }
 
         /// <summary>
-        /// The default privacy setting selected for Open Graph activities in the Auth Dialog. App <code>access_token</code> required; only returned if specifically requested via the fields URL parameter. <code>string</code> which is one of, <code>SELF</code>, <code>EVERYONE</code>, <code>ALL_FRIENDS</code> or <code>NONE</code>.
+        /// The default privacy setting selected for Open Graph activities in the Auth Dialog. App access_token required; only returned if specifically requested via the fields URL parameter. string which is one of, SELF, EVERYONE, ALL_FRIENDS or NONE.
         /// 
         /// original type is: string
         /// </summary>
@@ -207,7 +207,7 @@ namespace facebook.Tables
         public string AuthReferralDefaultActivityPrivacy { get; set; }
 
         /// <summary>
-        /// Indicates whether Authenticated Referrals are enabled. App <code>access_token</code> required.
+        /// Indicates whether Authenticated Referrals are enabled. App access_token required.
         /// 
         /// original type is: bool
         /// </summary>
@@ -215,7 +215,7 @@ namespace facebook.Tables
         public bool? AuthReferralEnabled { get; set; }
 
         /// <summary>
-        /// Extended permissions that a user can choose to grant when Authenticated Referrals are enabled. App <code>access_token</code> required.
+        /// Extended permissions that a user can choose to grant when Authenticated Referrals are enabled. App access_token required.
         /// 
         /// original type is: array
         /// </summary>
@@ -223,7 +223,7 @@ namespace facebook.Tables
         public JsonObject AuthReferralExtendedPerms { get; set; }
 
         /// <summary>
-        /// The format that an app receives the Auth token from the Auth Dialog in. App <code>access_token</code> required; only returned if specifically requested via the fields URL parameter. <code>string</code> which is one of, <code>code</code> or <code>token</code>.
+        /// The format that an app receives the Auth token from the Auth Dialog in. App access_token required; only returned if specifically requested via the fields URL parameter. string which is one of, code or token.
         /// 
         /// original type is: string
         /// </summary>
@@ -231,7 +231,7 @@ namespace facebook.Tables
         public string AuthReferralResponseType { get; set; }
 
         /// <summary>
-        /// Indicates whether app uses fluid or settable height values for Canvas. App <code>access_token</code> required.
+        /// Indicates whether app uses fluid or settable height values for Canvas. App access_token required.
         /// 
         /// original type is: bool
         /// </summary>
@@ -239,7 +239,7 @@ namespace facebook.Tables
         public bool? CanvasFluidHeight { get; set; }
 
         /// <summary>
-        /// Indicates whether app uses fluid or fixed width values for Canvas. App <code>access_token</code> required.
+        /// Indicates whether app uses fluid or fixed width values for Canvas. App access_token required.
         /// 
         /// original type is: bool
         /// </summary>
@@ -247,7 +247,7 @@ namespace facebook.Tables
         public bool? CanvasFluidWidth { get; set; }
 
         /// <summary>
-        /// The non-secure URL from which Canvas app content is loaded. App <code>access_token</code> required.
+        /// The non-secure URL from which Canvas app content is loaded. App access_token required.
         /// 
         /// original type is: string
         /// </summary>
@@ -255,7 +255,7 @@ namespace facebook.Tables
         public string CanvasUrl { get; set; }
 
         /// <summary>
-        /// Email address listed for users to contact developers. App <code>access_token</code> required.
+        /// Email address listed for users to contact developers. App access_token required.
         /// 
         /// original type is: string
         /// </summary>
@@ -263,7 +263,7 @@ namespace facebook.Tables
         public string ContactEmail { get; set; }
 
         /// <summary>
-        /// Unix timestamp that indicates when the app was created. App <code>access_token</code> required.
+        /// Unix timestamp that indicates when the app was created. App access_token required.
         /// 
         /// original type is: int
         /// </summary>
@@ -271,7 +271,7 @@ namespace facebook.Tables
         public long? CreatedTime { get; set; }
 
         /// <summary>
-        /// User ID of the creator of this app. App <code>access_token</code> required.
+        /// User ID of the creator of this app. App access_token required.
         /// 
         /// original type is: int
         /// </summary>
@@ -279,7 +279,7 @@ namespace facebook.Tables
         public Uid CreatorUid { get; set; }
 
         /// <summary>
-        /// URL that is pinged whenever a user removes the app. App <code>access_token</code> required.
+        /// URL that is pinged whenever a user removes the app. App access_token required.
         /// 
         /// original type is: string
         /// </summary>
@@ -287,15 +287,15 @@ namespace facebook.Tables
         public string DeauthCallbackUrl { get; set; }
 
         /// <summary>
-        /// ID of the app in the iPhone App Store. App <code>access_token</code> required.
+        /// ID of the app in the iPhone App Store. App access_token required.
         /// 
         /// original type is: string
         /// </summary>
         [Column(Name = "iphone_app_store_id" )]
-        public string IphoneAppStoreId { get; set; }
+        public AppId IphoneAppStoreId { get; set; }
 
         /// <summary>
-        /// Webspace created with one of our hosting partners for this app. App <code>access_token</code> required.
+        /// Webspace created with one of our hosting partners for this app. App access_token required.
         /// 
         /// original type is: string
         /// </summary>
@@ -303,7 +303,7 @@ namespace facebook.Tables
         public string HostingUrl { get; set; }
 
         /// <summary>
-        /// URL to which Mobile users will be directed when using the app. App <code>access_token</code> required.
+        /// URL to which Mobile users will be directed when using the app. App access_token required.
         /// 
         /// original type is: string
         /// </summary>
@@ -311,7 +311,7 @@ namespace facebook.Tables
         public string MobileWebUrl { get; set; }
 
         /// <summary>
-        /// The title of the app when used in a Page Tab. App <code>access_token</code> required.
+        /// The title of the app when used in a Page Tab. App access_token required.
         /// 
         /// original type is: string
         /// </summary>
@@ -319,7 +319,7 @@ namespace facebook.Tables
         public string PageTabDefaultName { get; set; }
 
         /// <summary>
-        /// The non-secure URL from which Page Tab app content is loaded. App <code>access_token</code> required.
+        /// The non-secure URL from which Page Tab app content is loaded. App access_token required.
         /// 
         /// original type is: string
         /// </summary>
@@ -327,7 +327,7 @@ namespace facebook.Tables
         public string PageTabUrl { get; set; }
 
         /// <summary>
-        /// The URL that links to a Privacy Policy for the app. App <code>access_token</code> required.
+        /// The URL that links to a Privacy Policy for the app. App access_token required.
         /// 
         /// original type is: string
         /// </summary>
@@ -335,7 +335,7 @@ namespace facebook.Tables
         public string PrivacyPolicyUrl { get; set; }
 
         /// <summary>
-        /// The secure URL from which Canvas app content is loaded. App <code>access_token</code> required.
+        /// The secure URL from which Canvas app content is loaded. App access_token required.
         /// 
         /// original type is: string
         /// </summary>
@@ -343,7 +343,7 @@ namespace facebook.Tables
         public string SecureCanvasUrl { get; set; }
 
         /// <summary>
-        /// The secure URL from which Page Tab app content is loaded. App <code>access_token</code> required.
+        /// The secure URL from which Page Tab app content is loaded. App access_token required.
         /// 
         /// original type is: string
         /// </summary>
@@ -351,7 +351,7 @@ namespace facebook.Tables
         public string SecurePageTabUrl { get; set; }
 
         /// <summary>
-        /// App requests must originate from this comma-separated list of IP addresses. App <code>access_token</code> required.
+        /// App requests must originate from this comma-separated list of IP addresses. App access_token required.
         /// 
         /// original type is: string
         /// </summary>
@@ -359,7 +359,7 @@ namespace facebook.Tables
         public string ServerIpWhitelist { get; set; }
 
         /// <summary>
-        /// Indicates whether app usage stories show up in the Ticker or News Feed. App <code>access_token</code> required.
+        /// Indicates whether app usage stories show up in the Ticker or News Feed. App access_token required.
         /// 
         /// original type is: bool
         /// </summary>
@@ -367,7 +367,7 @@ namespace facebook.Tables
         public bool? SocialDiscovery { get; set; }
 
         /// <summary>
-        /// URL to Terms of Service which is linked to in Auth Dialog. App <code>access_token</code> required.
+        /// URL to Terms of Service which is linked to in Auth Dialog. App access_token required.
         /// 
         /// original type is: string
         /// </summary>
@@ -375,7 +375,7 @@ namespace facebook.Tables
         public string TermsOfServiceUrl { get; set; }
 
         /// <summary>
-        /// App settings changes can only be made from an IP address in this comma-separated list. App <code>access_token</code> required.
+        /// App settings changes can only be made from an IP address in this comma-separated list. App access_token required.
         /// 
         /// original type is: string
         /// </summary>
@@ -383,7 +383,7 @@ namespace facebook.Tables
         public string UpdateIpWhitelist { get; set; }
 
         /// <summary>
-        /// Main contact email for this app. App <code>access_token</code> required.
+        /// Main contact email for this app. App access_token required.
         /// 
         /// original type is: string
         /// </summary>
@@ -391,7 +391,7 @@ namespace facebook.Tables
         public string UserSupportEmail { get; set; }
 
         /// <summary>
-        /// URL of support for users of an app shown in Canvas footer. App <code>access_token</code> required.
+        /// URL of support for users of an app shown in Canvas footer. App access_token required.
         /// 
         /// original type is: string
         /// </summary>
@@ -399,7 +399,7 @@ namespace facebook.Tables
         public string UserSupportUrl { get; set; }
 
         /// <summary>
-        /// URL of a website that integrates with this app. App <code>access_token</code> required.
+        /// URL of a website that integrates with this app. App access_token required.
         /// 
         /// original type is: string
         /// </summary>

@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "uid" , IsPrimaryKey = true)]
-        public string Uid { get; set; }
+        public Uid Uid { get; set; }
 
         /// <summary>
         /// The full name of the user.
@@ -127,7 +127,7 @@ namespace facebook.Tables
         public string CurrentLocation { get; set; }
 
         /// <summary>
-        /// A comma delimited list of Demographic Restrictions <code>types</code> a user is allowed to access. Currently, <code>alcohol</code> is the only type that can be returned.
+        /// A comma delimited list of Demographic Restrictions types a user is allowed to access. Currently, alcohol is the only type that can be returned.
         /// 
         /// original type is: string
         /// </summary>

@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "app_id" )]
-        public long? AppId { get; set; }
+        public AppId AppId { get; set; }
 
         /// <summary>
         /// The permalink for the Page app.

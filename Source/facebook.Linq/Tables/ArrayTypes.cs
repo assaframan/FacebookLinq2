@@ -104,11 +104,11 @@ namespace facebook.Tables
 	}
 
 	[DebuggerDisplay("{Value}")]
-	public class Uid
+	public class Fid
 	{
 		public long? Value { get; set; }
 
-		public Uid(long? value)
+		public Fid(long? value)
 		{
 			Value = value;
 		}
@@ -121,6 +121,149 @@ namespace facebook.Tables
 			return this.Value == other.Value;
 		}
 	}
+
+
+	// user id
+	[DebuggerDisplay("{Value}")]
+	public class Uid : Fid
+	{
+		public Uid(long? value) : base(value) {}
+	}
+
+	// application id
+	[DebuggerDisplay("{Value}")]
+	public class AppId : Fid
+	{
+		public AppId(long? value) : base(value) { }
+	}
+
+	// domain id
+	[DebuggerDisplay("{Value}")]
+	public class DomainId : Fid
+	{
+		public DomainId(long? value) : base(value) { }
+	}
+
+	// Status id
+	[DebuggerDisplay("{Value}")]
+	public class StatusId : Fid
+	{
+		public StatusId(long? value) : base(value) { }
+	}
+	
+
+
+	// request id
+	[DebuggerDisplay("{Value}")]
+	public class RequestId : Fid
+	{
+		public RequestId(long? value) : base(value) { }
+	}
+
+	// Checkin id
+	[DebuggerDisplay("{Value}")]
+	public class CheckinId : Fid
+	{
+		public CheckinId(long? value) : base(value) { }
+	}
+
+	// Page id
+	[DebuggerDisplay("{Value}")]
+	public class PageId : Fid
+	{
+		public PageId(long? value) : base(value) { }
+	}
+
+	// Post id
+	[DebuggerDisplay("{Value}")]
+	public class PostId : Fid
+	{
+		public PostId(long? value) : base(value) { }
+	}	
+
+	// Event id
+	[DebuggerDisplay("{Value}")]
+	public class EventId : Fid
+	{
+		public EventId(long? value) : base(value) { }
+	}
+
+	// friend list id
+	[DebuggerDisplay("{Value}")]
+	public class FriendListId : Fid
+	{
+		public FriendListId(long? value) : base(value) { }
+	}
+
+	// link id
+	[DebuggerDisplay("{Value}")]
+	public class LinkId : Fid
+	{
+		public LinkId(long? value) : base(value) { }
+	}
+
+	// group list id
+	[DebuggerDisplay("{Value}")]
+	public class GroupId : Fid
+	{
+		public GroupId(long? value) : base(value) { }
+	}
+
+	// thread id
+	[DebuggerDisplay("{Value}")]
+	public class ThreadId : Fid
+	{
+		public ThreadId(long? value) : base(value) { }
+	}
+
+	// notification id
+	[DebuggerDisplay("{Value}")]
+	public class NotificationId : Fid
+	{
+		public NotificationId(long? value) : base(value) { }
+	}
+
+	// Offer id
+	[DebuggerDisplay("{Value}")]
+	public class OfferId : Fid
+	{
+		public OfferId(long? value) : base(value) { }
+	}
+
+	// milestone id
+	[DebuggerDisplay("{Value}")]
+	public class MilestoneId : Fid
+	{
+		public MilestoneId(long? value) : base(value) { }
+	}
+
+	// photo id
+	[DebuggerDisplay("{Value}")]
+	public class PhotoId : Fid
+	{
+		public PhotoId(long? value) : base(value) { }
+	}
+
+	// review id
+	[DebuggerDisplay("{Value}")]
+	public class ReviewId : Fid
+	{
+		public ReviewId(long? value) : base(value) { }
+	}
+
+	// message id
+	[DebuggerDisplay("{Value}")]
+	public class MessageId : Fid
+	{
+		public MessageId(long? value) : base(value) { }
+	}
+
+	// video id
+	[DebuggerDisplay("{Value}")]
+	public class VideoId : Fid
+	{
+		public VideoId(long? value) : base(value) { }
+	}	
 	public class UidsList : FromJsonList<Uid> 
 	{
 		public UidsList(){}

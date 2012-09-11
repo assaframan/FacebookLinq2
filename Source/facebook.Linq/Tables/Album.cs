@@ -23,7 +23,7 @@ namespace facebook.Tables
         public string Aid { get; set; }
 
         /// <summary>
-        /// The object_id of the album on Facebook. This is used to identify the equivalent <code>Album</code> object in the Graph API. You can also use the object_id to let users comment on an album with the Graph API <code>Comments</code>
+        /// The object_id of the album on Facebook. This is used to identify the equivalent Album object in the Graph API. You can also use the object_id to let users comment on an album with the Graph API Comments
         /// 
         /// original type is: int
         /// </summary>
@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "owner" )]
-        public long? Owner { get; set; }
+        public Uid Owner { get; set; }
 
         /// <summary>
         /// The album cover photo ID string
@@ -167,7 +167,7 @@ namespace facebook.Tables
         public long? VideoCount { get; set; }
 
         /// <summary>
-        /// The like information of the album being queried. This is an object containing <code>can_like</code>, <code>like_count</code>, and <code>user_likes</code>
+        /// The like information of the album being queried. This is an object containing can_like, like_count, and user_likes
         /// 
         /// original type is: object
         /// </summary>
@@ -175,7 +175,7 @@ namespace facebook.Tables
         public JsonObject LikeInfo { get; set; }
 
         /// <summary>
-        /// The comment information of the album being queried. This is an object containing <code>can_comment</code> and <code>comment_count</code>
+        /// The comment information of the album being queried. This is an object containing can_comment and comment_count
         /// 
         /// original type is: object
         /// </summary>

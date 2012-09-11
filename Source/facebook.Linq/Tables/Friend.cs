@@ -15,7 +15,7 @@ namespace facebook.Tables
     public class Friend
     {
         /// <summary>
-        /// The <code>user</code> ID of the first <code>user</code> in a particular friendship link.
+        /// The user ID of the first user in a particular friendship link.
         /// 
         /// original type is: int
         /// </summary>
@@ -23,7 +23,7 @@ namespace facebook.Tables
         public Uid Uid1 { get; set; }
 
         /// <summary>
-        /// The <code>user</code> ID of the second <code>user</code> in a particular friendship link.
+        /// The user ID of the second user in a particular friendship link.
         /// 
         /// original type is: int
         /// </summary>

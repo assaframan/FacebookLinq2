@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "post_id" )]
-        public string PostId { get; set; }
+        public PostId PostId { get; set; }
 
         /// <summary>
         /// The user submitting a comment.
@@ -71,7 +71,7 @@ namespace facebook.Tables
         public long? Id { get; set; }
 
         /// <summary>
-        /// The user name that a user entered when they posted a comment. In these cases, the <code>fromid</code> returned will be 0. Note that user names for valid users are not returned here.
+        /// The user name that a user entered when they posted a comment. In these cases, the fromid returned will be 0. Note that user names for valid users are not returned here.
         /// 
         /// original type is: string
         /// </summary>
@@ -100,7 +100,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "app_id" )]
-        public long? AppId { get; set; }
+        public AppId AppId { get; set; }
 
         /// <summary>
         /// The number of likes for this comment.

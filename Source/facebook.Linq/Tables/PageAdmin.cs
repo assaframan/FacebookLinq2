@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "uid" , IsPrimaryKey = true)]
-        public string Uid { get; set; }
+        public Uid Uid { get; set; }
 
         /// <summary>
         /// The ID of a Page.
@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "page_id" )]
-        public string PageId { get; set; }
+        public PageId PageId { get; set; }
 
         /// <summary>
         /// The type of the Page.

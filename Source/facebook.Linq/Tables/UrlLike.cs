@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "user_id" , IsPrimaryKey = true)]
-        public string UserId { get; set; }
+        public Uid UserId { get; set; }
 
         /// <summary>
         /// The URL that was liked

@@ -79,7 +79,7 @@ namespace facebook.Tables
         public string PicBig { get; set; }
 
         /// <summary>
-        /// An object containing: <code>uri</code>: The URL to the largest-sized square profile picture for the object being queried. <code>width</code>, <code>height</code>: the pixel dimensions of this picture. <code>left</code>, <code>top</code>, <code>right</code>, <code>bottom</code>: the pixel co-ordinates of the user selected crop for this profile picture.
+        /// An object containing: uri: The URL to the largest-sized square profile picture for the object being queried. width, height: the pixel dimensions of this picture. left, top, right, bottom: the pixel co-ordinates of the user selected crop for this profile picture.
         /// 
         /// original type is: object
         /// </summary>
@@ -87,7 +87,7 @@ namespace facebook.Tables
         public JsonObject PicCrop { get; set; }
 
         /// <summary>
-        /// The type of profile, one of <code>user</code>, <code>group</code>, <code>page</code>, <code>event</code>, or <code>application</code>.
+        /// The type of profile, one of user, group, page, event, or application.
         /// 
         /// original type is: string
         /// </summary>

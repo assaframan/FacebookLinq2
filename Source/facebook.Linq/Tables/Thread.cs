@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "thread_id" , IsPrimaryKey = true)]
-        public string ThreadId { get; set; }
+        public ThreadId ThreadId { get; set; }
 
         /// <summary>
         /// The ID of the folder that belongs to the thread you are querying. The ID can be one of: 0 (for Inbox), 1 (for Outbox), or 4 (for Updates).
@@ -60,7 +60,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "parent_message_id" )]
-        public long? ParentMessageId { get; set; }
+        public MessageId ParentMessageId { get; set; }
 
         /// <summary>
         /// The ID of the thread from which this thread was branched, or 0 if this thread is not a branch.
@@ -68,7 +68,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "parent_thread_id" )]
-        public long? ParentThreadId { get; set; }
+        public ThreadId ParentThreadId { get; set; }
 
         /// <summary>
         /// The number of messages in this thread.
@@ -92,7 +92,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "snippet_author" )]
-        public long? SnippetAuthor { get; set; }
+        public Uid SnippetAuthor { get; set; }
 
         /// <summary>
         /// The object that sent this message, or 0 if it was not sent by an object. You can get more information about this object in the <strong>profile</strong> table.
@@ -116,7 +116,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "viewer_id" )]
-        public string ViewerId { get; set; }
+        public Uid ViewerId { get; set; }
 
     }
 }

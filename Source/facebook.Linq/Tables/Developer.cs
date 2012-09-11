@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "developer_id" , IsPrimaryKey = true)]
-        public string DeveloperId { get; set; }
+        public Uid DeveloperId { get; set; }
 
         /// <summary>
         /// The application ID.

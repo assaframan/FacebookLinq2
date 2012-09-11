@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "page_id" , IsPrimaryKey = true)]
-        public long? PageId { get; set; }
+        public PageId PageId { get; set; }
 
         /// <summary>
         /// The name of the Page.
@@ -111,7 +111,7 @@ namespace facebook.Tables
         public string PicLarge { get; set; }
 
         /// <summary>
-        /// The JSON object containing three fields: <code>cover_id</code> (the ID of the cover photo), <code>source</code> (the URL for the cover photo), and <code>offset_y</code> (indicating percentage offset from top [0-100])
+        /// The JSON object containing three fields: cover_id (the ID of the cover photo), source (the URL for the cover photo), and offset_y (indicating percentage offset from top [0-100])
         /// 
         /// original type is: object
         /// </summary>
@@ -183,7 +183,7 @@ namespace facebook.Tables
         public bool? CanPost { get; set; }
 
         /// <summary>
-        /// Number of checkins at a <code>place</code> represented by a Page.
+        /// Number of checkins at a place represented by a Page.
         /// 
         /// original type is: int
         /// </summary>
@@ -239,7 +239,7 @@ namespace facebook.Tables
         public JsonObject Location { get; set; }
 
         /// <summary>
-        /// Applicable to <strong>Businesses</strong> and <strong>Places</strong>. Can be one of <code>street</code>, <code>lot</code> or <code>valet</code>
+        /// Applicable to <strong>Businesses</strong> and <strong>Places</strong>. Can be one of street, lot or valet
         /// 
         /// original type is: array
         /// </summary>
@@ -271,7 +271,7 @@ namespace facebook.Tables
         public string PublicTransit { get; set; }
 
         /// <summary>
-        /// Applicable to <strong>Restaurants</strong> or <strong>Nightlife</strong>. Can be one of <code>Casual</code>, <code>Dressy</code> or <code>Unspecified</code>.
+        /// Applicable to <strong>Restaurants</strong> or <strong>Nightlife</strong>. Can be one of Casual, Dressy or Unspecified.
         /// 
         /// original type is: string
         /// </summary>
@@ -303,7 +303,7 @@ namespace facebook.Tables
         public string GeneralManager { get; set; }
 
         /// <summary>
-        /// Applicable to <strong>Restaurants</strong> or <strong>Nightlife</strong>. Can be one of <code>$ (0-10)</code>, <code>$$ (10-30)</code>, <code>$$$ (30-50)</code>, <code>$$$$ (50+)</code> or <code>Unspecified</code>.
+        /// Applicable to <strong>Restaurants</strong> or <strong>Nightlife</strong>. Can be one of $ (0-10), $$ (10-30), $$$ (30-50), $$$$ (50+) or Unspecified.
         /// 
         /// original type is: string
         /// </summary>

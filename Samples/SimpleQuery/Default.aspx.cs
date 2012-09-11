@@ -118,7 +118,10 @@ namespace SimpleQuery
 
 				//var GroupQuery = from Group in db.Group where Group.Gid == 146797922030397 select Group.Venue;
 				//var GroupResult = GroupQuery.ToArray();
-				
+
+				//var links = (from link in db.Link
+				//			 where link.Owner == db.Me
+				//			 select link).ToList();
 
 				var friendIds = from friend in db.Friend where friend.Uid1 == db.Me select friend.Uid2;
 				var friendDetails = (from user in db.User where friendIds.Contains(user.Uid) select new { Uid = user.Uid, Name = user.Name, Picture = user.PicSmall });

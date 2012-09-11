@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "app_id" , IsPrimaryKey = true)]
-        public string AppId { get; set; }
+        public AppId AppId { get; set; }
 
         /// <summary>
         /// The [XID|external ID] of the <a href="/docs/reference/fbml/comments">fb:comments</a> object being queried.

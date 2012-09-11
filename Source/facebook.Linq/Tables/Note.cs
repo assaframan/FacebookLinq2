@@ -71,7 +71,7 @@ namespace facebook.Tables
         public string Title { get; set; }
 
         /// <summary>
-        /// The like information of the note being queried. This is an object containing <code>can_like</code>, <code>like_count</code>, and <code>user_likes</code>
+        /// The like information of the note being queried. This is an object containing can_like, like_count, and user_likes
         /// 
         /// original type is: object
         /// </summary>
@@ -79,7 +79,7 @@ namespace facebook.Tables
         public JsonObject LikeInfo { get; set; }
 
         /// <summary>
-        /// The comment information of the note being queried. This is an object containing <code>can_comment</code> and <code>comment_count</code>
+        /// The comment information of the note being queried. This is an object containing can_comment and comment_count
         /// 
         /// original type is: object
         /// </summary>

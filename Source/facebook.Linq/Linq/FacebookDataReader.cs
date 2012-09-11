@@ -321,10 +321,120 @@ namespace Facebook.Linq
 			}
 			else if (propType == typeof(Uid))
 			{
-				return new Uid(value as long?);
+				long? val = FixValueForId(value);
+				return new Uid(val);
+			}
+			else if (propType == typeof(AppId))
+			{
+				long? val = FixValueForId(value);
+				return new AppId(val);
+			}
+			else if (propType == typeof(DomainId))
+			{
+				long? val = FixValueForId(value);
+				return new DomainId(val);
+			}
+			else if (propType == typeof(StatusId))
+			{
+				long? val = FixValueForId(value);
+				return new StatusId(val);
+			}				
+			else if (propType == typeof(RequestId))
+			{
+				long? val = FixValueForId(value);
+				return new RequestId(val);
+			}
+			else if (propType == typeof(CheckinId))
+			{
+				long? val = FixValueForId(value);
+				return new CheckinId(val);
+			}
+			else if (propType == typeof(PageId))
+			{
+				long? val = FixValueForId(value);
+				return new PageId(val);
+			}
+			else if (propType == typeof(PostId))
+			{
+				long? val = FixValueForId(value);
+				return new PostId(val);
+			}
+			else if (propType == typeof(EventId))
+			{
+				long? val = FixValueForId(value);
+				return new EventId(val);
+			}
+			else if (propType == typeof(FriendListId))
+			{
+				long? val = FixValueForId(value);
+				return new FriendListId(val);
+			}
+			else if (propType == typeof(LinkId))
+			{
+				long? val = FixValueForId(value);
+				return new LinkId(val);
+			}
+			else if (propType == typeof(GroupId))
+			{
+				long? val = FixValueForId(value);
+				return new GroupId(val);
+			}
+			else if (propType == typeof(ThreadId))
+			{
+				long? val = FixValueForId(value);
+				return new ThreadId(val);
+			}
+			else if (propType == typeof(NotificationId))
+			{
+				long? val = FixValueForId(value);
+				return new NotificationId(val);
+			}
+			else if (propType == typeof(OfferId))
+			{
+				long? val = FixValueForId(value);
+				return new OfferId(val);
+			}
+			else if (propType == typeof(MilestoneId))
+			{
+				long? val = FixValueForId(value);
+				return new MilestoneId(val);
+			}
+			else if (propType == typeof(PhotoId))
+			{
+				long? val = FixValueForId(value);
+				return new PhotoId(val);
+			}
+			else if (propType == typeof(ReviewId))
+			{
+				long? val = FixValueForId(value);
+				return new ReviewId(val);
+			}
+			else if (propType == typeof(MessageId))
+			{
+				long? val = FixValueForId(value);
+				return new MessageId(val);
+			}
+			else if (propType == typeof(VideoId))
+			{
+				long? val = FixValueForId(value);
+				return new VideoId(val);
 			}
 			else
 				throw new NotImplementedException();
+		}
+
+		private long? FixValueForId(object value)
+		{
+			long? val;
+			if (value is String)
+			{
+				val = long.Parse(value as String);
+			}
+			else
+			{
+				val = value as long?;
+			}
+			return val;
 		}
 		
 		private object ParseFacebookEnum(Type propType, string value)

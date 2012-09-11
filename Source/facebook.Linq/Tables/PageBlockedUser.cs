@@ -20,10 +20,10 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "page_id" , IsPrimaryKey = true)]
-        public string PageId { get; set; }
+        public PageId PageId { get; set; }
 
         /// <summary>
-        /// The ID of any <code>user</code> blocked by the Page
+        /// The ID of any user blocked by the Page
         /// 
         /// original type is: string
         /// </summary>

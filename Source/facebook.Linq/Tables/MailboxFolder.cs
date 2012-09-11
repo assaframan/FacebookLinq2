@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "viewer_id" )]
-        public long? ViewerId { get; set; }
+        public Uid ViewerId { get; set; }
 
         /// <summary>
         /// A short description of the folder being queried.

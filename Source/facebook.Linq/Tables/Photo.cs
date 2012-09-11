@@ -23,15 +23,15 @@ namespace facebook.Tables
         public long? ObjectId { get; set; }
 
         /// <summary>
-        /// The ID of the photo being queried. The <code>pid</code> cannot be longer than 50 characters.<br /><strong>Note:</strong> Because the pid is a string, you should always wrap the pid in quotes when referenced in a query.
+        /// The ID of the photo being queried. The pid cannot be longer than 50 characters.<br /><strong>Note:</strong> Because the pid is a string, you should always wrap the pid in quotes when referenced in a query.
         /// 
         /// original type is: string
         /// </summary>
         [Column(Name = "pid" )]
-        public string Pid { get; set; }
+        public PhotoId Pid { get; set; }
 
         /// <summary>
-        /// The ID of the album containing the photo being queried. The <code>aid</code> cannot be longer than 50 characters.<br /><strong>Note:</strong> Because the aid is a string, you should always wrap the aid in quotes when referenced in a query.
+        /// The ID of the album containing the photo being queried. The aid cannot be longer than 50 characters.<br /><strong>Note:</strong> Because the aid is a string, you should always wrap the aid in quotes when referenced in a query.
         /// 
         /// original type is: string
         /// </summary>
@@ -44,7 +44,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "owner" )]
-        public string Owner { get; set; }
+        public Uid Owner { get; set; }
 
         /// <summary>
         /// The URL to the thumbnail version of the photo being queried. The image can have a maximum width of 75px and a maximum height of 225px. This URL may be blank.
@@ -135,6 +135,14 @@ namespace facebook.Tables
         public string Caption { get; set; }
 
         /// <summary>
+        /// An array containing an array of objects mentioned in the caption which contain the id, name, and type of each object as well as the offset and length which can be used to match it up with its corresponding string in the caption.
+        /// 
+        /// original type is: array
+        /// </summary>
+        [Column(Name = "caption_tags" )]
+        public JsonObject CaptionTags { get; set; }
+
+        /// <summary>
         /// The date when the photo being queried was added.
         /// 
         /// original type is: time
@@ -183,7 +191,7 @@ namespace facebook.Tables
         public JsonObject Images { get; set; }
 
         /// <summary>
-        /// The like information of the photo being queried. This is an object containing <code>can_like</code>, <code>like_count</code>, and <code>user_likes</code>
+        /// The like information of the photo being queried. This is an object containing can_like, like_count, and user_likes
         /// 
         /// original type is: object
         /// </summary>
@@ -191,7 +199,7 @@ namespace facebook.Tables
         public JsonObject LikeInfo { get; set; }
 
         /// <summary>
-        /// The comment information of the photo being queried. This is an object containing <code>can_comment</code> and <code>comment_count</code>
+        /// The comment information of the photo being queried. This is an object containing can_comment and comment_count
         /// 
         /// original type is: object
         /// </summary>
@@ -199,7 +207,7 @@ namespace facebook.Tables
         public JsonObject CommentInfo { get; set; }
 
         /// <summary>
-        /// <code>true</code> if the viewer is able to delete the photo
+        /// true if the viewer is able to delete the photo
         /// 
         /// original type is: bool
         /// </summary>

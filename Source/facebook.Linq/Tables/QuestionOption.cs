@@ -60,7 +60,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "owner" )]
-        public long? Owner { get; set; }
+        public Uid Owner { get; set; }
 
         /// <summary>
         /// UNIX timestamp of time when the option was created

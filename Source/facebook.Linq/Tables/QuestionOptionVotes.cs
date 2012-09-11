@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "voter_id" )]
-        public long? VoterId { get; set; }
+        public Uid VoterId { get; set; }
 
     }
 }

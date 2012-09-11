@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "notification_id" , IsPrimaryKey = true)]
-        public string NotificationId { get; set; }
+        public NotificationId NotificationId { get; set; }
 
         /// <summary>
         /// The user ID of the sender of the notification.
@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "sender_id" )]
-        public long? SenderId { get; set; }
+        public Uid SenderId { get; set; }
 
         /// <summary>
         /// The user ID of the recipient of the notification. It is always the current session user.
@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "recipient_id" )]
-        public long? RecipientId { get; set; }
+        public Uid RecipientId { get; set; }
 
         /// <summary>
         /// The time the notification was originally sent. Notifications older than 7 days are deleted and will not be returned via this table.
@@ -100,7 +100,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "app_id" )]
-        public long? AppId { get; set; }
+        public AppId AppId { get; set; }
 
         /// <summary>
         /// Indicates whether the notification has been marked as read. Use notifications.markRead to mark a notification as read.

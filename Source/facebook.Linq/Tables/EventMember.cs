@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "uid" , IsPrimaryKey = true)]
-        public string Uid { get; set; }
+        public Uid Uid { get; set; }
 
         /// <summary>
         /// The ID of the event being queried.
@@ -28,10 +28,10 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "eid" )]
-        public string Eid { get; set; }
+        public EventId Eid { get; set; }
 
         /// <summary>
-        /// The reply status of the user for the event being queried.  There are four possible return values: <code>attending</code>, <code>unsure</code>, <code>declined</code>, and <code>not_replied</code>.
+        /// The reply status of the user for the event being queried.  There are four possible return values: attending, unsure, declined, and not_replied.
         /// 
         /// original type is: string
         /// </summary>

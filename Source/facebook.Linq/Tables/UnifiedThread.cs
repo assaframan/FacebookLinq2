@@ -47,7 +47,7 @@ namespace facebook.Tables
         public string Folder { get; set; }
 
         /// <summary>
-        /// List of former participants who have unsubscribed from the thread. Each element of the list is an object with properties <code>name</code> (string), <code>email</code> (string) and <code>user_id</code> (string).
+        /// List of former participants who have unsubscribed from the thread. Each element of the list is an object with properties name (string), email (string) and user_id (string).
         /// 
         /// original type is: array
         /// </summary>
@@ -103,7 +103,7 @@ namespace facebook.Tables
         public long? NumUnread { get; set; }
 
         /// <summary>
-        /// List of participants who represent a Facebook page, group or event. Each element of the list is an object with properties <code>object_address_type</code> (int) and <code>id</code> (string).
+        /// List of participants who represent a Facebook page, group or event. Each element of the list is an object with properties object_address_type (int) and id (string).
         /// 
         /// original type is: array
         /// </summary>
@@ -111,7 +111,7 @@ namespace facebook.Tables
         public JsonObject ObjectParticipants { get; set; }
 
         /// <summary>
-        /// List of participants who are currently subscribed to the thread. Each element of the list is an object with properties <code>name</code> (string), <code>email</code> (string) and <code>user_id</code> (string).
+        /// List of participants who are currently subscribed to the thread. Each element of the list is an object with properties name (string), email (string) and user_id (string).
         /// 
         /// original type is: array
         /// </summary>
@@ -119,7 +119,7 @@ namespace facebook.Tables
         public JsonObject Participants { get; set; }
 
         /// <summary>
-        /// List of participants who have sent a message in the thread. Each element of the list is an object with properties <code>name</code> (string), <code>email</code> (string) and <code>user_id</code> (string).
+        /// List of participants who have sent a message in the thread. Each element of the list is an object with properties name (string), email (string) and user_id (string).
         /// 
         /// original type is: array
         /// </summary>
@@ -132,7 +132,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "single_recipient" )]
-        public string SingleRecipient { get; set; }
+        public Uid SingleRecipient { get; set; }
 
         /// <summary>
         /// Fragment of the thread for use in thread lists.
@@ -143,7 +143,7 @@ namespace facebook.Tables
         public string Snippet { get; set; }
 
         /// <summary>
-        /// An object with properties <code>name</code> (string), <code>email</code> (string) and <code>user_id</code> (string) of the sender.
+        /// An object with properties name (string), email (string) and user_id (string) of the sender.
         /// 
         /// original type is: array
         /// </summary>
@@ -180,7 +180,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "thread_id" )]
-        public string ThreadId { get; set; }
+        public ThreadId ThreadId { get; set; }
 
         /// <summary>
         /// List of participants who are currently subscribed to the thread. Each element of the list is an object with properties name (string), email (string) and user_id (string).

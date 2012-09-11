@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "uid_to" , IsPrimaryKey = true)]
-        public string UidTo { get; set; }
+        public Uid UidTo { get; set; }
 
         /// <summary>
         /// The ID of the user making the friend request.
@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "uid_from" )]
-        public string UidFrom { get; set; }
+        public Uid UidFrom { get; set; }
 
         /// <summary>
         /// A unix timestamp indicating when the friend request was sent.

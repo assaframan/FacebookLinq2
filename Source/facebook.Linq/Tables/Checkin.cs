@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "checkin_id" , IsPrimaryKey = true)]
-        public long? CheckinId { get; set; }
+        public CheckinId CheckinId { get; set; }
 
         /// <summary>
         /// The ID of the user making the checkin.
@@ -31,12 +31,12 @@ namespace facebook.Tables
         public Uid AuthorUid { get; set; }
 
         /// <summary>
-        /// The ID of the Page representing the <code>place</code>.
+        /// The ID of the Page representing the place.
         /// 
         /// original type is: int
         /// </summary>
         [Column(Name = "page_id" )]
-        public long? PageId { get; set; }
+        public PageId PageId { get; set; }
 
         /// <summary>
         /// The ID of an app that made the checkin.
@@ -44,7 +44,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "app_id" )]
-        public long? AppId { get; set; }
+        public AppId AppId { get; set; }
 
         /// <summary>
         /// The ID of the stream post created by the check-in
@@ -52,7 +52,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "post_id" )]
-        public string PostId { get; set; }
+        public PostId PostId { get; set; }
 
         /// <summary>
         /// The latitude and longitude of the location.

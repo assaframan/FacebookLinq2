@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "message_id" , IsPrimaryKey = true)]
-        public string MessageId { get; set; }
+        public MessageId MessageId { get; set; }
 
         /// <summary>
         /// Unique identifier of the thread.
@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "thread_id" )]
-        public string ThreadId { get; set; }
+        public ThreadId ThreadId { get; set; }
 
         /// <summary>
         /// Subject of the message.
@@ -79,7 +79,7 @@ namespace facebook.Tables
         public JsonObject Tags { get; set; }
 
         /// <summary>
-        /// Sender of the message. This field is an object with properties <code>name</code> (string), <code>email</code> (string) and <code>user_id</code> (string).
+        /// Sender of the message. This field is an object with properties name (string), email (string) and user_id (string).
         /// 
         /// original type is: object
         /// </summary>
@@ -87,7 +87,7 @@ namespace facebook.Tables
         public JsonObject Sender { get; set; }
 
         /// <summary>
-        /// List of message recipients. Each element of the list is an object with properties <code>name</code> (string), <code>email</code> (string) and <code>user_id</code> (string).
+        /// List of message recipients. Each element of the list is an object with properties name (string), email (string) and user_id (string).
         /// 
         /// original type is: array
         /// </summary>
@@ -95,7 +95,7 @@ namespace facebook.Tables
         public UidsList Recipients { get; set; }
 
         /// <summary>
-        /// Sender of the message in the case that it is a Facebook page, group or event. This field is an object with properties <code>object_address_type</code> (int) and <code>id</code> (string).
+        /// Sender of the message in the case that it is a Facebook page, group or event. This field is an object with properties object_address_type (int) and id (string).
         /// 
         /// original type is: object
         /// </summary>
@@ -119,7 +119,7 @@ namespace facebook.Tables
         public JsonObject Attachments { get; set; }
 
         /// <summary>
-        /// Map from attachment identifiers to objects containing information about the attachment (file size, type, etc.). Each object has the following properties: <code>id</code> (string), <code>type</code> (int), <code>mime_type</code> (string), <code>filename</code> (string) and <code>file_size</code> (int).
+        /// Map from attachment identifiers to objects containing information about the attachment (file size, type, etc.). Each object has the following properties: id (string), type (int), mime_type (string), filename (string) and file_size (int).
         /// 
         /// original type is: array
         /// </summary>
@@ -135,7 +135,7 @@ namespace facebook.Tables
         public JsonObject Shares { get; set; }
 
         /// <summary>
-        /// Map from share identifiers to objects containing information about the shared objects. Each object has the following properties: <code>share_id</code> (string), <code>type</code> (int), <code>href</code> (string), <code>title</code> (string), <code>summary</code> (string) and <code>image</code> (string).
+        /// Map from share identifiers to objects containing information about the shared objects. Each object has the following properties: share_id (string), type (int), href (string), title (string), summary (string) and image (string).
         /// 
         /// original type is: array
         /// </summary>

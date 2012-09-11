@@ -15,7 +15,7 @@ namespace facebook.Tables
     public class PrivacySetting
     {
         /// <summary>
-        /// Name of the privacy setting to retrived. This column must be specified in the WHERE clauses and currently must be <code>'default_stream_privacy'</code> as shown in the example above
+        /// Name of the privacy setting to retrived. This column must be specified in the WHERE clauses and currently must be 'default_stream_privacy' as shown in the example above
         /// 
         /// original type is: string
         /// </summary>

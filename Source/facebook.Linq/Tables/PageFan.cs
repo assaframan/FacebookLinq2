@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "page_id" )]
-        public string PageId { get; set; }
+        public PageId PageId { get; set; }
 
         /// <summary>
         /// The type of Page being queried.

@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "owner" , IsPrimaryKey = true)]
-        public string Owner { get; set; }
+        public Uid Owner { get; set; }
 
         /// <summary>
         /// The ID of the friend list. <strong>Note:</strong> This is only indexable for friend lists belonging to the current session user
@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "flid" )]
-        public string Flid { get; set; }
+        public FriendListId Flid { get; set; }
 
         /// <summary>
         /// The name of the friend list.

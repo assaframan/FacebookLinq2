@@ -23,12 +23,12 @@ namespace facebook.Tables
         public long? ObjectId { get; set; }
 
         /// <summary>
-        /// The ID of the photo being queried. The <code>pid</code> cannot be longer than 50 characters.<br /><strong>Note:</strong> Because the pid is a string, you should always wrap the pid in quotes when referenced in a query.
+        /// The ID of the photo being queried. The pid cannot be longer than 50 characters.<br /><strong>Note:</strong> Because the pid is a string, you should always wrap the pid in quotes when referenced in a query.
         /// 
         /// original type is: string
         /// </summary>
         [Column(Name = "pid" )]
-        public string Pid { get; set; }
+        public PhotoId Pid { get; set; }
 
         /// <summary>
         /// For tagged users, use the user ID of the subject for the tag being queried. For photos associated with events or groups, use the eid or gid for subject.

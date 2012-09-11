@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "reviewee_id" , IsPrimaryKey = true)]
-        public long? RevieweeId { get; set; }
+        public AppId RevieweeId { get; set; }
 
         /// <summary>
         /// The ID of the user who created a review.
@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "reviewer_id" )]
-        public long? ReviewerId { get; set; }
+        public Uid ReviewerId { get; set; }
 
         /// <summary>
         /// The ID of the review.
@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "review_id" )]
-        public long? ReviewId { get; set; }
+        public ReviewId ReviewId { get; set; }
 
         /// <summary>
         /// The review text (optional).

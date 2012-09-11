@@ -143,7 +143,7 @@ namespace facebook.Tables
         public string BirthdayDate { get; set; }
 
         /// <summary>
-        /// An <code>array</code> of objects containing fields <code>os</code>, which may be a value of 'iOS' or 'Android', along with an additional field <code>hardware</code> which may be a value of 'iPad' or 'iPhone', if present. However, <code>hardware</code> may not be returned if we are unable to determine the exact <code>hardware</code> model and only the <code>os</code>.
+        /// An array of objects containing fields os, which may be a value of 'iOS' or 'Android', along with an additional field hardware which may be a value of 'iPad' or 'iPhone', if present. However, hardware may not be returned if we are unable to determine the exact hardware model and only the os.
         /// 
         /// original type is: array
         /// </summary>
@@ -196,7 +196,7 @@ namespace facebook.Tables
         /// original type is: uid
         /// </summary>
         [Column(Name = "significant_other_id" )]
-        public object SignificantOtherId { get; set; }
+        public Uid SignificantOtherId { get; set; }
 
         /// <summary>
         /// The political views of the user being queried.
@@ -287,7 +287,7 @@ namespace facebook.Tables
         public string AboutMe { get; set; }
 
         /// <summary>
-        /// <strong>Deprecated.</strong> This value is now equivalent to <code>education</code> entry of <code>type</code> ''High School''.
+        /// <strong>Deprecated.</strong> This value is now equivalent to education entry of type ''High School''.
         /// 
         /// original type is: array
         /// </summary>
@@ -295,7 +295,7 @@ namespace facebook.Tables
         public JsonObject HsInfo { get; set; }
 
         /// <summary>
-        /// <strong>Deprecated.</strong> This value is now equivalent to <code>education</code> entry of <code>type</code> ''College''.
+        /// <strong>Deprecated.</strong> This value is now equivalent to education entry of type ''College''.
         /// 
         /// original type is: array
         /// </summary>
@@ -303,7 +303,7 @@ namespace facebook.Tables
         public JsonObject EducationHistory { get; set; }
 
         /// <summary>
-        /// <strong>Deprecated.</strong> This value is now equivalent to <code>work</code>.
+        /// <strong>Deprecated.</strong> This value is now equivalent to work.
         /// 
         /// original type is: array
         /// </summary>
@@ -335,7 +335,7 @@ namespace facebook.Tables
         public string Status { get; set; }
 
         /// <summary>
-        /// <strong>Deprecated.</strong> This value is now equivalent to <code>is_app_user</code>.
+        /// <strong>Deprecated.</strong> This value is now equivalent to is_app_user.
         /// 
         /// original type is: bool
         /// </summary>
@@ -343,7 +343,7 @@ namespace facebook.Tables
         public bool? HasAddedApp { get; set; }
 
         /// <summary>
-        /// The user's Facebook Chat status. Returns a string, one of <code>active</code>, <code>idle</code>, <code>offline</code>, or <code>error</code> (when Facebook can't determine presence information on the server side). The query does not return the user's Facebook Chat status when that information is restricted for privacy reasons.
+        /// The user's Facebook Chat status. Returns a string, one of active, idle, offline, or error (when Facebook can't determine presence information on the server side). The query does not return the user's Facebook Chat status when that information is restricted for privacy reasons.
         /// 
         /// original type is: string
         /// </summary>
@@ -367,7 +367,7 @@ namespace facebook.Tables
         public string ProxiedEmail { get; set; }
 
         /// <summary>
-        /// The URL to a user's profile. If the user specified a username for his or her profile, <code>profile_url</code> contains the username.
+        /// The URL to a user's profile. If the user specified a username for his or her profile, profile_url contains the username.
         /// 
         /// original type is: string
         /// </summary>
@@ -415,7 +415,7 @@ namespace facebook.Tables
         public string PicWithLogo { get; set; }
 
         /// <summary>
-        /// An array containing the keys <code>cover_id</code>, <code>source</code>, and <code>offset_y</code> which refer to the user's cover photo.
+        /// An array containing the keys cover_id, source, and offset_y which refer to the user's cover photo.
         /// 
         /// original type is: array
         /// </summary>
@@ -423,7 +423,7 @@ namespace facebook.Tables
         public JsonObject PicCover { get; set; }
 
         /// <summary>
-        /// A comma-delimited list of <a href="/docs/reference/rest/admin.setRestrictionInfo">Demographic Restrictions</a> <code>types</code> a user is allowed to access. Currently, <code>alcohol</code> is the only type that can get returned.
+        /// A comma-delimited list of <a href="/docs/reference/rest/admin.setRestrictionInfo">Demographic Restrictions</a> types a user is allowed to access. Currently, alcohol is the only type that can get returned.
         /// 
         /// original type is: string
         /// </summary>
@@ -452,7 +452,7 @@ namespace facebook.Tables
         /// <p>This array contains a series of entries for the immediate relatives of the user being queried. Each entry is also an array containing the following fields:</p>
         /// 
         /// <ul>
-        /// <li>relationship -- A string describing the type of relationship. Can be one of <code>parent</code>, <code>mother</code>, <code>father</code>, <code>sibling</code>, <code>sister</code>, <code>brother</code>, <code>child</code>, <code>son</code>, <code>daughter</code>.</li>
+        /// <li>relationship -- A string describing the type of relationship. Can be one of parent, mother, father, sibling, sister, brother, child, son, daughter.</li>
         /// <li>uid (optional) -- The user ID of the relative, which gets displayed if the account is linked to (confirmed by) another account. If the relative did not confirm the relationship, the name appears instead.</li>
         /// <li>name (optional) -- The name of the relative, which could be text the user entered. If the relative confirmed the relationship, the uid appears instead.</li>
         /// <li>birthday -- If the relative is a child, this is the birthday the user entered.</li>
@@ -482,7 +482,7 @@ namespace facebook.Tables
         public bool? IsBlocked { get; set; }
 
         /// <summary>
-        /// A string containing the user's primary Facebook email address. If the user shared his or her primary email address with you, this address also appears in the <code>email</code> field (see below). Facebook recommends you query the email field to get the email address shared with your application.
+        /// A string containing the user's primary Facebook email address. If the user shared his or her primary email address with you, this address also appears in the email field (see below). Facebook recommends you query the email field to get the email address shared with your application.
         /// 
         /// original type is: string
         /// </summary>
@@ -538,7 +538,7 @@ namespace facebook.Tables
         public JsonObject Work { get; set; }
 
         /// <summary>
-        /// A list of the user's education history. Contains <code>year</code> and <code>type</code> fields, and <code>school</code> object (<code>name</code>, <code>id</code>, <code>type</code>, and optional <code>year</code>, <code>degree</code>, <code>concentration</code> array, <code>classes</code> array, and <code>with</code> array ).
+        /// A list of the user's education history. Contains year and type fields, and school object (name, id, type, and optional year, degree, concentration array, classes array, and with array ).
         /// 
         /// original type is: array
         /// </summary>

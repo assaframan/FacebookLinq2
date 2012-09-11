@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "page_id" , IsPrimaryKey = true)]
-        public long? PageId { get; set; }
+        public PageId PageId { get; set; }
 
         /// <summary>
         /// The name of the place.

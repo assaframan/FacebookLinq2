@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "photo_id" , IsPrimaryKey = true)]
-        public long? PhotoId { get; set; }
+        public PhotoId PhotoId { get; set; }
 
         /// <summary>
         /// A string representing max size of the image returned. For example, 640X640. <strong>Note:</strong> If you want an exact dimension, use width and height.

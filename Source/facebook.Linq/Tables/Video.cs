@@ -15,12 +15,12 @@ namespace facebook.Tables
     public class Video
     {
         /// <summary>
-        /// The ID of the video being queried. The <code>vid</code> cannot be longer than 50 characters.<br /><strong>Note:</strong> Because the vid is a string, you should always wrap the vid in quotes when referenced in a query. The vid is unique only for a given user. You can use the vid as an object ID in the Graph API.
+        /// The ID of the video being queried. The vid cannot be longer than 50 characters.<br /><strong>Note:</strong> Because the vid is a string, you should always wrap the vid in quotes when referenced in a query. The vid is unique only for a given user. You can use the vid as an object ID in the Graph API.
         /// 
         /// original type is: string
         /// </summary>
         [Column(Name = "vid" , IsPrimaryKey = true)]
-        public string Vid { get; set; }
+        public VideoId Vid { get; set; }
 
         /// <summary>
         /// The user ID of the owner of the video being queried.
@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "owner" )]
-        public long? Owner { get; set; }
+        public Uid Owner { get; set; }
 
         /// <summary>
         /// The name of the video being queried.

@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "flid" , IsPrimaryKey = true)]
-        public string Flid { get; set; }
+        public FriendListId Flid { get; set; }
 
         /// <summary>
         /// The user ID of the friend list member.
@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "uid" )]
-        public string Uid { get; set; }
+        public Uid Uid { get; set; }
 
     }
 }

@@ -36,7 +36,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "app_id" )]
-        public long? AppId { get; set; }
+        public AppId AppId { get; set; }
 
         /// <summary>
         /// UNIX timestamp
@@ -47,7 +47,7 @@ namespace facebook.Tables
         public long? Timestamp { get; set; }
 
         /// <summary>
-        /// <code>array</code> of <code>int</code>s representing the Facebook IDs tagged in the post
+        /// array of ints representing the Facebook IDs tagged in the post
         /// 
         /// original type is: array
         /// </summary>
@@ -60,10 +60,10 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "page_id" )]
-        public long? PageId { get; set; }
+        public PageId PageId { get; set; }
 
         /// <summary>
-        /// Type of the target; either <code>page</code> or <code>event</code>
+        /// Type of the target; either page or event
         /// 
         /// original type is: string
         /// </summary>
@@ -71,7 +71,7 @@ namespace facebook.Tables
         public string PageType { get; set; }
 
         /// <summary>
-        /// <code>object</code> with <code>latitude</code> and <code>longitude</code> fields
+        /// object with latitude and longitude fields
         /// 
         /// original type is: object
         /// </summary>
@@ -79,7 +79,7 @@ namespace facebook.Tables
         public JsonObject Coords { get; set; }
 
         /// <summary>
-        /// The type of post. Either <code>photo</code>, <code>checkin</code>, <code>video</code>, or <code>status</code>
+        /// The type of post. Either photo, checkin, video, or status
         /// 
         /// original type is: string
         /// </summary>

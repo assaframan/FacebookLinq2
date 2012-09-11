@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "profile_id" , IsPrimaryKey = true)]
-        public string ProfileId { get; set; }
+        public Uid ProfileId { get; set; }
 
         /// <summary>
         /// The user ID of the relative, which is returned if the relationship is confirmed and links to another profile.
@@ -28,7 +28,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "uid" )]
-        public string Uid { get; set; }
+        public Uid Uid { get; set; }
 
         /// <summary>
         /// The name of the relative, which is returned if the relationship is not linked to another profile.

@@ -20,7 +20,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "id" , IsPrimaryKey = true)]
-        public long? Id { get; set; }
+        public Uid Id { get; set; }
 
         /// <summary>
         /// requested width of the profile pic, in pixels
@@ -47,7 +47,7 @@ namespace facebook.Tables
         public string Url { get; set; }
 
         /// <summary>
-        /// This value is <code>true</code> if a profile picture has not been set (i.e. the profile picture is the default picture)
+        /// This value is true if a profile picture has not been set (i.e. the profile picture is the default picture)
         /// 
         /// original type is: boolean
         /// </summary>
@@ -55,7 +55,7 @@ namespace facebook.Tables
         public bool? IsSilhouette { get; set; }
 
         /// <summary>
-        /// actual width of the returned profile pic, in pixels (this may or may not be the same as <code>width</code>)
+        /// actual width of the returned profile pic, in pixels (this may or may not be the same as width)
         /// 
         /// original type is: int
         /// </summary>
@@ -63,7 +63,7 @@ namespace facebook.Tables
         public long? RealWidth { get; set; }
 
         /// <summary>
-        /// actual height of the returned profile pic, in pixels (this may or may not be the same as <code>height</code>)
+        /// actual height of the returned profile pic, in pixels (this may or may not be the same as height)
         /// 
         /// original type is: int
         /// </summary>
