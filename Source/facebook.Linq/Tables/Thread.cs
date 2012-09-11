@@ -38,7 +38,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "subject" )]
-        public Fid Subject { get; set; }
+        public string Subject { get; set; }
 
         /// <summary>
         /// The user IDs of the recipients of the thread.

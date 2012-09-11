@@ -195,15 +195,7 @@ namespace CreateTableClassesFromFacebookPages
 				return;
 			}
 
-			if (    (name == "source_id")
-				 || (name == "actor_id")
-				 || (name == "subject")
-				 || (name == "target_id")
-				)
-			{
-				cSharpTypeToUse = "Fid";
-			}
-			else if (theType != "array" &&
+			if (theType != "array" &&
 					(
 						description.Contains("user ID") 
 						|| description.Contains("User ID")
@@ -271,6 +263,30 @@ namespace CreateTableClassesFromFacebookPages
 			else if (name == "id" && tableName == "note")
 			{
 				cSharpTypeToUse = "NoteId";
+			}
+			else if (name == "source_id" && tableName == "connection")
+			{
+				cSharpTypeToUse = "Uid";
+			}
+			else if (name == "source_id" && tableName == "stream")
+			{
+				cSharpTypeToUse = "UnionId";
+			}
+			else if (name == "actor_id" && tableName == "stream")
+			{
+				cSharpTypeToUse = "UnionId";
+			}
+			else if (name == "actor_id" && tableName == "stream_tag")
+			{
+				cSharpTypeToUse = "Uid";
+			}
+			else if (name == "target_id")
+			{
+				cSharpTypeToUse = "UnionId";
+			}
+			else if (name == "subject" && tableName == "photo_tag")
+			{
+				cSharpTypeToUse = "Subject";
 			}
 			else if (name == "aid")
 			{

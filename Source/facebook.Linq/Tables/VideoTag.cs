@@ -30,7 +30,7 @@ namespace facebook.Tables
         /// Indexable
         /// </summary>
         [Column(Name = "subject" )]
-        public Fid Subject { get; set; }
+        public Uid Subject { get; set; }
 
         /// <summary>
         /// The date when the video being queried was last modified.

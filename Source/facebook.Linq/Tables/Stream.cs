@@ -46,7 +46,7 @@ namespace facebook.Tables
         /// Indexable
         /// </summary>
         [Column(Name = "source_id" )]
-        public Fid SourceId { get; set; }
+        public Uid SourceId { get; set; }
 
         /// <summary>
         /// The time the post was last updated, which occurs when a user comments on the post, expressed as a Unix timestamp. Querying by updated_time is currently not supported
@@ -87,7 +87,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "actor_id" )]
-        public Fid ActorId { get; set; }
+        public Uid ActorId { get; set; }
 
         /// <summary>
         /// The user, page, group, or event to whom the post was directed
@@ -95,7 +95,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "target_id" )]
-        public Fid TargetId { get; set; }
+        public UnionId TargetId { get; set; }
 
         /// <summary>
         /// The message written in the post

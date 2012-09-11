@@ -39,7 +39,7 @@ namespace facebook.Tables
         /// Indexable
         /// </summary>
         [Column(Name = "subject" )]
-        public Fid Subject { get; set; }
+        public Uid Subject { get; set; }
 
         /// <summary>
         /// The content of the tag being queried. It contains either the name of the user tagged or the text tag.

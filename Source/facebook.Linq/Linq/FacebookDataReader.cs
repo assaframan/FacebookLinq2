@@ -504,6 +504,16 @@ namespace Facebook.Linq
 				string val = FixValueForId(value);
 				return new AlbumId(val);
 			}
+			else if (propType == typeof(UnionId))
+			{
+				string val = FixValueForId(value);
+				return new UnionId(val);
+			}
+			else if (propType == typeof(SubjectId))
+			{
+				string val = FixValueForId(value);
+				return new SubjectId(val);
+			}
 			else if (propType == typeof(ObjectId))
 			{
 				string val = FixValueForId(value);

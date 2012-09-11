@@ -194,6 +194,67 @@ namespace facebook.Tables
 		}
 	}
 
+	// UnionId
+	[DebuggerDisplay("{Value}")]
+	public class UnionId : Fid
+	{
+		public UnionId(string value) : base(value) { }
+		public static implicit operator PostId(UnionId d)
+		{
+			return new PostId(d.Value);
+		}
+		public static implicit operator VideoId(UnionId d)
+		{
+			return new VideoId(d.Value);
+		}
+		public static implicit operator NoteId(UnionId d)
+		{
+			return new NoteId(d.Value);
+		}
+		public static implicit operator LinkId(UnionId d)
+		{
+			return new LinkId(d.Value);
+		}
+		public static implicit operator PhotoId(UnionId d)
+		{
+			return new PhotoId(d.Value);
+		}
+		public static implicit operator AlbumId(UnionId d)
+		{
+			return new AlbumId(d.Value);
+		}
+		public static implicit operator GroupId(UnionId d)
+		{
+			return new GroupId(d.Value);
+		}
+		public static implicit operator Uid(UnionId d)
+		{
+			return new Uid(d.Value);
+		}
+		public static implicit operator EventId(UnionId d)
+		{
+			return new EventId(d.Value);
+		}
+	}
+
+	public class SubjectId : Fid
+	{
+		public SubjectId(string value) : base(value) { }
+		public static implicit operator Uid(SubjectId d)
+		{
+			return new Uid(d.Value);
+		}
+		public static implicit operator EventId(SubjectId d)
+		{
+			return new EventId(d.Value);
+		}
+		public static implicit operator GroupId(SubjectId d)
+		{
+			return new GroupId(d.Value);
+		}
+
+	}
+
 
 	// user id
 	[DebuggerDisplay("{Value}")]
@@ -406,30 +467,6 @@ namespace facebook.Tables
 	{
 		public ObjectId(string value) : base(value) { }
 
-		public static implicit operator PostId(ObjectId d)  
-		{
-			return new PostId(d.Value);
-		}
-		public static implicit operator VideoId(ObjectId d) 
-		{
-			return new VideoId(d.Value);
-		}
-		public static implicit operator NoteId(ObjectId d)  
-		{
-			return new NoteId(d.Value);
-		}
-		public static implicit operator LinkId(ObjectId d)
-		{
-			return new LinkId(d.Value);
-		}
-		public static implicit operator PhotoId(ObjectId d)
-		{
-			return new PhotoId(d.Value);
-		}
-		public static implicit operator AlbumId(ObjectId d)
-		{
-			return new AlbumId(d.Value);
-		}
 		public static implicit operator Xid(ObjectId d)   
 		{
 			return new Xid(d.Value);
@@ -553,7 +590,7 @@ namespace facebook.Tables
 	public class Tag
 	{
 		[Column(Name = "id")]
-		public Fid Id { get; set; }
+		public UnionId Id { get; set; }
 		[Column(Name = "name")]
 		public string Name { get; set; }
 		[Column(Name = "offset")]
@@ -572,7 +609,7 @@ namespace facebook.Tables
 		{
 			if (jsonValue.ContainsKey("id"))
 			{
-				Id = new Fid(((long)jsonValue["id"]).ToString());
+				Id = new UnionId(((long)jsonValue["id"]).ToString());
 			}
 			if (jsonValue.ContainsKey("name"))
 			{

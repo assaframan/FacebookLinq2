@@ -30,7 +30,7 @@ namespace facebook.Tables
         /// Indexable
         /// </summary>
         [Column(Name = "actor_id" )]
-        public Fid ActorId { get; set; }
+        public Uid ActorId { get; set; }
 
         /// <summary>
         /// The users, Pages, events, and other Facebook objects that have been tagged in one or more posts. This field, when used as an index, is used to retrieve all the entities that have been tagged in one or more posts.
@@ -39,7 +39,7 @@ namespace facebook.Tables
         /// Indexable
         /// </summary>
         [Column(Name = "target_id" )]
-        public Fid TargetId { get; set; }
+        public UnionId TargetId { get; set; }
 
     }
 }

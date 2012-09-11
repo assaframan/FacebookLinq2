@@ -167,7 +167,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "subject" )]
-        public Fid Subject { get; set; }
+        public string Subject { get; set; }
 
         /// <summary>
         /// Thread tags. See below.
