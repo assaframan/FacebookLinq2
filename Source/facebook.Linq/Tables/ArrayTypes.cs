@@ -107,7 +107,7 @@ namespace facebook.Tables
 
 	}
 
-
+	[DebuggerDisplay("CanLike = {CanLike}; LikeCount = {LikeCount}; UserLikes = {UserLikes}")]
 	public class LikeInfo
 	{
 		[Column(Name = "can_like")]
@@ -126,7 +126,7 @@ namespace facebook.Tables
 		{
 			if (jsonValue.ContainsKey("can_like"))
 			{
-				CanLike = bool.Parse((string)jsonValue["can_like"]);
+				CanLike = (bool)jsonValue["can_like"];
 			}
 			if (jsonValue.ContainsKey("like_count"))
 			{
@@ -134,13 +134,14 @@ namespace facebook.Tables
 			}
 			if (jsonValue.ContainsKey("user_likes"))
 			{
-				UserLikes = bool.Parse((string)jsonValue["user_likes"]);
+				UserLikes = (bool)jsonValue["user_likes"];
 			}
 		}
 
 	}
 
 
+	[DebuggerDisplay("CanComment = {CanComment}; CommentCount = {CommentCount}")]
 	public class CommentInfo
 	{
 		[Column(Name = "can_comment")]
@@ -157,7 +158,7 @@ namespace facebook.Tables
 		{
 			if (jsonValue.ContainsKey("can_comment"))
 			{
-				CanComment = bool.Parse((string)jsonValue["can_comment"]);
+				CanComment = (bool)jsonValue["can_comment"];
 			}
 			if (jsonValue.ContainsKey("comment_count"))
 			{
