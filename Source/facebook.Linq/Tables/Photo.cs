@@ -176,7 +176,7 @@ namespace facebook.Tables
         /// Indexable
         /// </summary>
         [Column(Name = "album_object_id" )]
-        public long? AlbumObjectId { get; set; }
+        public ObjectId AlbumObjectId { get; set; }
 
         /// <summary>
         /// Facebook ID of the place associated with the photo, if any.

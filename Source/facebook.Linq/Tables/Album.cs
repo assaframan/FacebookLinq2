@@ -55,7 +55,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "cover_object_id" )]
-        public long? CoverObjectId { get; set; }
+        public ObjectId CoverObjectId { get; set; }
 
         /// <summary>
         /// The title of the album

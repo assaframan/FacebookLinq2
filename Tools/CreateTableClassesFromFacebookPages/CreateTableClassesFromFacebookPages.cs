@@ -225,7 +225,7 @@ namespace CreateTableClassesFromFacebookPages
 			else if (IsIdField("Review", false, description, name, ref cSharpTypeToUse)) { }
 			else if (IsIdField("Message", false, description, name, ref cSharpTypeToUse)) { }
 			else if (IsIdField("Video", false, description, name, ref cSharpTypeToUse)) { }
-			else if (IsIdField("Object", false, description, name, ref cSharpTypeToUse)) { }
+			else if (IsIdField("Object", name.EndsWith("_object_id"), description, name, ref cSharpTypeToUse)) { }
 			else if (IsIdField("ThirdParty", name == "third_party_id", description, name, ref cSharpTypeToUse)) { }
 			else if (name.EndsWith("_xid") || name == "xid")
 			{
