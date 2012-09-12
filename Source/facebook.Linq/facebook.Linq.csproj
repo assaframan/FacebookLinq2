@@ -211,6 +211,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>copy /y $(TargetDir)$(TargetName)*.* $(SolutionDir)..\bin</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>
