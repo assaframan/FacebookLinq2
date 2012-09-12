@@ -181,7 +181,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "version" )]
-        public string Version { get; set; }
+        public long? Version { get; set; }
 
     }
 }

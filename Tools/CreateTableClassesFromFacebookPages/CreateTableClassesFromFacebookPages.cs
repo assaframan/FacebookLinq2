@@ -312,6 +312,10 @@ namespace CreateTableClassesFromFacebookPages
 			{
 				cSharpTypeToUse = "Subject";
 			}
+			else if (name == "version")
+			{
+				cSharpTypeToUse = "long?";
+			}
 			else if (name == "post_fbid" && tableName == "comment")
 			{
 				cSharpTypeToUse = "ObjectId";

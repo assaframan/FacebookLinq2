@@ -97,6 +97,7 @@ namespace SimpleQuery
 			{
 
 				/*
+				
 				var albumQuery = from album in db.Album where album.Aid == new AlbumId("20531316728_324257") select album;
 				var albumResult = albumQuery.ToArray();
 
@@ -134,47 +135,33 @@ namespace SimpleQuery
 				var eventQuery = from event_ in db.Event where event_.Eid == new EventId("209798352393506") select event_;
 				var eventResult = eventQuery.ToArray();
 
-				var CommentsQuery = from Comments in db.Comment where Comments.ObjectId == new ObjectId("483854529708") select Comments;
-				var CommentsResult = CommentsQuery.ToArray();
 
-				 int a = 1;
-				*/
+				var commentsQuery = from comments in db.Comment where comments.ObjectId == new ObjectId("483854529708") select comments;
+				var commentsResult = commentsQuery.ToArray();
 
-
-
-
-				///var ThreadQuery = from Thread in db.Thread where Thread.FolderId == "0" select Thread.ThreadId;
-				//var MessageQuery = from Message in db.Message where ThreadQuery.Contains(Message.ThreadId) select Message;
-
-				//var MessageResult = MessageQuery.ToArray();
-			
-
-				//var NotificationQuery = from Notification in db.Notification where Notification.RecipientId == db.Me select Notification.CreatedTime;
-				//var NotificationResult = NotificationQuery.ToArray();
+				var threadQuery = from thread in db.Thread where thread.FolderId == FolderId.Inbox select thread.ThreadId;
+				var messageQuery = from message in db.Message where threadQuery.Contains(message.ThreadId) select message;
+				var messageResult = messageQuery.ToArray();
 
 
-				//var GroupQuery = from Group in db.Group where Group.Gid == 146797922030397 select Group.Venue;
-				//var GroupResult = GroupQuery.ToArray();
+				DateTime yesterday = DateTime.Today.AddDays(-1);
+				var threadQuery2 = from thread in db.Thread where thread.FolderId == FolderId.Inbox select thread.ThreadId;
+				var messageQuery2 = from message in db.Message
+									where threadQuery2.Contains(message.ThreadId)
+										&& message.CreatedTime > yesterday
+									select message;
+				var messageResult2 = messageQuery2.ToArray();
 
-				//var links = (from link in db.Link
-				//			 where link.Owner == db.Me
-				//			 select link).ToList();
+				var notificationQuery = from notification in db.Notification where notification.RecipientId == db.Me select notification;
+				var notificationResult = notificationQuery.ToArray();
 
-				//var links = (from link in db.Link
-				//			 where link.Owner == db.Me
-				//			 select link).ToList();
+				var groupQuery = from group_ in db.Group where group_.Gid == new GroupId("146797922030397") select group_;
+				var groupResult = groupQuery.ToArray();
 
-// 				DateTime yesterday = DateTime.Today.AddDays(-1) ;
-// 				var ThreadQuery = from thread in db.Thread where thread.FolderId == FolderId.Inbox select thread.ThreadId;
-// 				var MessageQuery = from message in db.Message where ThreadQuery.Contains(message.ThreadId) 
-// 								   && message.CreatedTime > yesterday select message;
-// 				var MessageResult = MessageQuery.ToArray();
+				var streamQuery = from stream in db.Stream where stream.SourceId == db.Me select stream;
+				var streamResult = streamQuery.ToArray();
 
-				//var ThreadQuery = from thread in db.Thread where thread.FolderId == FolderId.Inbox select thread;
-				//var ThreadResult = ThreadQuery.ToArray();
-
-				//var StreamQuery = from stream in db.Stream where stream.SourceId == db.Me select stream;
-				//var StreamResult = StreamQuery.ToArray();
+				//*/
 
 				var friendIds = from friend in db.Friend where friend.Uid1 == db.Me select friend.Uid2;
 				var friendDetails = (from user in db.User where friendIds.Contains(user.Uid) select new { Uid = user.Uid, Name = user.Name, Picture = user.PicSmall });

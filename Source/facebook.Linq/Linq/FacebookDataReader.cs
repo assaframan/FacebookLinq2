@@ -273,7 +273,15 @@ namespace Facebook.Linq
 			}
 			else if (propType == typeof(bool))
 			{
-				return (value);
+				if (value is string)
+				{
+					return ParseBool((string)(value));
+				}
+				if (value is long)
+				{
+					return 0 == ((long)(value));
+				}
+				return value;
 			}
 			else if (propType == typeof(DateTime))
 			{
