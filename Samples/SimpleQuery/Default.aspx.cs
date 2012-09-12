@@ -125,8 +125,23 @@ namespace SimpleQuery
 				var connectionQuery = from connection in db.Connection where connection.SourceId == db.Me select connection;
 				var connectionResult = connectionQuery.ToArray();
 
-				int a = 1;
+				var cookiesQuery = from cookies in db.Cookies where cookies.Uid == db.Me select cookies;
+				var cookiesResult = cookiesQuery.ToArray();
+
+				var developerQuery = from developer in db.Developer where developer.DeveloperId == db.Me select developer;
+				var developerResult = developerQuery.ToArray();
+
+				var eventQuery = from event_ in db.Event where event_.Eid == new EventId("209798352393506") select event_;
+				var eventResult = eventQuery.ToArray();
+
+				var CommentsQuery = from Comments in db.Comment where Comments.ObjectId == new ObjectId("483854529708") select Comments;
+				var CommentsResult = CommentsQuery.ToArray();
+
+				 int a = 1;
 				*/
+
+
+
 
 				///var ThreadQuery = from Thread in db.Thread where Thread.FolderId == "0" select Thread.ThreadId;
 				//var MessageQuery = from Message in db.Message where ThreadQuery.Contains(Message.ThreadId) select Message;
@@ -137,8 +152,6 @@ namespace SimpleQuery
 				//var NotificationQuery = from Notification in db.Notification where Notification.RecipientId == db.Me select Notification.CreatedTime;
 				//var NotificationResult = NotificationQuery.ToArray();
 
-				//var CommentsQuery = from Comments in db.Comment where Comments.ObjectId == "483854529708" select Comments.Comments;
-				//var CommentsResult = CommentsQuery.ToArray();
 
 				//var GroupQuery = from Group in db.Group where Group.Gid == 146797922030397 select Group.Venue;
 				//var GroupResult = GroupQuery.ToArray();

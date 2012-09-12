@@ -284,6 +284,22 @@ namespace CreateTableClassesFromFacebookPages
 			{
 				cSharpTypeToUse = "ConnectionTargetId";
 			}
+			else if (name == "owner_id" && tableName == "domain_admin")
+			{
+				cSharpTypeToUse = "DomainOwnerId";
+			}
+			else if (name == "owner_id" && tableName == "offer")
+			{
+				cSharpTypeToUse = "PageId";
+			}
+			else if (name == "owner_id" && tableName == "page_milestone")
+			{
+				cSharpTypeToUse = "PageId";
+			}
+			else if (name == "fromid")
+			{
+				cSharpTypeToUse = "Uid";
+			}
 			else if (name == "target_id" && tableName == "stream")
 			{
 				cSharpTypeToUse = "StreamTargetId";
@@ -295,6 +311,10 @@ namespace CreateTableClassesFromFacebookPages
 			else if (name == "subject" && tableName == "photo_tag")
 			{
 				cSharpTypeToUse = "Subject";
+			}
+			else if (name == "post_fbid" && tableName == "comment")
+			{
+				cSharpTypeToUse = "ObjectId";
 			}
 			else if (name == "aid")
 			{
@@ -321,6 +341,10 @@ namespace CreateTableClassesFromFacebookPages
 				cSharpTypeToUse = "CommentInfo";
 			}
 			else if (name.EndsWith("_time"))
+			{
+				cSharpTypeToUse = "DateTime?";
+			}
+			else if (name == "time")
 			{
 				cSharpTypeToUse = "DateTime?";
 			}
@@ -367,7 +391,7 @@ namespace CreateTableClassesFromFacebookPages
 			{
 				cSharpTypeToUse = "Devices";
 			}
-			else if ((name == "description_tags") || (name == "message_tags"))
+			else if ((name == "description_tags") || (name == "message_tags") || (name == "text_tags"))
 			{
 				cSharpTypeToUse = "Tags";
 			}

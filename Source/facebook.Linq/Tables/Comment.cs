@@ -47,7 +47,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "fromid" )]
-        public long? Fromid { get; set; }
+        public Uid Fromid { get; set; }
 
         /// <summary>
         /// A Unix timestamp associated with the creation time of a comment.
@@ -55,7 +55,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "time" )]
-        public long? Time { get; set; }
+        public DateTime? Time { get; set; }
 
         /// <summary>
         /// The text of a comment.
@@ -95,7 +95,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "post_fbid" )]
-        public string PostFbid { get; set; }
+        public ObjectId PostFbid { get; set; }
 
         /// <summary>
         /// The application id associated with this comment.
@@ -143,7 +143,7 @@ namespace facebook.Tables
         /// original type is: array
         /// </summary>
         [Column(Name = "text_tags" )]
-        public object TextTags { get; set; }
+        public Tags TextTags { get; set; }
 
         /// <summary>
         /// If this comment is private.

@@ -30,7 +30,7 @@ namespace facebook.Tables
         /// Indexable
         /// </summary>
         [Column(Name = "owner_id" )]
-        public long? OwnerId { get; set; }
+        public PageId OwnerId { get; set; }
 
         /// <summary>
         /// The title of the offer.

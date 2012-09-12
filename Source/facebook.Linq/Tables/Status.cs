@@ -38,7 +38,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "time" )]
-        public long? Time { get; set; }
+        public DateTime? Time { get; set; }
 
         /// <summary>
         /// The application that published the status originally.

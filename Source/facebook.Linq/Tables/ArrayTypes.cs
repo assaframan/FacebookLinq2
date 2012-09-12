@@ -456,6 +456,27 @@ namespace facebook.Tables
 		}
 	}
 
+	// domain owner id
+	[DebuggerDisplay("{Value}")]
+	public class DomainOwnerId : Fid
+	{
+		public DomainOwnerId(string value) : base(value) { }
+
+		public static implicit operator Uid(DomainOwnerId d)
+		{
+			return new Uid(d.Value);
+		}
+		public static implicit operator PageId(DomainOwnerId d)
+		{
+			return new PageId(d.Value);
+		}
+		public static implicit operator AppId(DomainOwnerId d)
+		{
+			return new AppId(d.Value);
+		}
+	}
+
+
 	// Stream target id
 	[DebuggerDisplay("{Value}")]
 	public class StreamTargetId : Fid

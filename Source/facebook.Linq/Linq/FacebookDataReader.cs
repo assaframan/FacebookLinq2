@@ -524,6 +524,11 @@ namespace Facebook.Linq
 				string val = FixValueForId(value);
 				return new StreamTargetId(val);
 			}
+			else if (propType == typeof(DomainOwnerId))
+			{
+				string val = FixValueForId(value);
+				return new DomainOwnerId(val);
+			}
 			else if (propType == typeof(ObjectId))
 			{
 				string val = FixValueForId(value);
