@@ -514,6 +514,16 @@ namespace Facebook.Linq
 				string val = FixValueForId(value);
 				return new SubjectId(val);
 			}
+			else if (propType == typeof(ConnectionTargetId))
+			{
+				string val = FixValueForId(value);
+				return new ConnectionTargetId(val);
+			}
+			else if (propType == typeof(StreamTargetId))
+			{
+				string val = FixValueForId(value);
+				return new StreamTargetId(val);
+			}
 			else if (propType == typeof(ObjectId))
 			{
 				string val = FixValueForId(value);

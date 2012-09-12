@@ -280,6 +280,14 @@ namespace CreateTableClassesFromFacebookPages
 			{
 				cSharpTypeToUse = "Uid";
 			}
+			else if (name == "target_id" && tableName == "connection")
+			{
+				cSharpTypeToUse = "ConnectionTargetId";
+			}
+			else if (name == "target_id" && tableName == "stream")
+			{
+				cSharpTypeToUse = "StreamTargetId";
+			}
 			else if (name == "target_id")
 			{
 				cSharpTypeToUse = "UnionId";

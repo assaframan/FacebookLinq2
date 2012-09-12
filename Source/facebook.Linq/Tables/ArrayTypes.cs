@@ -440,6 +440,46 @@ namespace facebook.Tables
 		public NoteId(string value) : base(value) { }
 	}
 
+	// Connection target id
+	[DebuggerDisplay("{Value}")]
+	public class ConnectionTargetId : Fid
+	{
+		public ConnectionTargetId(string value) : base(value) { }
+
+		public static implicit operator Uid(ConnectionTargetId d)
+		{
+			return new Uid(d.Value);
+		}
+		public static implicit operator PageId(ConnectionTargetId d)
+		{
+			return new PageId(d.Value);
+		}
+	}
+
+	// Stream target id
+	[DebuggerDisplay("{Value}")]
+	public class StreamTargetId : Fid
+	{
+		public StreamTargetId(string value) : base(value) { }
+
+		public static implicit operator Uid(StreamTargetId d)
+		{
+			return new Uid(d.Value);
+		}
+		public static implicit operator PageId(StreamTargetId d)
+		{
+			return new PageId(d.Value);
+		}
+		public static implicit operator GroupId(StreamTargetId d)
+		{
+			return new GroupId(d.Value);
+		}
+		public static implicit operator EventId(StreamTargetId d)
+		{
+			return new EventId(d.Value);
+		}
+	}
+
 	// Album id
 	[DebuggerDisplay("{Value}")]
 	public class AlbumId : Fid

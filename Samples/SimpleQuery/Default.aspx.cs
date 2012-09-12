@@ -121,11 +121,12 @@ namespace SimpleQuery
 				var albumObjectIdQuery = from album in db.Album where album.Aid == new AlbumId("20531316728_324257") select album.ObjectId;
 				var commentQuery = from comment in db.Comment where albumObjectIdQuery.Contains(comment.ObjectId) select comment;
 				var commentResult = commentQuery.ToArray();
+				 
+				var connectionQuery = from connection in db.Connection where connection.SourceId == db.Me select connection;
+				var connectionResult = connectionQuery.ToArray();
 
 				int a = 1;
-
-				 */
-
+				*/
 
 				///var ThreadQuery = from Thread in db.Thread where Thread.FolderId == "0" select Thread.ThreadId;
 				//var MessageQuery = from Message in db.Message where ThreadQuery.Contains(Message.ThreadId) select Message;

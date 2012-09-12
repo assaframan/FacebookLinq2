@@ -95,7 +95,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "target_id" )]
-        public UnionId TargetId { get; set; }
+        public StreamTargetId TargetId { get; set; }
 
         /// <summary>
         /// The message written in the post

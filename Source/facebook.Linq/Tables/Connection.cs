@@ -29,7 +29,7 @@ namespace facebook.Tables
         /// original type is: int
         /// </summary>
         [Column(Name = "target_id" )]
-        public UnionId TargetId { get; set; }
+        public ConnectionTargetId TargetId { get; set; }
 
         /// <summary>
         /// Indicates whether the target is a user or a page.
