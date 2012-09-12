@@ -12,7 +12,7 @@ My goals where:
 * Get the code to run with the latest facebook-csharp-sdk.
 * Create code that generates classes for the FQL tables based on the FQL documentation on Facebook's site.
 
-### Use example
+### Use sample
 This C# code:
 
     var friendIds = from friend in db.Friend where friend.Uid1 == db.Me select friend.Uid2;
@@ -43,7 +43,7 @@ The code for the CreateTableClassesFromFacebookPages project is based on [facebo
 [facebook-csharp-sdk]: https://github.com/facebook-csharp-sdk/facebook-csharp-sdk/
 
 
-### Here are some more use examples:
+### Here are some more use samples:
     var albumQuery = from album in db.Album where album.Aid == new AlbumId("20531316728_324257") select album;
     var albumResult = albumQuery.ToArray();
     
