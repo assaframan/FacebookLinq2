@@ -358,7 +358,7 @@ namespace CreateTableClassesFromFacebookPages
 				{
 					cSharpTypeToUse = "string";
 				}
-				else if (name == "uid" || name == "uid1" || name == "uid2" || name.EndsWith("_uid"))
+				else if (name == "uid" || name == "uid1" || name == "uid2" || name.EndsWith("_uid") || name == "user_id")
 				{
 					cSharpTypeToUse = "Uid";
 				}

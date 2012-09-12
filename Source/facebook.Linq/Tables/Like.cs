@@ -45,7 +45,7 @@ namespace facebook.Tables
         /// Indexable
         /// </summary>
         [Column(Name = "user_id" )]
-        public long? UserId { get; set; }
+        public Uid UserId { get; set; }
 
         /// <summary>
         /// The type of the liked object. One of: photo, album, event, group, note, link, video, application, status, check-in, review, comment, post
