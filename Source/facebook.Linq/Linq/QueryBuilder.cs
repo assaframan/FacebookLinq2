@@ -407,6 +407,31 @@ namespace Facebook.Linq
 					sb.Append(s.Substring(idx));
 				}
 			}
+			else if (exp.Method.Name == "Substring")
+			{
+				Write("substr(");
+				Build(exp.Object);
+				Write(", ");
+				Build(exp.Arguments[0]);
+				Write(", ");
+				if (exp.Arguments.Count == 2)
+				{
+					Build(exp.Arguments[1]);
+				}
+				else
+				{
+					Build(999999);
+				}
+				Write(")");
+			}
+			else if (exp.Method.Name == "IndexOf")
+			{
+				Write("strpos(");
+				Build(exp.Object);
+				Write(", ");
+				Build(exp.Arguments[0]);
+				Write(")");
+			}
 			else
 				throw new Exception();
 		}
@@ -458,6 +483,15 @@ namespace Facebook.Linq
 				{
 					var pd = td.Properties[exp.Member.Name];
 					Write(pd.FqlFieldName);
+				}
+				else if (  exp.Expression != null &&
+						   exp.Expression.Type == typeof(string) &&
+						   exp.Member != null &&
+						   exp.Member.Name == "Length"
+					    )
+				{
+					var p = exp.Expression == null ? null : Eval(exp.Expression); 
+					Write("strlen(" + (p as PropNameString).Name + ")");
 				}
 				else //Variable
 				{

@@ -163,10 +163,23 @@ namespace SimpleQuery
 
 				//*/
 
+				// substr sample
+				//var friendIds = from friend in db.Friend where friend.Uid1 == db.Me select friend.Uid2;
+				//var friendDetails = (from user in db.User where friendIds.Contains(user.Uid) && user.Name.Substring(0, 1) == "a" select new { Uid = user.Uid, Name = user.Name, Picture = user.PicSmall });
+
+				// strlen sample
+				//var friendIds = from friend in db.Friend where friend.Uid1 == db.Me select friend.Uid2;
+				//var friendDetails = (from user in db.User where friendIds.Contains(user.Uid) && user.Name.Length == 14 select new { Uid = user.Uid, Name = user.Name, Picture = user.PicSmall });
+
+				// strpos sample
+				//var friendIds = from friend in db.Friend where friend.Uid1 == db.Me select friend.Uid2;
+				//var friendDetails = (from user in db.User where friendIds.Contains(user.Uid) && user.Name.IndexOf("as") > 0 select new { Uid = user.Uid, Name = user.Name, Picture = user.PicSmall });
+
+
 				var friendIds = from friend in db.Friend where friend.Uid1 == db.Me select friend.Uid2;
 				var friendDetails = (from user in db.User where friendIds.Contains(user.Uid) select new { Uid = user.Uid, Name = user.Name, Picture = user.PicSmall });
 				listFriends.DataSource = friendDetails.ToArray();
-					DataBind();
+				DataBind();
 			}
 			else if (useMethodSyntax)
 			{
