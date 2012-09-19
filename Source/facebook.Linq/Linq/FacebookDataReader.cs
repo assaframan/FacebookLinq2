@@ -340,6 +340,10 @@ namespace Facebook.Linq
 			{
 				return new AppDomains((JsonArray)value);
 			}
+			else if (propType == typeof(UserStatus))
+			{
+				return new UserStatus((JsonObject)value);
+			}				
 			else if (propType == typeof(Auths))
 			{
 				return new Auths((JsonArray)value);

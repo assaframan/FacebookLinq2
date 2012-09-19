@@ -772,6 +772,45 @@ namespace facebook.Tables
 	}
 
 
+	[DebuggerDisplay("{Time}: {Message}")]
+	public class UserStatus
+	{
+		[Column(Name = "message")]
+		public string Message { get; set; }
+		[Column(Name = "time")]
+		public DateTime Time { get; set; }
+		[Column(Name = "status_id")]
+		public StatusId StatusId { get; set; }
+		[Column(Name = "comment_count")]
+		public long CommentCount { get; set; }
+
+		public UserStatus()
+		{
+
+		}
+
+		public UserStatus(JsonObject jsonValue)
+		{
+			if (jsonValue.ContainsKey("message"))
+			{
+				Message = (string)jsonValue["message"];
+			}
+			if (jsonValue.ContainsKey("time"))
+			{
+				Time = DateHelper.ConvertDoubleToDate(Convert.ToDouble((long)jsonValue["time"]));
+			}
+			if (jsonValue.ContainsKey("status_id"))
+			{
+				StatusId = new StatusId(jsonValue["status_id"].ToString());
+			}
+			if (jsonValue.ContainsKey("comment_count"))
+			{
+				CommentCount = (long)jsonValue["comment_count"];
+			}
+		}
+	}
+
+
 }
 
 

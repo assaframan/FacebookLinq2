@@ -265,6 +265,10 @@ namespace CreateTableClassesFromFacebookPages
 			{
 				cSharpTypeToUse = "NoteId";
 			}
+			else if (name == "status" && tableName == "user")
+			{
+				cSharpTypeToUse = "UserStatus";
+			}
 			else if (name == "source_id" && tableName == "connection")
 			{
 				cSharpTypeToUse = "Uid";

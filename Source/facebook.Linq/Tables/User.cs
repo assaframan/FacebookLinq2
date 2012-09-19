@@ -311,7 +311,7 @@ namespace facebook.Tables
         /// original type is: string
         /// </summary>
         [Column(Name = "status" )]
-        public string Status { get; set; }
+        public UserStatus Status { get; set; }
 
         /// <summary>
         /// The user's Facebook Chat status. Returns a string, one of active, idle, offline, or error (when Facebook can't determine presence information on the server side). The query does not return the user's Facebook Chat status when that information is restricted for privacy reasons.
