@@ -72,22 +72,6 @@ namespace facebook.Tables
         public string Description { get; set; }
 
         /// <summary>
-        /// The category of the group being queried. This field has been DEPRECATED AND REMOVED and is no longer supported. Please see the deprecation <a href="https://developers.facebook.com/blog/post/2012/02/03/platform-updates--operation-developer-love/">announcement</a>.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "group_type" )]
-        public string GroupType { get; set; }
-
-        /// <summary>
-        /// The group type for the group being queried. This field has been DEPRECATED AND REMOVED and is no longer supported. Please see the deprecation <a href="https://developers.facebook.com/blog/post/2012/02/03/platform-updates--operation-developer-love/">announcement</a>.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "group_subtype" )]
-        public string GroupSubtype { get; set; }
-
-        /// <summary>
         /// The contents of the Recent News field of the group being queried.
         /// 
         /// original type is: string
@@ -178,7 +162,7 @@ namespace facebook.Tables
         /// <summary>
         /// The group version.  New groups are versioned > 0.
         /// 
-        /// original type is: string
+        /// original type is: int
         /// </summary>
         [Column(Name = "version" )]
         public long? Version { get; set; }

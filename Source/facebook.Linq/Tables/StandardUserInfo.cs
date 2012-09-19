@@ -75,14 +75,6 @@ namespace facebook.Tables
         public string Locale { get; set; }
 
         /// <summary>
-        /// The corporate or educational networks to which the user being queried belongs. Regional networks have been deprecated and are no longer returned.
-        /// 
-        /// original type is: array
-        /// </summary>
-        [Column(Name = "affiliations" )]
-        public object Affiliations { get; set; }
-
-        /// <summary>
         /// The URL to a user's profile.
         /// 
         /// original type is: string

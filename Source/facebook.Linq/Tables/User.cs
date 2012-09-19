@@ -290,30 +290,6 @@ namespace facebook.Tables
         public string AboutMe { get; set; }
 
         /// <summary>
-        /// <strong>Deprecated.</strong> This value is now equivalent to education entry of type ''High School''.
-        /// 
-        /// original type is: array
-        /// </summary>
-        [Column(Name = "hs_info" )]
-        public object HsInfo { get; set; }
-
-        /// <summary>
-        /// <strong>Deprecated.</strong> This value is now equivalent to education entry of type ''College''.
-        /// 
-        /// original type is: array
-        /// </summary>
-        [Column(Name = "education_history" )]
-        public object EducationHistory { get; set; }
-
-        /// <summary>
-        /// <strong>Deprecated.</strong> This value is now equivalent to work.
-        /// 
-        /// original type is: array
-        /// </summary>
-        [Column(Name = "work_history" )]
-        public object WorkHistory { get; set; }
-
-        /// <summary>
         /// The number of notes created by the user being queried.
         /// 
         /// original type is: int
@@ -336,14 +312,6 @@ namespace facebook.Tables
         /// </summary>
         [Column(Name = "status" )]
         public string Status { get; set; }
-
-        /// <summary>
-        /// <strong>Deprecated.</strong> This value is now equivalent to is_app_user.
-        /// 
-        /// original type is: bool
-        /// </summary>
-        [Column(Name = "has_added_app" )]
-        public bool? HasAddedApp { get; set; }
 
         /// <summary>
         /// The user's Facebook Chat status. Returns a string, one of active, idle, offline, or error (when Facebook can't determine presence information on the server side). The query does not return the user's Facebook Chat status when that information is restricted for privacy reasons.
@@ -376,14 +344,6 @@ namespace facebook.Tables
         /// </summary>
         [Column(Name = "profile_url" )]
         public string ProfileUrl { get; set; }
-
-        /// <summary>
-        /// An array containing a set of confirmed email hashes for the user. Emails are registered via the deprecated <a href="https://developers.facebook.com/docs/reference/rest/connect.registerUsers/">connect.registerUsers</a> API call and are only confirmed when the user adds your application. The format of each email hash is the crc32 and md5 hashes of the email address combined with an underscore (_).
-        /// 
-        /// original type is: array
-        /// </summary>
-        [Column(Name = "email_hashes" )]
-        public object EmailHashes { get; set; }
 
         /// <summary>
         /// The URL to the small-sized profile picture for the user being queried. The image can have a maximum width of 50px and a maximum height of 150px, and is overlaid with the Facebook favicon. This URL may be blank.
@@ -526,14 +486,6 @@ namespace facebook.Tables
         public object VideoUploadLimits { get; set; }
 
         /// <summary>
-        /// The user's favorite games; this field is deprecated and will be removed in the near future. The string is a comma-separated list.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "games" )]
-        public string Games { get; set; }
-
-        /// <summary>
         /// A list of the user's work history. Contains employer, location, position, start_date and end_date fields.
         /// 
         /// original type is: array
@@ -556,22 +508,6 @@ namespace facebook.Tables
         /// </summary>
         [Column(Name = "sports" )]
         public object Sports { get; set; }
-
-        /// <summary>
-        /// The user's favorite athletes; this field is deprecated and will be removed in the near future. The array objects contain id and name fields.
-        /// 
-        /// original type is: array
-        /// </summary>
-        [Column(Name = "favorite_athletes" )]
-        public object FavoriteAthletes { get; set; }
-
-        /// <summary>
-        /// The user's favorite teams; this field is deprecated and will be removed in the near future. The array objects contain id and name fields.
-        /// 
-        /// original type is: array
-        /// </summary>
-        [Column(Name = "favorite_teams" )]
-        public object FavoriteTeams { get; set; }
 
         /// <summary>
         /// The people who inspire the user. The array objects contain id and name fields.

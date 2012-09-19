@@ -189,6 +189,7 @@ namespace CreateTableClassesFromFacebookPages
 			if ( 
 				   (name == "update_ip_whitelist")
 				|| (name == "server_ip_whitelist")
+				|| (description.ToLower().Contains("deprecated"))
 			   )
 				
 			{
