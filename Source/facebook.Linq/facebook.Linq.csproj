@@ -75,6 +75,7 @@
     <Compile Include="Tables\Album.cs" />
     <Compile Include="Tables\Application.cs" />
     <Compile Include="Tables\Apprequest.cs" />
+    <Compile Include="Tables\AppRole.cs" />
     <Compile Include="Tables\ArrayTypes.cs" />
     <Compile Include="Tables\Checkin.cs" />
     <Compile Include="Tables\Comment.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="Tables\Insights.cs" />
     <Compile Include="Tables\Like.cs" />
     <Compile Include="Tables\Link.cs" />
+    <Compile Include="Tables\LinkImageSrc.cs" />
     <Compile Include="Tables\LinkStat.cs" />
     <Compile Include="Tables\LocationPost.cs" />
     <Compile Include="Tables\MailboxFolder.cs" />
@@ -109,6 +111,7 @@
     <Compile Include="Tables\PageAdmin.cs" />
     <Compile Include="Tables\PageBlockedUser.cs" />
     <Compile Include="Tables\PageFan.cs" />
+    <Compile Include="Tables\PageGlobalBrandChild.cs" />
     <Compile Include="Tables\PageMilestone.cs" />
     <Compile Include="Tables\Permissions.cs" />
     <Compile Include="Tables\PermissionsInfo.cs" />
@@ -125,6 +128,7 @@
     <Compile Include="Tables\QuestionOption.cs" />
     <Compile Include="Tables\QuestionOptionVotes.cs" />
     <Compile Include="Tables\Review.cs" />
+    <Compile Include="Tables\Score.cs" />
     <Compile Include="Tables\StandardFriendInfo.cs" />
     <Compile Include="Tables\StandardUserInfo.cs" />
     <Compile Include="Tables\Status.cs" />
@@ -135,9 +139,12 @@
     <Compile Include="Tables\Thread.cs" />
     <Compile Include="Tables\Translation.cs" />
     <Compile Include="Tables\UnifiedMessage.cs" />
+    <Compile Include="Tables\UnifiedMessageCount.cs" />
+    <Compile Include="Tables\UnifiedMessageSync.cs" />
     <Compile Include="Tables\UnifiedThread.cs" />
     <Compile Include="Tables\UnifiedThreadAction.cs" />
     <Compile Include="Tables\UnifiedThreadCount.cs" />
+    <Compile Include="Tables\UnifiedThreadSync.cs" />
     <Compile Include="Tables\UrlLike.cs" />
     <Compile Include="Tables\User.cs" />
     <Compile Include="Tables\Video.cs" />

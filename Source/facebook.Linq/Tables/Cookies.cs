@@ -9,19 +9,18 @@ using Facebook;
 namespace facebook.Tables
 {
     /// <summary>
-    /// http://developers.facebook.com/docs/reference/fql/cookies/
+    /// https://developers.facebook.com/docs/reference/fql/cookies
     /// </summary>
     [Table(Name = "cookies")]
     public class Cookies
     {
         /// <summary>
-        /// The user ID associated with the cookie.
+        /// Time stamp when the cookie should expire. If not specified, the cookie never expires.
         /// 
-        /// original type is: string
-        /// Indexable
+        /// original type is: timestamp
         /// </summary>
-        [Column(Name = "uid" , IsPrimaryKey = true)]
-        public Uid Uid { get; set; }
+        [Column(Name = "expires" , IsPrimaryKey = true)]
+        public object Expires { get; set; }
 
         /// <summary>
         /// The name of the cookie.
@@ -32,28 +31,28 @@ namespace facebook.Tables
         public string Name { get; set; }
 
         /// <summary>
-        /// The value of the cookie.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "value" )]
-        public string Value { get; set; }
-
-        /// <summary>
-        /// Time stamp when the cookie should expire. If not specified, the cookie never expires.
-        /// 
-        /// original type is: int
-        /// </summary>
-        [Column(Name = "expires" )]
-        public long? Expires { get; set; }
-
-        /// <summary>
         /// Path relative to the application's callback URL, with which the cookie should be associated. Default value is /
         /// 
         /// original type is: string
         /// </summary>
         [Column(Name = "path" )]
         public string Path { get; set; }
+
+        /// <summary>
+        /// The user ID associated with the cookie.
+        /// 
+        /// original type is: numeric string
+        /// </summary>
+        [Column(Name = "uid" )]
+        public Uid Uid { get; set; }
+
+        /// <summary>
+        /// The value of the cookie.
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "value" )]
+        public string Value { get; set; }
 
     }
 }

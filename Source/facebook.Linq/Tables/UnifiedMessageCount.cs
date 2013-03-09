@@ -9,10 +9,10 @@ using Facebook;
 namespace facebook.Tables
 {
     /// <summary>
-    /// https://developers.facebook.com/docs/reference/fql/unified_thread_count
+    /// https://developers.facebook.com/docs/reference/fql/unified_message_count
     /// </summary>
-    [Table(Name = "unified_thread_count")]
-    public class UnifiedThreadCount
+    [Table(Name = "unified_message_count")]
+    public class UnifiedMessageCount
     {
         /// <summary>
         /// Folder name ('inbox', 'other' or 'spam')

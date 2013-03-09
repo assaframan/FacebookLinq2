@@ -9,141 +9,26 @@ using Facebook;
 namespace facebook.Tables
 {
     /// <summary>
-    /// http://developers.facebook.com/docs/reference/fql/application/
+    /// https://developers.facebook.com/docs/reference/fql/application
     /// </summary>
     [Table(Name = "application")]
     public class Application
     {
         /// <summary>
-        /// The ID of the application being queried.
+        /// Android key hash of the app.
         /// 
-        /// original type is: int
-        /// Indexable
+        /// original type is: array
         /// </summary>
-        [Column(Name = "app_id" , IsPrimaryKey = true)]
-        public AppId AppId { get; set; }
+        [Column(Name = "android_key_hash" , IsPrimaryKey = true)]
+        public object AndroidKeyHash { get; set; }
 
         /// <summary>
         /// The API key of the application being queried.
         /// 
         /// original type is: string
-        /// Indexable
         /// </summary>
         [Column(Name = "api_key" )]
         public string ApiKey { get; set; }
-
-        /// <summary>
-        /// The string appended to apps.facebook.com/ to navigate to the application's canvas page.
-        /// 
-        /// original type is: string
-        /// Indexable
-        /// </summary>
-        [Column(Name = "namespace" )]
-        public string Namespace { get; set; }
-
-        /// <summary>
-        /// The name of the application.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "display_name" )]
-        public string DisplayName { get; set; }
-
-        /// <summary>
-        /// The URL identifying the application's icon image.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "icon_url" )]
-        public string IconUrl { get; set; }
-
-        /// <summary>
-        /// The URL identifying the application's logo image.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "logo_url" )]
-        public string LogoUrl { get; set; }
-
-        /// <summary>
-        /// The name of the company that built the application.<br /><strong>Note:</strong> Only one of company_name and developers will contain data, never both.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "company_name" )]
-        public string CompanyName { get; set; }
-
-        /// <summary>
-        /// A list of records, where each record identifies a Facebook user who is marked as a developer of the application.<br /><strong>Note:</strong> Only one of company_name and developers will contain data, never both.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "developers" )]
-        public Developers Developers { get; set; }
-
-        /// <summary>
-        /// The description of the application, as provided by the developer.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "description" )]
-        public string Description { get; set; }
-
-        /// <summary>
-        /// The number of Facebook users who've used the application in the last day.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "daily_active_users" )]
-        public string DailyActiveUsers { get; set; }
-
-        /// <summary>
-        /// The number of Facebook users who've used the application in the last seven days.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "weekly_active_users" )]
-        public string WeeklyActiveUsers { get; set; }
-
-        /// <summary>
-        /// The number of Facebook users who've used the application in the last 30 days.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "monthly_active_users" )]
-        public string MonthlyActiveUsers { get; set; }
-
-        /// <summary>
-        /// The category the application can be found under.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "category" )]
-        public string Category { get; set; }
-
-        /// <summary>
-        /// The subcategory the application can be found under.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "subcategory" )]
-        public string Subcategory { get; set; }
-
-        /// <summary>
-        /// Whether or not the application is natively developed by Facebook.
-        /// 
-        /// original type is: bool
-        /// </summary>
-        [Column(Name = "is_facebook_app" )]
-        public bool? IsFacebookApp { get; set; }
-
-        /// <summary>
-        /// Returns demographic restrictions for the app in a object with zero or more of the following fields: type, location, age, and age_distr. See restrictions field on the Graph API <a href="/docs/reference/api/application/">Application</a> object for more information.
-        /// 
-        /// original type is: object
-        /// </summary>
-        [Column(Name = "restriction_info" )]
-        public JsonObject RestrictionInfo { get; set; }
 
         /// <summary>
         /// Domains and subdomains this app can use. App access_token required.
@@ -154,20 +39,44 @@ namespace facebook.Tables
         public AppDomains AppDomains { get; set; }
 
         /// <summary>
+        /// The ID of the application being queried.
+        /// 
+        /// original type is: numeric string
+        /// </summary>
+        [Column(Name = "app_id" )]
+        public AppId AppId { get; set; }
+
+        /// <summary>
+        /// Name of the app.
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "app_name" )]
+        public string AppName { get; set; }
+
+        /// <summary>
+        /// Type of the app.
+        /// 
+        /// original type is: bool
+        /// </summary>
+        [Column(Name = "app_type" )]
+        public bool? AppType { get; set; }
+
+        /// <summary>
+        /// The URL identifying the hi-resolution version of the application's icon image
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "appcenter_icon_url" )]
+        public string AppcenterIconUrl { get; set; }
+
+        /// <summary>
         /// The URL of a special landing page that helps users of an app begin publishing Open Graph activity. App access_token required.
         /// 
         /// original type is: string
         /// </summary>
         [Column(Name = "auth_dialog_data_help_url" )]
         public string AuthDialogDataHelpUrl { get; set; }
-
-        /// <summary>
-        /// The description of an app that appears in the Auth Dialog. App access_token required.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "auth_dialog_description" )]
-        public string AuthDialogDescription { get; set; }
 
         /// <summary>
         /// One line description of an app that appears in the Auth Dialog. App access_token required; only returned if specifically requested via the fields URL parameter. string
@@ -184,22 +93,6 @@ namespace facebook.Tables
         /// </summary>
         [Column(Name = "auth_dialog_perms_explanation" )]
         public string AuthDialogPermsExplanation { get; set; }
-
-        /// <summary>
-        /// Basic user permissions that a user must grant when Authenticated Referrals are enabled. App access_token required.
-        /// 
-        /// original type is: array
-        /// </summary>
-        [Column(Name = "auth_referral_user_perms" )]
-        public Auths AuthReferralUserPerms { get; set; }
-
-        /// <summary>
-        /// Basic friends permissions that a user must grant when Authenticated Referrals are enabled. App access_token required.
-        /// 
-        /// original type is: array
-        /// </summary>
-        [Column(Name = "auth_referral_friend_perms" )]
-        public Auths AuthReferralFriendPerms { get; set; }
 
         /// <summary>
         /// The default privacy setting selected for Open Graph activities in the Auth Dialog. App access_token required; only returned if specifically requested via the fields URL parameter. string which is one of, SELF, EVERYONE, ALL_FRIENDS or NONE.
@@ -226,12 +119,28 @@ namespace facebook.Tables
         public Auths AuthReferralExtendedPerms { get; set; }
 
         /// <summary>
+        /// Basic friends permissions that a user must grant when Authenticated Referrals are enabled. App access_token required.
+        /// 
+        /// original type is: array
+        /// </summary>
+        [Column(Name = "auth_referral_friend_perms" )]
+        public Auths AuthReferralFriendPerms { get; set; }
+
+        /// <summary>
         /// The format that an app receives the Auth token from the Auth Dialog in. App access_token required; only returned if specifically requested via the fields URL parameter. string which is one of, code or token.
         /// 
         /// original type is: string
         /// </summary>
         [Column(Name = "auth_referral_response_type" )]
         public string AuthReferralResponseType { get; set; }
+
+        /// <summary>
+        /// Basic user permissions that a user must grant when Authenticated Referrals are enabled. App access_token required.
+        /// 
+        /// original type is: array
+        /// </summary>
+        [Column(Name = "auth_referral_user_perms" )]
+        public Auths AuthReferralUserPerms { get; set; }
 
         /// <summary>
         /// Indicates whether app uses fluid or settable height values for Canvas. App access_token required.
@@ -258,6 +167,38 @@ namespace facebook.Tables
         public string CanvasUrl { get; set; }
 
         /// <summary>
+        /// The category the application can be found under.
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "category" )]
+        public string Category { get; set; }
+
+        /// <summary>
+        /// Config data for the client
+        /// 
+        /// original type is: array
+        /// </summary>
+        [Column(Name = "client_config" )]
+        public object ClientConfig { get; set; }
+
+        /// <summary>
+        /// The name of the company that built the application. Note: Only one of company_name and developers will contain data, never both.
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "company_name" )]
+        public string CompanyName { get; set; }
+
+        /// <summary>
+        /// True if the app has configured Single Sign On on iOS
+        /// 
+        /// original type is: bool
+        /// </summary>
+        [Column(Name = "configured_ios_sso" )]
+        public bool? ConfiguredIosSso { get; set; }
+
+        /// <summary>
         /// Email address listed for users to contact developers. App access_token required.
         /// 
         /// original type is: string
@@ -266,9 +207,9 @@ namespace facebook.Tables
         public string ContactEmail { get; set; }
 
         /// <summary>
-        /// Unix timestamp that indicates when the app was created. App access_token required.
+        /// UNIX timestamp that indicates when the app was created. App access_token required.
         /// 
-        /// original type is: int
+        /// original type is: string
         /// </summary>
         [Column(Name = "created_time" )]
         public DateTime? CreatedTime { get; set; }
@@ -276,10 +217,18 @@ namespace facebook.Tables
         /// <summary>
         /// User ID of the creator of this app. App access_token required.
         /// 
-        /// original type is: int
+        /// original type is: string
         /// </summary>
         [Column(Name = "creator_uid" )]
         public Uid CreatorUid { get; set; }
+
+        /// <summary>
+        /// The number of Facebook users who've used the application in the last day.
+        /// 
+        /// original type is: numeric string
+        /// </summary>
+        [Column(Name = "daily_active_users" )]
+        public object DailyActiveUsers { get; set; }
 
         /// <summary>
         /// URL that is pinged whenever a user removes the app. App access_token required.
@@ -290,12 +239,28 @@ namespace facebook.Tables
         public string DeauthCallbackUrl { get; set; }
 
         /// <summary>
-        /// ID of the app in the iPhone App Store. App access_token required.
+        /// The description of the application, as provided by the developer.
         /// 
         /// original type is: string
         /// </summary>
-        [Column(Name = "iphone_app_store_id" )]
-        public AppId IphoneAppStoreId { get; set; }
+        [Column(Name = "description" )]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// A list of records, where each record identifies a Facebook user who is marked as a developer of the application. Note: Only one of company_name and developers will contain data, never both.
+        /// 
+        /// original type is: array
+        /// </summary>
+        [Column(Name = "developers" )]
+        public Developers Developers { get; set; }
+
+        /// <summary>
+        /// The name of the application.
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "display_name" )]
+        public string DisplayName { get; set; }
 
         /// <summary>
         /// Webspace created with one of our hosting partners for this app. App access_token required.
@@ -306,12 +271,100 @@ namespace facebook.Tables
         public string HostingUrl { get; set; }
 
         /// <summary>
+        /// The URL identifying the application's icon image.
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "icon_url" )]
+        public string IconUrl { get; set; }
+
+        /// <summary>
+        /// Bundle ID of the associated iOS app.
+        /// 
+        /// original type is: array
+        /// </summary>
+        [Column(Name = "ios_bundle_id" )]
+        public object IosBundleId { get; set; }
+
+        /// <summary>
+        /// ID of the app in the iPad App Store. App access_token required.
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "ipad_app_store_id" )]
+        public AppId IpadAppStoreId { get; set; }
+
+        /// <summary>
+        /// ID of the app in the iPhone App Store. App access_token required.
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "iphone_app_store_id" )]
+        public AppId IphoneAppStoreId { get; set; }
+
+        /// <summary>
+        /// Whether or not the application is natively developed by Facebook.
+        /// 
+        /// original type is: bool
+        /// </summary>
+        [Column(Name = "is_facebook_app" )]
+        public bool? IsFacebookApp { get; set; }
+
+        /// <summary>
+        /// Facebook profile link of the app.
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "link" )]
+        public string Link { get; set; }
+
+        /// <summary>
+        /// The URL identifying the application's logo image.
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "logo_url" )]
+        public string LogoUrl { get; set; }
+
+        /// <summary>
+        /// Status of every valid migration for this app (true means enabled.)
+        /// 
+        /// original type is: array
+        /// </summary>
+        [Column(Name = "migration_status" )]
+        public object MigrationStatus { get; set; }
+
+        /// <summary>
+        /// URL of the app section on a user's profile for the mobile site.
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "mobile_profile_section_url" )]
+        public string MobileProfileSectionUrl { get; set; }
+
+        /// <summary>
         /// URL to which Mobile users will be directed when using the app. App access_token required.
         /// 
         /// original type is: string
         /// </summary>
         [Column(Name = "mobile_web_url" )]
         public string MobileWebUrl { get; set; }
+
+        /// <summary>
+        /// The number of Facebook users who've used the application in the last 30 days.
+        /// 
+        /// original type is: numeric string
+        /// </summary>
+        [Column(Name = "monthly_active_users" )]
+        public object MonthlyActiveUsers { get; set; }
+
+        /// <summary>
+        /// The string appended to apps.facebook.com/ to navigate to the application's canvas page.
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "namespace" )]
+        public string Namespace { get; set; }
 
         /// <summary>
         /// The title of the app when used in a Page Tab. App access_token required.
@@ -338,6 +391,22 @@ namespace facebook.Tables
         public string PrivacyPolicyUrl { get; set; }
 
         /// <summary>
+        /// URL of the app section on a user's profile for the desktop site.
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "profile_section_url" )]
+        public string ProfileSectionUrl { get; set; }
+
+        /// <summary>
+        /// Returns demographic restrictions for the app in a object with zero or more of the following fields: type, location, age, and age_distr. See restrictions field on the Graph API <a href="/docs/reference/api/application/">Application</a> object for more information.
+        /// 
+        /// original type is: struct
+        /// </summary>
+        [Column(Name = "restriction_info" )]
+        public object RestrictionInfo { get; set; }
+
+        /// <summary>
         /// The secure URL from which Canvas app content is loaded. App access_token required.
         /// 
         /// original type is: string
@@ -362,12 +431,44 @@ namespace facebook.Tables
         public bool? SocialDiscovery { get; set; }
 
         /// <summary>
+        /// The subcategory the application can be found under.
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "subcategory" )]
+        public string Subcategory { get; set; }
+
+        /// <summary>
+        /// Indicates whether the app has opted out of app install tracking.
+        /// 
+        /// original type is: bool
+        /// </summary>
+        [Column(Name = "supports_attribution" )]
+        public bool? SupportsAttribution { get; set; }
+
+        /// <summary>
+        /// Indicates whether the app has opted out of the mobile SDKs sending data on SDK interactions.
+        /// 
+        /// original type is: bool
+        /// </summary>
+        [Column(Name = "supports_implicit_sdk_logging" )]
+        public bool? SupportsImplicitSdkLogging { get; set; }
+
+        /// <summary>
         /// URL to Terms of Service which is linked to in Auth Dialog. App access_token required.
         /// 
         /// original type is: string
         /// </summary>
         [Column(Name = "terms_of_service_url" )]
         public string TermsOfServiceUrl { get; set; }
+
+        /// <summary>
+        /// ><p>
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "url_scheme_suffix" )]
+        public string UrlSchemeSuffix { get; set; }
 
         /// <summary>
         /// Main contact email for this app. App access_token required.
@@ -392,6 +493,14 @@ namespace facebook.Tables
         /// </summary>
         [Column(Name = "website_url" )]
         public string WebsiteUrl { get; set; }
+
+        /// <summary>
+        /// The number of Facebook users who've used the application in the last seven days.
+        /// 
+        /// original type is: numeric string
+        /// </summary>
+        [Column(Name = "weekly_active_users" )]
+        public object WeeklyActiveUsers { get; set; }
 
     }
 }

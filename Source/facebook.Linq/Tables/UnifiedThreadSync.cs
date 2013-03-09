@@ -9,10 +9,10 @@ using Facebook;
 namespace facebook.Tables
 {
     /// <summary>
-    /// https://developers.facebook.com/docs/reference/fql/unified_thread
+    /// https://developers.facebook.com/docs/reference/fql/unified_thread_sync
     /// </summary>
-    [Table(Name = "unified_thread")]
-    public class UnifiedThread
+    [Table(Name = "unified_thread_sync")]
+    public class UnifiedThreadSync
     {
         /// <summary>
         /// Unique numeric version identifier for the thread. Guaranteed to increase as the thread is modified
@@ -183,6 +183,14 @@ namespace facebook.Tables
         public object ReadReceipts { get; set; }
 
         /// <summary>
+        /// ID of the refetch action
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "refetch_action_id" )]
+        public string RefetchActionId { get; set; }
+
+        /// <summary>
         /// List of participants who have sent a message in the thread
         /// 
         /// original type is: array
@@ -237,6 +245,14 @@ namespace facebook.Tables
         /// </summary>
         [Column(Name = "subject" )]
         public string Subject { get; set; }
+
+        /// <summary>
+        /// Change type for the synced thread
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "sync_change_type" )]
+        public string SyncChangeType { get; set; }
 
         /// <summary>
         /// List of tags in the thread

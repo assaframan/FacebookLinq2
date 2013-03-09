@@ -9,16 +9,15 @@ using Facebook;
 namespace facebook.Tables
 {
     /// <summary>
-    /// http://developers.facebook.com/docs/reference/fql/page_blocked_user/
+    /// https://developers.facebook.com/docs/reference/fql/page_blocked_user
     /// </summary>
     [Table(Name = "page_blocked_user")]
     public class PageBlockedUser
     {
         /// <summary>
-        /// The ID of the Page to retrieve a list of blocked users for
+        /// The ID of the Page
         /// 
-        /// original type is: string
-        /// Indexable
+        /// original type is: numeric string
         /// </summary>
         [Column(Name = "page_id" , IsPrimaryKey = true)]
         public PageId PageId { get; set; }
@@ -26,10 +25,10 @@ namespace facebook.Tables
         /// <summary>
         /// The ID of any user blocked by the Page
         /// 
-        /// original type is: string
+        /// original type is: numeric string
         /// </summary>
         [Column(Name = "uid" )]
-        public string Uid { get; set; }
+        public object Uid { get; set; }
 
     }
 }

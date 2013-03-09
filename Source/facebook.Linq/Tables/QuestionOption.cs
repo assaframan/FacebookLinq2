@@ -9,28 +9,26 @@ using Facebook;
 namespace facebook.Tables
 {
     /// <summary>
-    /// http://developers.facebook.com/docs/reference/fql/question_option/
+    /// https://developers.facebook.com/docs/reference/fql/question_option
     /// </summary>
     [Table(Name = "question_option")]
     public class QuestionOption
     {
         /// <summary>
-        /// ID of the specific question option
+        /// UNIX timestamp of time when the option was created
         /// 
-        /// original type is: int
-        /// Indexable
+        /// original type is: timestamp
         /// </summary>
-        [Column(Name = "id" , IsPrimaryKey = true)]
-        public QuestionOptionId Id { get; set; }
+        [Column(Name = "created_time" , IsPrimaryKey = true)]
+        public DateTime? CreatedTime { get; set; }
 
         /// <summary>
-        /// ID of the question associated with this option.
+        /// ID of the specific question option
         /// 
-        /// original type is: string
-        /// Indexable
+        /// original type is: id
         /// </summary>
-        [Column(Name = "question_id" )]
-        public string QuestionId { get; set; }
+        [Column(Name = "id" )]
+        public QuestionOptionId Id { get; set; }
 
         /// <summary>
         /// Text of the option
@@ -41,17 +39,9 @@ namespace facebook.Tables
         public string Name { get; set; }
 
         /// <summary>
-        /// Number of votes this option has received
+        /// ID of the Page associated with this option (optional, may be empty)
         /// 
-        /// original type is: int
-        /// </summary>
-        [Column(Name = "votes" )]
-        public long? Votes { get; set; }
-
-        /// <summary>
-        /// ID of Page associated with this option (optional, may be empty)
-        /// 
-        /// original type is: int
+        /// original type is: id
         /// </summary>
         [Column(Name = "object_id" )]
         public ObjectId ObjectId { get; set; }
@@ -59,18 +49,34 @@ namespace facebook.Tables
         /// <summary>
         /// User ID of the owner
         /// 
-        /// original type is: int
+        /// original type is: id
         /// </summary>
         [Column(Name = "owner" )]
         public Uid Owner { get; set; }
 
         /// <summary>
-        /// UNIX timestamp of time when the option was created
+        /// ID of the photo associated with this option (optional, may be empty)
         /// 
-        /// original type is: int
+        /// original type is: numeric string
         /// </summary>
-        [Column(Name = "created_time" )]
-        public DateTime? CreatedTime { get; set; }
+        [Column(Name = "photo_id" )]
+        public PhotoId PhotoId { get; set; }
+
+        /// <summary>
+        /// ID of the question associated with this option
+        /// 
+        /// original type is: id
+        /// </summary>
+        [Column(Name = "question_id" )]
+        public object QuestionId { get; set; }
+
+        /// <summary>
+        /// Number of votes this option has received
+        /// 
+        /// original type is: unsigned int32
+        /// </summary>
+        [Column(Name = "votes" )]
+        public object Votes { get; set; }
 
     }
 }

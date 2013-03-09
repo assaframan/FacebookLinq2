@@ -9,25 +9,39 @@ using Facebook;
 namespace facebook.Tables
 {
     /// <summary>
-    /// http://developers.facebook.com/docs/reference/fql/question/
+    /// https://developers.facebook.com/docs/reference/fql/question
     /// </summary>
     [Table(Name = "question")]
     public class Question
     {
         /// <summary>
+        /// Time the question was created (UNIX timestamp)
+        /// 
+        /// original type is: timestamp
+        /// </summary>
+        [Column(Name = "created_time" , IsPrimaryKey = true)]
+        public DateTime? CreatedTime { get; set; }
+
+        /// <summary>
         /// The question ID
         /// 
-        /// original type is: int
-        /// Indexable
+        /// original type is: id
         /// </summary>
-        [Column(Name = "id" , IsPrimaryKey = true)]
+        [Column(Name = "id" )]
         public QuestionId Id { get; set; }
+
+        /// <summary>
+        /// Whether the question has been published
+        /// 
+        /// original type is: bool
+        /// </summary>
+        [Column(Name = "is_published" )]
+        public bool? IsPublished { get; set; }
 
         /// <summary>
         /// ID of the user who created the question
         /// 
-        /// original type is: int
-        /// Indexable
+        /// original type is: id
         /// </summary>
         [Column(Name = "owner" )]
         public Uid Owner { get; set; }
@@ -41,17 +55,9 @@ namespace facebook.Tables
         public string Question_ { get; set; }
 
         /// <summary>
-        /// Time the question was created, expressed as a UNIX timestamp
+        /// Time the question was was last modified (UNIX timestamp)
         /// 
-        /// original type is: int
-        /// </summary>
-        [Column(Name = "created_time" )]
-        public DateTime? CreatedTime { get; set; }
-
-        /// <summary>
-        /// Time the question was was last modified, expressed as a UNIX timestamp
-        /// 
-        /// original type is: int
+        /// original type is: timestamp
         /// </summary>
         [Column(Name = "updated_time" )]
         public DateTime? UpdatedTime { get; set; }

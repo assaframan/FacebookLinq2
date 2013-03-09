@@ -9,39 +9,21 @@ using Facebook;
 namespace facebook.Tables
 {
     /// <summary>
-    /// http://developers.facebook.com/docs/reference/fql/review/
+    /// https://developers.facebook.com/docs/reference/fql/review
     /// </summary>
     [Table(Name = "review")]
     public class Review
     {
         /// <summary>
-        /// The ID of the application to which a review applies.
+        /// Creation time of the review (UNIX timestamp)
         /// 
-        /// original type is: int
-        /// Indexable
+        /// original type is: timestamp
         /// </summary>
-        [Column(Name = "reviewee_id" , IsPrimaryKey = true)]
-        public AppId RevieweeId { get; set; }
+        [Column(Name = "created_time" , IsPrimaryKey = true)]
+        public DateTime? CreatedTime { get; set; }
 
         /// <summary>
-        /// The ID of the user who created a review.
-        /// 
-        /// original type is: int
-        /// Indexable
-        /// </summary>
-        [Column(Name = "reviewer_id" )]
-        public Uid ReviewerId { get; set; }
-
-        /// <summary>
-        /// The ID of the review.
-        /// 
-        /// original type is: int
-        /// </summary>
-        [Column(Name = "review_id" )]
-        public ReviewId ReviewId { get; set; }
-
-        /// <summary>
-        /// The review text (optional).
+        /// The review text (optional)
         /// 
         /// original type is: string
         /// </summary>
@@ -49,20 +31,36 @@ namespace facebook.Tables
         public string Message { get; set; }
 
         /// <summary>
-        /// A Unix timestamp associated with the creation time of a review.
+        /// The review rating. Ratings can range from 1 - 5
         /// 
-        /// original type is: int
-        /// </summary>
-        [Column(Name = "created_time" )]
-        public DateTime? CreatedTime { get; set; }
-
-        /// <summary>
-        /// The review rating.
-        /// 
-        /// original type is: int
+        /// original type is: unsigned int32
         /// </summary>
         [Column(Name = "rating" )]
-        public long? Rating { get; set; }
+        public object Rating { get; set; }
+
+        /// <summary>
+        /// The ID of the review
+        /// 
+        /// original type is: id
+        /// </summary>
+        [Column(Name = "review_id" )]
+        public ReviewId ReviewId { get; set; }
+
+        /// <summary>
+        /// The ID of the application to which a review applies
+        /// 
+        /// original type is: id
+        /// </summary>
+        [Column(Name = "reviewee_id" )]
+        public AppId RevieweeId { get; set; }
+
+        /// <summary>
+        /// The ID of the user who created a review
+        /// 
+        /// original type is: id
+        /// </summary>
+        [Column(Name = "reviewer_id" )]
+        public Uid ReviewerId { get; set; }
 
     }
 }

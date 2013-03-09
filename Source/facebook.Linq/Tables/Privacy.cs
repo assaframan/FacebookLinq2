@@ -9,55 +9,21 @@ using Facebook;
 namespace facebook.Tables
 {
     /// <summary>
-    /// http://developers.facebook.com/docs/reference/fql/privacy/
+    /// https://developers.facebook.com/docs/reference/fql/privacy
     /// </summary>
     [Table(Name = "privacy")]
     public class Privacy
     {
         /// <summary>
-        /// The ID of any video, note, link, photo, or photo album published by the current session user
-        /// 
-        /// original type is: string
-        /// Indexable
-        /// </summary>
-        [Column(Name = "id" , IsPrimaryKey = true)]
-        public ObjectId Id { get; set; }
-
-        /// <summary>
-        /// id is an alias of this column
-        /// 
-        /// original type is: string
-        /// Indexable
-        /// </summary>
-        [Column(Name = "object_id" )]
-        public ObjectId ObjectId { get; set; }
-
-        /// <summary>
-        /// The privacy value for the object, one of:
+        /// The UIDs of the specific users or the IDs of friendlists that can see the object (as a comma-separated string).
         /// 
         /// original type is: string
         /// </summary>
-        [Column(Name = "value" )]
-        public string Value { get; set; }
-
-        /// <summary>
-        /// A description of the privacy settings. For custom settings, it can contain names of users, networks, and friend lists
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "description" )]
-        public string Description { get; set; }
-
-        /// <summary>
-        /// The UIDs of the specific users or the IDs of <a href="/docs/reference/fql/friendlist/">friendlists</a> that can see the object (as a comma-separated string)
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "allow" )]
+        [Column(Name = "allow" , IsPrimaryKey = true)]
         public string Allow { get; set; }
 
         /// <summary>
-        /// The UIDs of the specific users or the IDs of <a href="/docs/reference/fql/friendlist/">friendlists</a> that cannot see the object (as a comma-separated string)
+        /// The UIDs of the specific users or the IDs of friendlists that cannot see the object (as a comma-separated string).
         /// 
         /// original type is: string
         /// </summary>
@@ -65,28 +31,60 @@ namespace facebook.Tables
         public string Deny { get; set; }
 
         /// <summary>
-        /// The ID of the user who owns the object
+        /// A description of the privacy settings. For custom settings, it can contain names of users, networks, and friend lists.
         /// 
-        /// original type is: int
+        /// original type is: string
         /// </summary>
-        [Column(Name = "owner_id" )]
-        public Uid OwnerId { get; set; }
+        [Column(Name = "description" )]
+        public string Description { get; set; }
 
         /// <summary>
-        /// The ID of the network that can see the object, or 1 for all of the user's networks.
-        /// 
-        /// original type is: int
-        /// </summary>
-        [Column(Name = "networks" )]
-        public long? Networks { get; set; }
-
-        /// <summary>
-        /// Which users can see the object. Can be one of:
+        /// Which users can see the object. Can be one of: EVERYONE, FRIENDS_OF_FRIENDS, ALL_FRIENDS, SOME_FRIENDS, SELF, NO_FRIENDS
         /// 
         /// original type is: string
         /// </summary>
         [Column(Name = "friends" )]
         public string Friends { get; set; }
+
+        /// <summary>
+        /// The ID of any video, note, link, photo, or photo album published by the current session user.
+        /// 
+        /// original type is: id
+        /// </summary>
+        [Column(Name = "id" )]
+        public ObjectId Id { get; set; }
+
+        /// <summary>
+        /// The ID of the network that can see the object, or ALL_NETWORKS for all of the user's networks.
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "networks" )]
+        public string Networks { get; set; }
+
+        /// <summary>
+        /// id is an alias of this column.
+        /// 
+        /// original type is: id
+        /// </summary>
+        [Column(Name = "object_id" )]
+        public ObjectId ObjectId { get; set; }
+
+        /// <summary>
+        /// The ID of the user who owns the object.
+        /// 
+        /// original type is: id
+        /// </summary>
+        [Column(Name = "owner_id" )]
+        public Uid OwnerId { get; set; }
+
+        /// <summary>
+        /// The privacy value for the object, one of: EVERYONE, CUSTOM, ALL_FRIENDS, FRIENDS_OF_FRIENDS
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "value" )]
+        public string Value { get; set; }
 
     }
 }

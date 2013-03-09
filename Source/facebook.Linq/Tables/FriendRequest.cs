@@ -9,35 +9,18 @@ using Facebook;
 namespace facebook.Tables
 {
     /// <summary>
-    /// http://developers.facebook.com/docs/reference/fql/friend_request/
+    /// https://developers.facebook.com/docs/reference/fql/friend_request
     /// </summary>
     [Table(Name = "friend_request")]
     public class FriendRequest
     {
         /// <summary>
-        /// The ID of the user receiving the friend request.
+        /// Returns true if the user has hidden the friend request. Only available if the uid_to parameter is set to the logged-in user
         /// 
-        /// original type is: string
-        /// Indexable
+        /// original type is: bool
         /// </summary>
-        [Column(Name = "uid_to" , IsPrimaryKey = true)]
-        public Uid UidTo { get; set; }
-
-        /// <summary>
-        /// The ID of the user making the friend request.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "uid_from" )]
-        public Uid UidFrom { get; set; }
-
-        /// <summary>
-        /// A unix timestamp indicating when the friend request was sent.
-        /// 
-        /// original type is: time
-        /// </summary>
-        [Column(Name = "time" )]
-        public DateTime? Time { get; set; }
+        [Column(Name = "is_hidden" , IsPrimaryKey = true)]
+        public bool? IsHidden { get; set; }
 
         /// <summary>
         /// An optional message sent by the user with the friend request.
@@ -48,12 +31,36 @@ namespace facebook.Tables
         public string Message { get; set; }
 
         /// <summary>
-        /// Returns true if the user has not yet seen the friend request. Only available if the <strong>uid_to</strong> parameter is set to the logged-in user
+        /// A UNIX timestamp indicating when the friend request was sent.
         /// 
-        /// original type is: bool
+        /// original type is: number
+        /// </summary>
+        [Column(Name = "time" )]
+        public DateTime? Time { get; set; }
+
+        /// <summary>
+        /// The ID of the user making the friend request.
+        /// 
+        /// original type is: numeric string
+        /// </summary>
+        [Column(Name = "uid_from" )]
+        public Uid UidFrom { get; set; }
+
+        /// <summary>
+        /// The ID of the user receiving the friend request.
+        /// 
+        /// original type is: numeric string
+        /// </summary>
+        [Column(Name = "uid_to" )]
+        public Uid UidTo { get; set; }
+
+        /// <summary>
+        /// Returns true if the user has not yet seen the friend request. Only available if the uid_to parameter is set to the logged-in user
+        /// 
+        /// original type is: (null) or (bool)
         /// </summary>
         [Column(Name = "unread" )]
-        public bool? Unread { get; set; }
+        public object Unread { get; set; }
 
     }
 }

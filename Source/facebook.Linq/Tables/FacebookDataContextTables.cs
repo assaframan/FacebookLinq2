@@ -17,6 +17,14 @@ namespace Facebook
             }
         }
 
+        public FqlTable<AppRole> AppRole
+        {
+            get
+            {
+                return GetTable<AppRole>();
+            }
+        }
+
         public FqlTable<Application> Application
         {
             get
@@ -193,6 +201,14 @@ namespace Facebook
             }
         }
 
+        public FqlTable<LinkImageSrc> LinkImageSrc
+        {
+            get
+            {
+                return GetTable<LinkImageSrc>();
+            }
+        }
+
         public FqlTable<LinkStat> LinkStat
         {
             get
@@ -249,14 +265,6 @@ namespace Facebook
             }
         }
 
-        public FqlTable<Offer> Offer
-        {
-            get
-            {
-                return GetTable<Offer>();
-            }
-        }
-
         public FqlTable<Page> Page
         {
             get
@@ -286,6 +294,14 @@ namespace Facebook
             get
             {
                 return GetTable<PageFan>();
+            }
+        }
+
+        public FqlTable<PageGlobalBrandChild> PageGlobalBrandChild
+        {
+            get
+            {
+                return GetTable<PageGlobalBrandChild>();
             }
         }
 
@@ -369,22 +385,6 @@ namespace Facebook
             }
         }
 
-        public FqlTable<ProfilePic> ProfilePic
-        {
-            get
-            {
-                return GetTable<ProfilePic>();
-            }
-        }
-
-        public FqlTable<ProfileView> ProfileView
-        {
-            get
-            {
-                return GetTable<ProfileView>();
-            }
-        }
-
         public FqlTable<Question> Question
         {
             get
@@ -414,6 +414,14 @@ namespace Facebook
             get
             {
                 return GetTable<Review>();
+            }
+        }
+
+        public FqlTable<Score> Score
+        {
+            get
+            {
+                return GetTable<Score>();
             }
         }
 
@@ -497,6 +505,22 @@ namespace Facebook
             }
         }
 
+        public FqlTable<UnifiedMessageCount> UnifiedMessageCount
+        {
+            get
+            {
+                return GetTable<UnifiedMessageCount>();
+            }
+        }
+
+        public FqlTable<UnifiedMessageSync> UnifiedMessageSync
+        {
+            get
+            {
+                return GetTable<UnifiedMessageSync>();
+            }
+        }
+
         public FqlTable<UnifiedThread> UnifiedThread
         {
             get
@@ -518,6 +542,14 @@ namespace Facebook
             get
             {
                 return GetTable<UnifiedThreadCount>();
+            }
+        }
+
+        public FqlTable<UnifiedThreadSync> UnifiedThreadSync
+        {
+            get
+            {
+                return GetTable<UnifiedThreadSync>();
             }
         }
 

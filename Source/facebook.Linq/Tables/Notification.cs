@@ -9,67 +9,18 @@ using Facebook;
 namespace facebook.Tables
 {
     /// <summary>
-    /// http://developers.facebook.com/docs/reference/fql/notification/
+    /// https://developers.facebook.com/docs/reference/fql/notification
     /// </summary>
     [Table(Name = "notification")]
     public class Notification
     {
         /// <summary>
-        /// The ID of the notification. This ID is not globally unique, so the recipient_id must be specified in addition to it.
+        /// The ID of the application associated with the notification. This may be a third-party application or a Facebook application (for example, Wall).
         /// 
-        /// original type is: string
+        /// original type is: number
         /// </summary>
-        [Column(Name = "notification_id" , IsPrimaryKey = true)]
-        public NotificationId NotificationId { get; set; }
-
-        /// <summary>
-        /// The user ID of the sender of the notification.
-        /// 
-        /// original type is: int
-        /// </summary>
-        [Column(Name = "sender_id" )]
-        public Uid SenderId { get; set; }
-
-        /// <summary>
-        /// The user ID of the recipient of the notification. It is always the current session user.
-        /// 
-        /// original type is: int
-        /// Indexable
-        /// </summary>
-        [Column(Name = "recipient_id" )]
-        public Uid RecipientId { get; set; }
-
-        /// <summary>
-        /// The time the notification was originally sent. Notifications older than 7 days are deleted and will not be returned via this table.
-        /// 
-        /// original type is: ISO-8601 datetime
-        /// </summary>
-        [Column(Name = "created_time" )]
-        public DateTime? CreatedTime { get; set; }
-
-        /// <summary>
-        /// The time the notification was originally sent, or the time the notification was updated, whichever is later.
-        /// 
-        /// original type is: ISO-8601 datetime
-        /// </summary>
-        [Column(Name = "updated_time" )]
-        public DateTime? UpdatedTime { get; set; }
-
-        /// <summary>
-        /// The main body of the notification in HTML.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "title_html" )]
-        public string TitleHtml { get; set; }
-
-        /// <summary>
-        /// The plaintext version of title_html, with all HTML tags stripped out.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "title_text" )]
-        public string TitleText { get; set; }
+        [Column(Name = "app_id" , IsPrimaryKey = true)]
+        public AppId AppId { get; set; }
 
         /// <summary>
         /// Any additional content the notification includes, in HTML.
@@ -88,6 +39,14 @@ namespace facebook.Tables
         public string BodyText { get; set; }
 
         /// <summary>
+        /// The time the notification was originally sent. Notifications older than 7 days are deleted and will not be returned via this table.
+        /// 
+        /// original type is: number
+        /// </summary>
+        [Column(Name = "created_time" )]
+        public DateTime? CreatedTime { get; set; }
+
+        /// <summary>
         /// The URL associated with the notification. This is usually a location where the user can interact with the subject of the notification.
         /// 
         /// original type is: string
@@ -96,28 +55,36 @@ namespace facebook.Tables
         public string Href { get; set; }
 
         /// <summary>
-        /// The ID of the application associated with the notification. This may be a third-party application or a Facebook application (for example, Wall).
+        /// The URL associated with the notification's icon.
         /// 
-        /// original type is: int
+        /// original type is: string
         /// </summary>
-        [Column(Name = "app_id" )]
-        public AppId AppId { get; set; }
-
-        /// <summary>
-        /// Indicates whether the notification has been marked as read. Use notifications.markRead to mark a notification as read.
-        /// 
-        /// original type is: bool
-        /// </summary>
-        [Column(Name = "is_unread" )]
-        public bool? IsUnread { get; set; }
+        [Column(Name = "icon_url" )]
+        public string IconUrl { get; set; }
 
         /// <summary>
         /// Indicates whether the user hid the associated application's notifications.
         /// 
-        /// original type is: bool
+        /// original type is: number (min: 0) (max: 1)
         /// </summary>
         [Column(Name = "is_hidden" )]
-        public bool? IsHidden { get; set; }
+        public object IsHidden { get; set; }
+
+        /// <summary>
+        /// Indicates whether the notification has been marked as read. Use notifications.markRead to mark a notification as read.
+        /// 
+        /// original type is: number
+        /// </summary>
+        [Column(Name = "is_unread" )]
+        public object IsUnread { get; set; }
+
+        /// <summary>
+        /// The ID of the notification. This ID is not globally unique, so the recipient_id must be specified in addition to it.
+        /// 
+        /// original type is: numeric string
+        /// </summary>
+        [Column(Name = "notification_id" )]
+        public NotificationId NotificationId { get; set; }
 
         /// <summary>
         /// The object id of the notification.
@@ -136,12 +103,44 @@ namespace facebook.Tables
         public string ObjectType { get; set; }
 
         /// <summary>
-        /// The URL associated with the notification's icon.
+        /// The user ID of the recipient of the notification. It is always the current session user.
+        /// 
+        /// original type is: number
+        /// </summary>
+        [Column(Name = "recipient_id" )]
+        public Uid RecipientId { get; set; }
+
+        /// <summary>
+        /// The user ID of the sender of the notification.
+        /// 
+        /// original type is: number
+        /// </summary>
+        [Column(Name = "sender_id" )]
+        public Uid SenderId { get; set; }
+
+        /// <summary>
+        /// The main body of the notification in HTML.
         /// 
         /// original type is: string
         /// </summary>
-        [Column(Name = "icon_url" )]
-        public string IconUrl { get; set; }
+        [Column(Name = "title_html" )]
+        public string TitleHtml { get; set; }
+
+        /// <summary>
+        /// The plaintext version of title_html, with all HTML tags stripped out.
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "title_text" )]
+        public string TitleText { get; set; }
+
+        /// <summary>
+        /// The time the notification was originally sent, or the time the notification was updated, whichever is later.
+        /// 
+        /// original type is: number
+        /// </summary>
+        [Column(Name = "updated_time" )]
+        public DateTime? UpdatedTime { get; set; }
 
     }
 }

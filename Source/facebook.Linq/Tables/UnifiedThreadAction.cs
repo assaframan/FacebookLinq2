@@ -9,13 +9,13 @@ using Facebook;
 namespace facebook.Tables
 {
     /// <summary>
-    /// http://developers.facebook.com/docs/reference/fql/unified_thread_action/
+    /// https://developers.facebook.com/docs/reference/fql/unified_thread_action
     /// </summary>
     [Table(Name = "unified_thread_action")]
     public class UnifiedThreadAction
     {
         /// <summary>
-        /// A unique version identifier that is increasing in the same order as the actions that have been performed.
+        /// A unique version ID that is increasing in the same order as the actions that have been performed
         /// 
         /// original type is: string
         /// </summary>
@@ -23,24 +23,39 @@ namespace facebook.Tables
         public string ActionId { get; set; }
 
         /// <summary>
-        /// The user who performed the action. This field is an object with properties name (string), email (string) and user_id (string).
+        /// The user who performed the action
         /// 
-        /// original type is: object
+        /// original type is: struct
         /// </summary>
         [Column(Name = "actor" )]
-        public JsonObject Actor { get; set; }
+        public object Actor { get; set; }
 
         /// <summary>
-        /// Unique identifier of the thread.
+        /// Body of the thread action
         /// 
         /// original type is: string
-        /// Indexable
+        /// </summary>
+        [Column(Name = "body" )]
+        public string Body { get; set; }
+
+        /// <summary>
+        /// Internal ID for the message
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "internal_message_id" )]
+        public string InternalMessageId { get; set; }
+
+        /// <summary>
+        /// ID of the thread
+        /// 
+        /// original type is: string
         /// </summary>
         [Column(Name = "thread_id" )]
         public ThreadId ThreadId { get; set; }
 
         /// <summary>
-        /// Time at which the action was performed (Unix-type timestamp with millisecond resolution).
+        /// Time at which the action was performed (UNIX timestamp)
         /// 
         /// original type is: string
         /// </summary>
@@ -48,15 +63,15 @@ namespace facebook.Tables
         public string Timestamp { get; set; }
 
         /// <summary>
-        /// Flag to indicate whether the action is a subscribe (1) or unsubscribe (2).
+        /// Flag to indicate whether the action is a subscribe (1) or unsubscribe (2)
         /// 
-        /// original type is: int
+        /// original type is: int32
         /// </summary>
         [Column(Name = "type" )]
-        public long? Type { get; set; }
+        public object Type { get; set; }
 
         /// <summary>
-        /// List of users on whom the action was performed. Each element of the list is an object with properties name (string), email (string) and user_id (string).
+        /// List of users on whom the action was performed
         /// 
         /// original type is: array
         /// </summary>

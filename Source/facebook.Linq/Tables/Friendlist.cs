@@ -9,25 +9,23 @@ using Facebook;
 namespace facebook.Tables
 {
     /// <summary>
-    /// http://developers.facebook.com/docs/reference/fql/friendlist/
+    /// https://developers.facebook.com/docs/reference/fql/friendlist
     /// </summary>
     [Table(Name = "friendlist")]
     public class Friendlist
     {
         /// <summary>
-        /// The ID of the user who created the friend list.
+        /// The number of members in the friendlist that the flid specifies
         /// 
-        /// original type is: string
-        /// Indexable
+        /// original type is: unsigned int32
         /// </summary>
-        [Column(Name = "owner" , IsPrimaryKey = true)]
-        public Uid Owner { get; set; }
+        [Column(Name = "count" , IsPrimaryKey = true)]
+        public object Count { get; set; }
 
         /// <summary>
-        /// The ID of the friend list. <strong>Note:</strong> This is only indexable for friend lists belonging to the current session user
+        /// The ID of the friend list. Note: This is only indexable for friend lists belonging to the current session user
         /// 
         /// original type is: string
-        /// Indexable
         /// </summary>
         [Column(Name = "flid" )]
         public FriendListId Flid { get; set; }
@@ -39,6 +37,22 @@ namespace facebook.Tables
         /// </summary>
         [Column(Name = "name" )]
         public string Name { get; set; }
+
+        /// <summary>
+        /// The ID of the user who created the friend list.
+        /// 
+        /// original type is: id
+        /// </summary>
+        [Column(Name = "owner" )]
+        public Uid Owner { get; set; }
+
+        /// <summary>
+        /// A cursor used to paginate through a query that is index on the owner
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "owner_cursor" )]
+        public string OwnerCursor { get; set; }
 
         /// <summary>
         /// The type of the friends list; Possible values are: close_friends, acquaintances, restricted,user_created, education, work, current_city or family.

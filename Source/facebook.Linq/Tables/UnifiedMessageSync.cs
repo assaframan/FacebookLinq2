@@ -9,10 +9,10 @@ using Facebook;
 namespace facebook.Tables
 {
     /// <summary>
-    /// https://developers.facebook.com/docs/reference/fql/unified_message
+    /// https://developers.facebook.com/docs/reference/fql/unified_message_sync
     /// </summary>
-    [Table(Name = "unified_message")]
-    public class UnifiedMessage
+    [Table(Name = "unified_message_sync")]
+    public class UnifiedMessageSync
     {
         /// <summary>
         /// Version ID that increases in the same order as messages are received by Facebook. If messages arrive out of order, this ordering can theoretically be different from the timestamp-based ordering, since timestamps for email-originated messages are based on the timestamp of the sender's email client
@@ -173,6 +173,14 @@ namespace facebook.Tables
         /// </summary>
         [Column(Name = "subject" )]
         public string Subject { get; set; }
+
+        /// <summary>
+        /// Information on whether the message was added or deleted
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "sync_change_type" )]
+        public string SyncChangeType { get; set; }
 
         /// <summary>
         /// List of users tagged in the message

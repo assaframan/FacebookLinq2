@@ -9,10 +9,10 @@ using Facebook;
 namespace facebook.Tables
 {
     /// <summary>
-    /// https://developers.facebook.com/docs/reference/fql/developer
+    /// https://developers.facebook.com/docs/reference/fql/app_role
     /// </summary>
-    [Table(Name = "developer")]
-    public class Developer
+    [Table(Name = "app_role")]
+    public class AppRole
     {
         /// <summary>
         /// The application ID

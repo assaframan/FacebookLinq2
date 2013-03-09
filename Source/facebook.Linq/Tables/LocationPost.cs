@@ -9,65 +9,77 @@ using Facebook;
 namespace facebook.Tables
 {
     /// <summary>
-    /// http://developers.facebook.com/docs/reference/fql/location_post/
+    /// https://developers.facebook.com/docs/reference/fql/location_post
     /// </summary>
     [Table(Name = "location_post")]
     public class LocationPost
     {
         /// <summary>
-        /// ID of the object associated with this location
+        /// ID of the application that published the post
         /// 
-        /// original type is: int
-        /// Indexable
+        /// original type is: id
         /// </summary>
-        [Column(Name = "id" , IsPrimaryKey = true)]
-        public ObjectId Id { get; set; }
+        [Column(Name = "app_id" , IsPrimaryKey = true)]
+        public AppId AppId { get; set; }
 
         /// <summary>
         /// ID of person publishing the post
         /// 
-        /// original type is: int
-        /// Indexable
+        /// original type is: id
         /// </summary>
         [Column(Name = "author_uid" )]
-        public Uid AuthorUid { get; set; }
+        public object AuthorUid { get; set; }
 
         /// <summary>
-        /// ID of application that published the post
+        /// Coordinates of the checkin location
         /// 
-        /// original type is: int
+        /// original type is: struct
         /// </summary>
-        [Column(Name = "app_id" )]
-        public AppId AppId { get; set; }
+        [Column(Name = "coords" )]
+        public Coords Coords { get; set; }
 
         /// <summary>
-        /// UNIX timestamp
+        /// ID of the object associated with this location
         /// 
-        /// original type is: int
+        /// original type is: id
         /// </summary>
-        [Column(Name = "timestamp" )]
-        public long? Timestamp { get; set; }
+        [Column(Name = "id" )]
+        public ObjectId Id { get; set; }
 
         /// <summary>
-        /// array of ints representing the Facebook IDs tagged in the post
+        /// Latitude of the checkin location
         /// 
-        /// original type is: array
-        /// Indexable
+        /// original type is: float
         /// </summary>
-        [Column(Name = "tagged_uids" )]
-        public UidsList TaggedUids { get; set; }
+        [Column(Name = "latitude" )]
+        public float? Latitude { get; set; }
+
+        /// <summary>
+        /// Longitude of the checkin location
+        /// 
+        /// original type is: float
+        /// </summary>
+        [Column(Name = "longitude" )]
+        public float? Longitude { get; set; }
+
+        /// <summary>
+        /// Message of the post story
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "message" )]
+        public string Message { get; set; }
 
         /// <summary>
         /// ID of the Facebook page associated with the location or event in the post
         /// 
-        /// original type is: int
-        /// Indexable
+        /// original type is: id
         /// </summary>
         [Column(Name = "page_id" )]
         public PageId PageId { get; set; }
 
         /// <summary>
-        /// Type of the target; either page or event
+        /// Type of the target. For example, page and event
         /// 
         /// original type is: string
         /// </summary>
@@ -75,12 +87,28 @@ namespace facebook.Tables
         public string PageType { get; set; }
 
         /// <summary>
-        /// object with latitude and longitude fields
+        /// ID of the post story
         /// 
-        /// original type is: object
+        /// original type is: string
         /// </summary>
-        [Column(Name = "coords" )]
-        public Coords Coords { get; set; }
+        [Column(Name = "post_id" )]
+        public PostId PostId { get; set; }
+
+        /// <summary>
+        /// IDs of users tagged in the checkin
+        /// 
+        /// original type is: array
+        /// </summary>
+        [Column(Name = "tagged_uids" )]
+        public UidsList TaggedUids { get; set; }
+
+        /// <summary>
+        /// UNIX timestamp of the checkin
+        /// 
+        /// original type is: timestamp
+        /// </summary>
+        [Column(Name = "timestamp" )]
+        public object Timestamp { get; set; }
 
         /// <summary>
         /// The type of post. Either photo, checkin, video, or status

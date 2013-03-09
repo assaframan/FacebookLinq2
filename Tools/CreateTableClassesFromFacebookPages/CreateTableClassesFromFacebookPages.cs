@@ -27,7 +27,7 @@ namespace CreateTableClassesFromFacebookPages
 		static public void doit(string _accessToken)
 		{
 			string fqlRootPage = DownloadHTMLPage(@"http://developers.facebook.com/docs/reference/fql/", _accessToken);
-			string[] fqlRootPageLines = Regex.Split(fqlRootPage, "\n");
+			string[] fqlRootPageLines = Regex.Split(fqlRootPage, @"<li><a href=");
 			bool foundTables = false;
 
 
@@ -49,7 +49,7 @@ namespace CreateTableClassesFromFacebookPages
 			{
 				if (foundTables)
 				{
-					if (line.StartsWith(@"</div></div><div class="))
+					if (line.Contains(@"div class=""fsl"">"))
 					{
 						HendleTableLine(line, _accessToken, mainFile);
 					}
@@ -60,9 +60,8 @@ namespace CreateTableClassesFromFacebookPages
 				}
 				else
 				{
-					if (line.StartsWith(@"<ul></ul><hr /><h2 id=""tables"">Tables</h2>"))
+					if (line.Contains(@"ul class=""uiList _4kg _6-h _704 _6-i"""))
 					{
-						HendleTableLine(line, _accessToken, mainFile);
 						foundTables = true;
 					}
 				}
@@ -83,11 +82,10 @@ namespace CreateTableClassesFromFacebookPages
 		}
 		private static void HendleTableLine(string line, string _accessToken, System.IO.StreamWriter mainFile)
 		{
-			string theLine = line.Substring(line.IndexOf(@"<div class=""title"">"));
-			string[] parts = Regex.Split(theLine, ">");
-			string name = parts[2].Substring(0, parts[2].Length - 3);
+			string[] parts = Regex.Split(line, ">");
+			string name = parts[2].Substring(0, parts[2].Length - 5);
 			string capitalName = ToCapitalString(name);
-			string url = parts[1].Substring(9, parts[1].Length - 1 - 9);
+			string url = @"https://developers.facebook.com" + parts[0].Substring(1, parts[0].Length - 2);
 
 
 			mainFile.WriteLine("        public FqlTable<" + capitalName  + "> " + capitalName);
@@ -100,7 +98,7 @@ namespace CreateTableClassesFromFacebookPages
 			mainFile.WriteLine("");
 
 			string tablePage = DownloadHTMLPage(url, _accessToken);
-			string[] tablePageLines = Regex.Split(tablePage, "\n");
+			string[] tablePageLines = Regex.Split(tablePage, @"<td class=""_4-i6"">");
 
 			System.IO.StreamWriter file = new System.IO.StreamWriter("..\\..\\..\\..\\Source\\facebook.Linq\\Tables\\" + capitalName + ".cs");
 
@@ -125,7 +123,7 @@ namespace CreateTableClassesFromFacebookPages
 			bool first = true;
 			foreach (string fieldLine in tablePageLines)
 			{
-				if (fieldLine.IndexOf(@"<td class=""indexable"">") > 0)
+				if (fieldLine.IndexOf(@"<p class=""_4-i7"">") > 0)
 				{
 					HendleTableField(first, fieldLine, file, tablePage, name);
 					first = false;
@@ -140,9 +138,9 @@ namespace CreateTableClassesFromFacebookPages
 		static string lastName = "";
 		private static void HendleTableField(bool isFirst, string fieldLine, System.IO.StreamWriter file, string pageText, string tableName)
 		{
-			string theLine = fieldLine.Substring(fieldLine.IndexOf(@"<td class=""indexable"">"));
-			string[] parts = Regex.Split(theLine, ">");
-			string name = parts[3].Substring(0, parts[3].Length - 4);
+			string theLine = fieldLine;
+			string[] parts = Regex.Split(theLine, "<");
+			string name = theLine.Substring(0,theLine.IndexOf("<"));
 			if (lastName == name)
 			{
 				return;
@@ -153,26 +151,15 @@ namespace CreateTableClassesFromFacebookPages
 			{
 				capitalName = capitalName + "_";
 			}
-			string theType = parts[5].Substring(0, parts[5].Length - 4);
+			string typeClass = @"<p class=""_4-i7"">";
+			String typeStart = theLine.Substring(theLine.IndexOf(typeClass) + typeClass.Length);
+			string theType = typeStart.Substring(0, typeStart.IndexOf("</p>"));
 
-			string description = pageText;
-			description = description.Substring(description.IndexOf("<td class=\"name\">" + name + "</td><td class=\"type\">") + 1);
-			int posOfEnd =  description.IndexOf("<td class=\"name\">");
-			if (posOfEnd == -1)
-			{
-				posOfEnd = description.IndexOf("</table>");
-			}
-			description = description.Substring(0, posOfEnd);
+			string descriptionMark = @"</p></td><td><p><p>";
 
-			int posOfP = description.IndexOf("<p>");
-
-
-			description = description.Substring(posOfP + 3);
-
-			int posOfEndP = description.LastIndexOf("</p>");
-
-			description = description.Substring(0, posOfEndP);
-
+			string description = theLine.Substring(theLine.IndexOf(typeClass) + typeClass.Length);
+			description = description.Substring(description.IndexOf(descriptionMark) + descriptionMark.Length);
+			description = description.Substring(0, description.IndexOf("</p>"));
 			description = description.Replace("<code>", "");
 			description = description.Replace("</code>", "");
 

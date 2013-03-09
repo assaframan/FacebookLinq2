@@ -9,44 +9,18 @@ using Facebook;
 namespace facebook.Tables
 {
     /// <summary>
-    /// http://developers.facebook.com/docs/reference/fql/notes/
+    /// https://developers.facebook.com/docs/reference/fql/note
     /// </summary>
     [Table(Name = "note")]
     public class Note
     {
         /// <summary>
-        /// The user ID of the current user.
+        /// The comment information of the note being queried. This is an object containing can_comment and comment_count.
         /// 
-        /// original type is: int
-        /// Indexable
+        /// original type is: struct
         /// </summary>
-        [Column(Name = "uid" , IsPrimaryKey = true)]
-        public Uid Uid { get; set; }
-
-        /// <summary>
-        /// The unique identifier for the note.
-        /// 
-        /// original type is: string
-        /// Indexable
-        /// </summary>
-        [Column(Name = "note_id" )]
-        public string NoteId { get; set; }
-
-        /// <summary>
-        /// The time the user created the note as a UNIX timestamp.
-        /// 
-        /// original type is: time
-        /// </summary>
-        [Column(Name = "created_time" )]
-        public DateTime? CreatedTime { get; set; }
-
-        /// <summary>
-        /// The most recent time the user edited the note as a UNIX timestamp.
-        /// 
-        /// original type is: time
-        /// </summary>
-        [Column(Name = "updated_time" )]
-        public DateTime? UpdatedTime { get; set; }
+        [Column(Name = "comment_info" , IsPrimaryKey = true)]
+        public CommentInfo CommentInfo { get; set; }
 
         /// <summary>
         /// The body of the note in plaintext.
@@ -65,6 +39,30 @@ namespace facebook.Tables
         public string ContentHtml { get; set; }
 
         /// <summary>
+        /// The time the user created the note as a UNIX timestamp.
+        /// 
+        /// original type is: timestamp
+        /// </summary>
+        [Column(Name = "created_time" )]
+        public DateTime? CreatedTime { get; set; }
+
+        /// <summary>
+        /// The like information of the note being queried. This is an object containing can_like, like_count, and user_likes.
+        /// 
+        /// original type is: struct
+        /// </summary>
+        [Column(Name = "like_info" )]
+        public LikeInfo LikeInfo { get; set; }
+
+        /// <summary>
+        /// The unique identifier for the note.
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "note_id" )]
+        public string NoteId { get; set; }
+
+        /// <summary>
         /// The title of the note.
         /// 
         /// original type is: string
@@ -73,20 +71,28 @@ namespace facebook.Tables
         public string Title { get; set; }
 
         /// <summary>
-        /// The like information of the note being queried. This is an object containing can_like, like_count, and user_likes
+        /// The user ID of the current user.
         /// 
-        /// original type is: object
+        /// original type is: id
         /// </summary>
-        [Column(Name = "like_info" )]
-        public LikeInfo LikeInfo { get; set; }
+        [Column(Name = "uid" )]
+        public Uid Uid { get; set; }
 
         /// <summary>
-        /// The comment information of the note being queried. This is an object containing can_comment and comment_count
+        /// Cursor for the uid field.
         /// 
-        /// original type is: object
+        /// original type is: string
         /// </summary>
-        [Column(Name = "comment_info" )]
-        public CommentInfo CommentInfo { get; set; }
+        [Column(Name = "uid_cursor" )]
+        public string UidCursor { get; set; }
+
+        /// <summary>
+        /// The most recent time the user edited the note as a UNIX timestamp.
+        /// 
+        /// original type is: timestamp
+        /// </summary>
+        [Column(Name = "updated_time" )]
+        public DateTime? UpdatedTime { get; set; }
 
     }
 }

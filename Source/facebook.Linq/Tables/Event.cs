@@ -9,142 +9,29 @@ using Facebook;
 namespace facebook.Tables
 {
     /// <summary>
-    /// http://developers.facebook.com/docs/reference/fql/event/
+    /// https://developers.facebook.com/docs/reference/fql/event
     /// </summary>
     [Table(Name = "event")]
     public class Event
     {
         /// <summary>
-        /// The ID of the event being queried.
+        /// The number of invitees to the event
         /// 
-        /// original type is: int
-        /// Indexable
+        /// original type is: unsigned int32
         /// </summary>
-        [Column(Name = "eid" , IsPrimaryKey = true)]
-        public EventId Eid { get; set; }
+        [Column(Name = "all_members_count" , IsPrimaryKey = true)]
+        public object AllMembersCount { get; set; }
 
         /// <summary>
-        /// The name of the event being queried.
+        /// The number of invitees who have accepted the event invite
         /// 
-        /// original type is: string
+        /// original type is: unsigned int32
         /// </summary>
-        [Column(Name = "name" )]
-        public string Name { get; set; }
+        [Column(Name = "attending_count" )]
+        public object AttendingCount { get; set; }
 
         /// <summary>
-        /// The URL to the small-sized profile picture for the event being queried. The image can have a maximum width of 50px and a maximum height of 150px. This URL may be blank.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "pic_small" )]
-        public string PicSmall { get; set; }
-
-        /// <summary>
-        /// The URL to the largest-sized profile picture for the event being queried. The image can have a maximum width of 200px and a maximum height of 600px. This URL may be blank.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "pic_big" )]
-        public string PicBig { get; set; }
-
-        /// <summary>
-        /// The URL to the square-sized profile picture for the event being queried. The image is returned with a width and height of 50px.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "pic_square" )]
-        public string PicSquare { get; set; }
-
-        /// <summary>
-        /// The URL to the medium-sized profile picture for the event being queried. The image can have a maximum width of 100px and a maximum height of 300px. This URL may be blank.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "pic" )]
-        public string Pic { get; set; }
-
-        /// <summary>
-        /// The name of the host of the event being queried.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "host" )]
-        public string Host { get; set; }
-
-        /// <summary>
-        /// The description of the event being queried.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "description" )]
-        public string Description { get; set; }
-
-        /// <summary>
-        /// An ISO-8601 string representing the starting date and (optionally) time of the event being queried.  <strong>Note</strong> - before the 'Events Timezone' migration, this field was a timestamp.  See 'Events Timezone Migration Note' above for more information.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "start_time" )]
-        public DateTime? StartTime { get; set; }
-
-        /// <summary>
-        /// An ISO-8601 string representing the ending date and time of the event being queried.  This can be empty if no end time has been specified.  <strong>Note</strong> - before the 'Events Timezone' migration, this field was a timestamp.  See 'Events Timezone Migration Note' above for more information.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "end_time" )]
-        public DateTime? EndTime { get; set; }
-
-        /// <summary>
-        /// The user ID of the creator of the event being queried.
-        /// 
-        /// original type is: int
-        /// </summary>
-        [Column(Name = "creator" )]
-        public Uid Creator { get; set; }
-
-        /// <summary>
-        /// The time that the event being queried was last updated.
-        /// 
-        /// original type is: time
-        /// </summary>
-        [Column(Name = "update_time" )]
-        public DateTime? UpdateTime { get; set; }
-
-        /// <summary>
-        /// The location of the event being queried.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "location" )]
-        public string Location { get; set; }
-
-        /// <summary>
-        /// The venue where the event being queried is being held. Contains one or more of the following fields: street, city, state, zip, country, latitude, and longitude.
-        /// 
-        /// original type is: array
-        /// </summary>
-        [Column(Name = "venue" )]
-        public Venue Venue { get; set; }
-
-        /// <summary>
-        /// The privacy setting of the event being queried, indicating whether the event is OPEN, CLOSED, or SECRET.
-        /// 
-        /// original type is: string
-        /// </summary>
-        [Column(Name = "privacy" )]
-        public string Privacy { get; set; }
-
-        /// <summary>
-        /// Indicates whether the guest list on the event's page is hidden..
-        /// 
-        /// original type is: bool
-        /// </summary>
-        [Column(Name = "hide_guest_list" )]
-        public bool? HideGuestList { get; set; }
-
-        /// <summary>
-        /// Indicates whether or not the viewer can invite friends to the event.
+        /// Whether the viewer can invite friends to the event
         /// 
         /// original type is: bool
         /// </summary>
@@ -152,44 +39,196 @@ namespace facebook.Tables
         public bool? CanInviteFriends { get; set; }
 
         /// <summary>
-        /// The number of invitees to the event.
+        /// Creator of the event
         /// 
-        /// original type is: int
+        /// original type is: id
         /// </summary>
-        [Column(Name = "all_members_count" )]
-        public long? AllMembersCount { get; set; }
+        [Column(Name = "creator" )]
+        public object Creator { get; set; }
 
         /// <summary>
-        /// The number of invitees who have accepted the event invite.
+        /// The number of invitees who have declined the event invite
         /// 
-        /// original type is: int
-        /// </summary>
-        [Column(Name = "attending_count" )]
-        public long? AttendingCount { get; set; }
-
-        /// <summary>
-        /// The number of invitees who have responded maybe to the event invite.
-        /// 
-        /// original type is: int
-        /// </summary>
-        [Column(Name = "unsure_count" )]
-        public long? UnsureCount { get; set; }
-
-        /// <summary>
-        /// The number of invitees who have declined the event invite.
-        /// 
-        /// original type is: int
+        /// original type is: unsigned int32
         /// </summary>
         [Column(Name = "declined_count" )]
-        public long? DeclinedCount { get; set; }
+        public object DeclinedCount { get; set; }
 
         /// <summary>
-        /// The number of invitees who have not yet replied to the event invite.
+        /// Description of the event
         /// 
-        /// original type is: int
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "description" )]
+        public string Description { get; set; }
+
+        /// <summary>
+        /// ID of the event
+        /// 
+        /// original type is: id
+        /// </summary>
+        [Column(Name = "eid" )]
+        public EventId Eid { get; set; }
+
+        /// <summary>
+        /// End time of the event (UNIX timestamp)
+        /// 
+        /// original type is: timestamp
+        /// </summary>
+        [Column(Name = "end_time" )]
+        public DateTime? EndTime { get; set; }
+
+        /// <summary>
+        /// Whether the event has a profile picture
+        /// 
+        /// original type is: bool
+        /// </summary>
+        [Column(Name = "has_profile_pic" )]
+        public bool? HasProfilePic { get; set; }
+
+        /// <summary>
+        /// Whether the guest list is hidden for the event
+        /// 
+        /// original type is: bool
+        /// </summary>
+        [Column(Name = "hide_guest_list" )]
+        public bool? HideGuestList { get; set; }
+
+        /// <summary>
+        /// Host of the event
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "host" )]
+        public string Host { get; set; }
+
+        /// <summary>
+        /// Whether the event only has a date specified
+        /// 
+        /// original type is: bool
+        /// </summary>
+        [Column(Name = "is_date_only" )]
+        public bool? IsDateOnly { get; set; }
+
+        /// <summary>
+        /// Location of the event
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "location" )]
+        public string Location { get; set; }
+
+        /// <summary>
+        /// Name of the event
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "name" )]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// The number of invitees who have not yet replied to the event invite
+        /// 
+        /// original type is: unsigned int32
         /// </summary>
         [Column(Name = "not_replied_count" )]
-        public long? NotRepliedCount { get; set; }
+        public object NotRepliedCount { get; set; }
+
+        /// <summary>
+        /// Event picture
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "pic" )]
+        public string Pic { get; set; }
+
+        /// <summary>
+        /// Large event picture
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "pic_big" )]
+        public string PicBig { get; set; }
+
+        /// <summary>
+        /// Small event picture
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "pic_small" )]
+        public string PicSmall { get; set; }
+
+        /// <summary>
+        /// Square event picture
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "pic_square" )]
+        public string PicSquare { get; set; }
+
+        /// <summary>
+        /// Privacy of the event
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "privacy" )]
+        public string Privacy { get; set; }
+
+        /// <summary>
+        /// Start time of the event (UNIX timestamp)
+        /// 
+        /// original type is: timestamp
+        /// </summary>
+        [Column(Name = "start_time" )]
+        public DateTime? StartTime { get; set; }
+
+        /// <summary>
+        /// The link users can visit to buy a ticket to the event
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "ticket_uri" )]
+        public string TicketUri { get; set; }
+
+        /// <summary>
+        /// Timezone of the event
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "timezone" )]
+        public string Timezone { get; set; }
+
+        /// <summary>
+        /// The number of invitees who have responded maybe to the event invite
+        /// 
+        /// original type is: unsigned int32
+        /// </summary>
+        [Column(Name = "unsure_count" )]
+        public object UnsureCount { get; set; }
+
+        /// <summary>
+        /// Last update time of the event (UNIX timestamp)
+        /// 
+        /// original type is: timestamp
+        /// </summary>
+        [Column(Name = "update_time" )]
+        public DateTime? UpdateTime { get; set; }
+
+        /// <summary>
+        /// Venue hosting the event
+        /// 
+        /// original type is: struct
+        /// </summary>
+        [Column(Name = "venue" )]
+        public Venue Venue { get; set; }
+
+        /// <summary>
+        /// Version of the event
+        /// 
+        /// original type is: unsigned int32
+        /// </summary>
+        [Column(Name = "version" )]
+        public long? Version { get; set; }
 
     }
 }

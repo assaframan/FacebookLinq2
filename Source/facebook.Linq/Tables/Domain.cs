@@ -9,7 +9,7 @@ using Facebook;
 namespace facebook.Tables
 {
     /// <summary>
-    /// http://developers.facebook.com/docs/reference/fql/domain/
+    /// https://developers.facebook.com/docs/reference/fql/domain
     /// </summary>
     [Table(Name = "domain")]
     public class Domain
@@ -17,8 +17,7 @@ namespace facebook.Tables
         /// <summary>
         /// The domain id.
         /// 
-        /// original type is: int
-        /// Indexable
+        /// original type is: id
         /// </summary>
         [Column(Name = "domain_id" , IsPrimaryKey = true)]
         public DomainId DomainId { get; set; }
@@ -27,7 +26,6 @@ namespace facebook.Tables
         /// The domain name.
         /// 
         /// original type is: string
-        /// Indexable
         /// </summary>
         [Column(Name = "domain_name" )]
         public string DomainName { get; set; }

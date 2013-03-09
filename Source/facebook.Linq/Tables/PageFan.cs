@@ -9,18 +9,34 @@ using Facebook;
 namespace facebook.Tables
 {
     /// <summary>
-    /// http://developers.facebook.com/docs/reference/fql/page_fan/
+    /// https://developers.facebook.com/docs/reference/fql/page_fan
     /// </summary>
     [Table(Name = "page_fan")]
     public class PageFan
     {
         /// <summary>
+        /// The UNIX time when the user liked the Page.
+        /// 
+        /// original type is: number
+        /// </summary>
+        [Column(Name = "created_time" , IsPrimaryKey = true)]
+        public DateTime? CreatedTime { get; set; }
+
+        /// <summary>
         /// The ID of the Page being queried.
         /// 
-        /// original type is: string
+        /// original type is: id
         /// </summary>
         [Column(Name = "page_id" )]
         public PageId PageId { get; set; }
+
+        /// <summary>
+        /// The profile section on the user's profile which contains the Page.
+        /// 
+        /// original type is: string
+        /// </summary>
+        [Column(Name = "profile_section" )]
+        public string ProfileSection { get; set; }
 
         /// <summary>
         /// The type of Page being queried.
@@ -31,20 +47,12 @@ namespace facebook.Tables
         public string Type { get; set; }
 
         /// <summary>
-        /// The profile section the Page is in on the user's profile..
+        /// The user ID who has liked the Page being queried.
         /// 
-        /// original type is: string
+        /// original type is: id
         /// </summary>
-        [Column(Name = "profile_section" )]
-        public string ProfileSection { get; set; }
-
-        /// <summary>
-        /// The unix time when the user liked this Page
-        /// 
-        /// original type is: time
-        /// </summary>
-        [Column(Name = "created_time" )]
-        public DateTime? CreatedTime { get; set; }
+        [Column(Name = "uid" )]
+        public Uid Uid { get; set; }
 
     }
 }
